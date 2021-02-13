@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="ADCS Math" targetName="ADCS" />
@@ -7,18 +10,13 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" GENERATION_OPTIONS="-DCMAKE_TOOLCHAIN_FILE=E:\vcpkg\scripts\buildsystems\vcpkg.cmake" />
       <configuration PROFILE_NAME="Release" CONFIG_NAME="Release" GENERATION_OPTIONS="-DCMAKE_TOOLCHAIN_FILE=E:\vcpkg\scripts\buildsystems\vcpkg.cmake" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c137e2d0-92f6-44fe-a3ab-de71994422fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/Constants.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/adcs-math.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/adcs-math.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/AdcsMath.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/AdcsMath.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AdcsMath.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdcsMath.cpp" afterDir="false" />
     </list>
@@ -55,7 +53,7 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -63,7 +61,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="ADCS" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ADCS Math" TARGET_NAME="ADCS" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ADCS Math" RUN_TARGET_NAME="ADCS">
+    <configuration name="ADCS" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ADCS Math" TARGET_NAME="ADCS" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="ADCS Math" RUN_TARGET_NAME="ADCS">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -99,7 +97,7 @@
       <workItem from="1613205888361" duration="126000" />
       <workItem from="1613206075567" duration="127000" />
       <workItem from="1613206312540" duration="34000" />
-      <workItem from="1613206357215" duration="997000" />
+      <workItem from="1613206357215" duration="4661000" />
     </task>
     <servers />
   </component>
@@ -111,26 +109,30 @@
       <screen x="0" y="0" width="2752" height="1112" />
     </state>
     <state x="1198" y="399" key="FileChooserDialogImpl/0.0.2752.1112@0.0.2752.1112" timestamp="1613173253978" />
-    <state width="2709" height="305" key="GridCell.Tab.0.bottom" timestamp="1613234102039">
+    <state width="2709" height="305" key="GridCell.Tab.0.bottom" timestamp="1613236665394">
       <screen x="0" y="0" width="2752" height="1112" />
     </state>
-    <state width="2709" height="305" key="GridCell.Tab.0.bottom/0.0.2752.1112@0.0.2752.1112" timestamp="1613234102039" />
-    <state width="2709" height="305" key="GridCell.Tab.0.center" timestamp="1613234102039">
+    <state width="2709" height="305" key="GridCell.Tab.0.bottom/0.0.2752.1112@0.0.2752.1112" timestamp="1613236665394" />
+    <state width="2709" height="305" key="GridCell.Tab.0.center" timestamp="1613236665394">
       <screen x="0" y="0" width="2752" height="1112" />
     </state>
-    <state width="2709" height="305" key="GridCell.Tab.0.center/0.0.2752.1112@0.0.2752.1112" timestamp="1613234102039" />
-    <state width="2709" height="305" key="GridCell.Tab.0.left" timestamp="1613234102039">
+    <state width="2709" height="305" key="GridCell.Tab.0.center/0.0.2752.1112@0.0.2752.1112" timestamp="1613236665394" />
+    <state width="2709" height="305" key="GridCell.Tab.0.left" timestamp="1613236665394">
       <screen x="0" y="0" width="2752" height="1112" />
     </state>
-    <state width="2709" height="305" key="GridCell.Tab.0.left/0.0.2752.1112@0.0.2752.1112" timestamp="1613234102039" />
-    <state width="2709" height="305" key="GridCell.Tab.0.right" timestamp="1613234102039">
+    <state width="2709" height="305" key="GridCell.Tab.0.left/0.0.2752.1112@0.0.2752.1112" timestamp="1613236665394" />
+    <state width="2709" height="305" key="GridCell.Tab.0.right" timestamp="1613236665394">
       <screen x="0" y="0" width="2752" height="1112" />
     </state>
-    <state width="2709" height="305" key="GridCell.Tab.0.right/0.0.2752.1112@0.0.2752.1112" timestamp="1613234102039" />
-    <state x="1060" y="93" key="SettingsEditor" timestamp="1613204780371">
+    <state width="2709" height="305" key="GridCell.Tab.0.right/0.0.2752.1112@0.0.2752.1112" timestamp="1613236665394" />
+    <state x="1060" y="93" key="SettingsEditor" timestamp="1613236700060">
       <screen x="0" y="0" width="2752" height="1112" />
     </state>
-    <state x="1060" y="93" key="SettingsEditor/0.0.2752.1112@0.0.2752.1112" timestamp="1613204780371" />
+    <state x="1060" y="93" key="SettingsEditor/0.0.2752.1112@0.0.2752.1112" timestamp="1613236700060" />
+    <state x="1086" y="289" width="579" height="534" key="find.popup" timestamp="1613236049692">
+      <screen x="0" y="0" width="2752" height="1112" />
+    </state>
+    <state x="1086" y="289" width="579" height="534" key="find.popup/0.0.2752.1112@0.0.2752.1112" timestamp="1613236049692" />
     <state x="1038" y="243" width="672" height="678" key="search.everywhere.popup" timestamp="1613205890197">
       <screen x="0" y="0" width="2752" height="1112" />
     </state>
