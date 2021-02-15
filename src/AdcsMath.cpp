@@ -5,7 +5,7 @@
 #include "AdcsMath.h"
 #include <cmath>
 
-namespace fsw::math {
+namespace adcs {
 
     double getJulianDate(int year, int month, int day, int hour, int min, int sec) {
         return (367.0 * year - floor( ( 7 * ( year + floor( (month + 9 ) / 12.0) ) ) * 0.25)) +
