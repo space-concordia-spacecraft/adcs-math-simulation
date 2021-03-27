@@ -1,11 +1,12 @@
+
 //
 // Created by Ruben on 2/12/2021.
 //
 
-#include "VectorManipulation.h"
+#include "Location.h"
 #include <cmath>
 
-namespace adcs {
+namespace adcs::location {
 
     vec3 getSunPosition(int julianDate) {
         double tut1 = ( julianDate - 2451545.0 )/ 36525.0;
@@ -41,11 +42,13 @@ namespace adcs {
 
         return rsun;
     }
+
     /**
      * Function that transforms a vector from the mean equator mean equinox of date (mod) to the mean equator mean eeuinox (j2000) frame.
      * @param pos - Position vector of sun
      * @param julianCenturies - Julian centuries of terrestrial time
      */
+
     vec3 mod2eci(vec3 pos, int julianCenturies) {
         // Square and cubes of julian centuries
         int julianCenturiesSquared = pow(julianCenturies,2);
@@ -160,6 +163,41 @@ namespace adcs {
         vec3 temp  = cross(omegaearth,rpef);
 
         vec3 aecef = transpose(pm)*(transpose(st)*ateme - cross(omegaearth,temp) - (2.0 * cross(omegaearth,vpef)));
-        vec3 DCM_ET = transpose(pm) * st;
+        mat3 DCM_ET = transpose(pm) * st;
+    }
+
+    vec3 xyz2ell3(vec3 coordinates, double & h) {
+        double a = 6378137.0;
+        double finv = 298.257222101;
+
+        double f = 1 / finv;
+        double b = a * (1 - f);
+        double e2 = 1 - pow((1 - f), 2);
+
+        vec3 ellipsoidalCoordinates = vec3();
+
+        ellipsoidalCoordinates.x = atan2(coordinates.y,coordinates.x); //longitude
+        double e = e2*pow((a/b),2);
+        double p = sqrt((pow(coordinates.x, 2))+pow(coordinates.y, 2));
+        double r = sqrt(pow(p, 2)+pow(coordinates.z, 2));
+        double u = atan(b*coordinates.z*(1+e*b/r)/(a*p));
+        ellipsoidalCoordinates.y = atan((coordinates.z+(e*b*pow(sin(u),3) ))/(p-(e2*a*pow(cos(u),3)))); // latitude
+        double v = a/sqrt(1-(e2*pow(sin(ellipsoidalCoordinates.y),2) ));
+        h = p*cos(ellipsoidalCoordinates.y)+coordinates.z*sin(ellipsoidalCoordinates.y)-a*a/v;
+        ellipsoidalCoordinates.z = r; // altitude
+    }
+
+    vec3 getMagneticFieldComponents(double longitude, double latitude, double altitude) {
+        double costheta = cos(((CONST_PI/2) - latitude));
+        double sintheta = sin(((CONST_PI/2) - latitude));
+
+        double r = altitude;
+        double phi = longitude;
+
+
+    }
+
+    vec3 lg2ct(vec3 coordinates, double latitude, double longitude) {
+
     }
 }
