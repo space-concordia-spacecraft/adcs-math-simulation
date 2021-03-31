@@ -38,7 +38,7 @@ else()
 endif()
 
 # Clump source files from src
-file(GLOB ADCS_SRC "src/*.cpp")
+file(GLOB ADCS_SRC "src/*.cpp" "src/**/*.cpp")
 
 # Specify include directories
 include_directories(include)
@@ -61,3 +61,7 @@ if(WIN32)
                 ${CMAKE_CURRENT_BINARY_DIR}/$<CONFIG>)
     endif()
 endif()
+
+file(REMOVE_RECURSE ${CMAKE_CURRENT_BINARY_DIR}/assets)
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/assets)
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
