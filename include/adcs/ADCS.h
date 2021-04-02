@@ -1,7 +1,12 @@
 #pragma once
 
 #include <adcs/Constants.h>
+
 #include "simulation/Simulation.h"
+
+#include "adcs/SGP4.h"
+#include "adcs/AstroLib.h"
+#include "adcs/Controls.h"
 
 using adcs::simulation::Simulation;
 
