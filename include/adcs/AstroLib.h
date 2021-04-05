@@ -1,5 +1,5 @@
-#ifndef _AstroLib_h_
-#define _AstroLib_h_
+#pragma once
+
 /* --------------------------------------------------------------------
 *
 *                                AstroLib.h
@@ -31,6 +31,13 @@
 #include <glm/glm.hpp>
 using glm::vec3;
 using glm::mat3;
+=======
+#include <cmath>
+#include <cstdio>
+#include <string>
+#include <cstdlib>
+#include <vector>
+#include <cstdint>
 
   // be sure to update to your specific paths!!
   // " " tells the compiler to look in this directory first, usually the parent directory
@@ -613,5 +620,3 @@ namespace AstroLib
 
 
 };  // namespace
-
-#endif
