@@ -1,5 +1,5 @@
-#ifndef _AstroLib_h_
-#define _AstroLib_h_
+#pragma once
+
 /* --------------------------------------------------------------------
 *
 *                                AstroLib.h
@@ -27,12 +27,12 @@
 *                           original baseline
   ----------------------------------------------------------------------      */
 
-#include <math.h>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include <cmath>
+#include <cstdio>
+#include <string>
+#include <cstdlib>
 #include <vector>
-#include <stdint.h>
+#include <cstdint>
 
   // be sure to update to your specific paths!!
   // " " tells the compiler to look in this directory first, usually the parent directory
@@ -615,5 +615,3 @@ namespace AstroLib
 
 
 };  // namespace
-
-#endif

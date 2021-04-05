@@ -1,13 +1,13 @@
 #pragma once
 
-#include <adcs/Constants.h>
-#include <glm/glm.hpp>
-using glm::vec3;
-using glm::mat3;
+#include "adcs/Constants.h"
 
-namespace adcs::controls {
+namespace adcs {
+    namespace controls {
 
-    vec3 generateMagneticField(vec3 dipole, vec3 body);
-    void guidance(int mode, vec3 Se);
+        void torque_saturation(const double tw[3], double out[3]);
+        void saturation_rw(const double lw[3], const double ti[3], double out[3]);
+        void selector(int mode, const double lwheel[3], const double nominal[3], const double calibration[3], double out[3]);
 
+    }
 }
