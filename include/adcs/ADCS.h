@@ -7,8 +7,13 @@
 #include "adcs/SGP4.h"
 #include "adcs/AstroLib.h"
 #include "adcs/Controls.h"
+#include "adcs/Location.h"
+
+#include <iostream>
+#include <ctime>
 
 using adcs::simulation::Simulation;
+using adcs::location::mod_eci;
 
 namespace adcs {
     class ADCS{

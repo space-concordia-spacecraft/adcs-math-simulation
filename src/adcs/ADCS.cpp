@@ -14,8 +14,8 @@ namespace adcs {
             double recef[3] = {0,0,0}, vecef[3] = {0,0,0}, aecef[3] = {0,0,0};
             double rtasc, decl;
 
-            char longstr1[130] = {'1',' ','4','4','3','3','2','U',' ','9','8','0','6','7','Q','H',' ',' ','1','9','3','5','0','.','7','7','7','2','1','4','6','8',' ',' ','.','0','0','0','0','6','2','7','4',' ',' ','0','0','0','0','0','-','0',' ',' ','1','0','0','5','4','-','3',' ','0',' ',' ','9','9','9','8'},
-            longstr2[130] = "2 44332  51.6386 172.4798 0005656  48.9347 311.2132 15.54514188 2835547";
+            char * longstr1 =  "1 44332U 98067QH  19350.77721468  .00006274  00000-0  10054-3 0  9998",
+            * longstr2 = "2 44332  51.6386 172.4798 0005656  48.9347 311.2132 15.54514188 2835547";
 
             double startmfe, stopmfe, deltamin, opsmode;
             elsetrec satrec;
@@ -25,20 +25,28 @@ namespace adcs {
 
             // Get Julian Date
             double jd = 0, jdFrac = 0;
-            SGP4Funcs::jday_SGP4(0, 0, 0, 0, 0, 0, jd, jdFrac);
+            time_t now = time(0);
+            tm * gmtm = gmtime(&now);
+
+            SGP4Funcs::jday_SGP4(gmtm->tm_year, gmtm->tm_mon, gmtm->tm_mday, gmtm->tm_hour, gmtm->tm_min, gmtm->tm_sec, jd, jdFrac);
+
+            double ttt = (jd-2451545)/36525.0; // julian centuries
 
             // SGP4 init
             double r[3], v[3];
             SGP4Funcs::sgp4(satrec, jd, r, v);
 
             // Sun Prediction
-            AstroLib::sun(0, 0, sunPosition, rtasc, decl);
-
-            //mod2eci
+            double reci[3] = {0,0,0};
+            AstroLib::sun(0, 0, sunPosition, rtasc, decl); //sunalmanac
+            mod_eci(sunPosition, ttt, reci);
+            eci_teme();
+            AstroLib::mod_gcrf(rmod, vmod, amod, MathTimeLib::edirection::eTo, rgcrf, vgcrf, agcrf, ttt);//mod2eci
             //eci2teme
 
             //teme2ecef
-            AstroLib::teme_ecef(rteme, vteme, ateme, direction, recef, vecef, aecef, ttt, jdut, lod, xp, yp, eqeterms);
+            AstroLib::teme_ecef(rteme, vteme, ateme, direction, recef, vecef, aecef, ttt, jdut, 0, xp, yp, 2);
+
 
             //xyz2ell3
             //igrf

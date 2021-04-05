@@ -2,12 +2,22 @@
 
 #include <adcs/Constants.h>
 #include <glm/glm.hpp>
-using glm::vec3;
-using glm::mat3;
+using glm::dvec3;
+using glm::dmat3;
 
 namespace adcs::controls {
+    typedef enum
+    {
+        detumbling,
+        nadir_pointing,
+        imaging_argentina,
+        imaging_namibia,
+        ground,
+        sun,
+        calibration,
+        off
+    } adcs_mode;
 
-    vec3 generateMagneticField(vec3 dipole, vec3 body);
-    void guidance(int mode, vec3 Se);
-
+    bool eclipse_prediction(dvec3 se, dvec3 pe);
+    void body_earth_estimation();
 }

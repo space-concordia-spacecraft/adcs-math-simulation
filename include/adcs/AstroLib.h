@@ -28,11 +28,9 @@
   ----------------------------------------------------------------------      */
 
 #include <math.h>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <vector>
-#include <stdint.h>
+#include <glm/glm.hpp>
+using glm::vec3;
+using glm::mat3;
 
   // be sure to update to your specific paths!!
   // " " tells the compiler to look in this directory first, usually the parent directory
@@ -86,7 +84,7 @@ const int jpldesize = 60000; // 60000 if from 1957-2100
 
 typedef struct jpldedata
 {
-	double rsun[3], rmoon[3];
+	vec3 rsun, rmoon;
 	int    year, mon, day;
 	double rsmag, rmmag, mjd;
 } jpldedata;
@@ -146,7 +144,7 @@ namespace AstroLib
 		double ttt, double ddx, double ddy, eOpt opt,
 		const iau00data &iau00arr,
 		double& x, double& y, double& s,
-		std::vector< std::vector<double> > &nut
+		mat3 &nut
 	);
 
 	void iau00pn
@@ -154,13 +152,13 @@ namespace AstroLib
 		double ttt, double ddx, double ddy, eOpt opt,
 		const iau00data &iau00arr,
 		double x, double y, double s,
-		std::vector< std::vector<double> > &nut
+		mat3 &nut
 	);
 
 	void gstime00
 	(
 		double jdut1, double deltapsi, double ttt, const iau00data &iau00arr, eOpt opt, double& gst,
-		std::vector< std::vector<double> > &st
+		mat3 &st
 	);
 
 	double  gstime
@@ -177,7 +175,7 @@ namespace AstroLib
 	(
 		double ttt, eOpt opt,
 		double& psia, double& wa, double& epsa, double& chia,
-		std::vector< std::vector<double> > &prec
+		mat3 &prec
 	);
 
 	void nutation
@@ -185,96 +183,96 @@ namespace AstroLib
 		double ttt, double ddpsi, double ddeps,
 		const iau80data &iau80arr, eOpt opt,
 		double& deltapsi, double& deltaeps, double& trueeps, double& meaneps, double& omega,
-		std::vector< std::vector<double> > &nut
+		mat3 &nut
 	);
 
 	void nutation00a
 	(
 		double ttt, double ddpsi, double ddeps,
 		const iau00data &iau00arr, eOpt opt,
-		std::vector< std::vector<double> > &tm
+		mat3 &tm
 	);
 
 	void sidereal
 	(
 		double jdut1, double deltapsi, double meaneps, double omega,
 		double lod, int eqeterms, eOpt opt,
-		std::vector< std::vector<double> > &st,
-		std::vector< std::vector<double> > &stdot
+		mat3 &st,
+		mat3 &stdot
 	);
 
 	void polarm
 	(
-		double xp, double yp, double ttt, eOpt opt, std::vector< std::vector<double> > &pm
+		double xp, double yp, double ttt, eOpt opt, mat3 &pm
 	);
 
 	void framebias
 	(
 		char opt,
-		double& term1, double& term2, double& term3, std::vector< std::vector<double> > &fb
+		double& term1, double& term2, double& term3, mat3 &fb
 	);
 
 	void itrf_gcrf
 	(
-		double ritrf[3], double vitrf[3], double aitrf[3],
+		vec3 ritrf, vec3 vitrf, vec3 aitrf,
 		MathTimeLib::edirection direct,
-		double rgcrf[3], double vgcrf[3], double agcrf[3],
+		vec3 rgcrf, vec3 vgcrf, vec3 agcrf,
 		const iau80data &iau80rec, eOpt opt,
 		double ttt, double jdut1, double lod, double xp,
 		double yp, int eqeterms, double ddpsi, double ddeps,
-		std::vector< std::vector<double> > &trans
+		mat3 &trans
 	);
 
 
 	void eci_ecef00
 	(
-		double reci[3], double veci[3],
+		vec3 reci, vec3 veci,
 		MathTimeLib::edirection direct,
-		double recef[3], double vecef[3],
+		vec3 recef, vec3 vecef,
 		const iau00data &iau00arr, eOpt opt,
 		double ttt, double jdut1, double lod, double xp, double yp, int eqeterms, double ddx, double ddy
 	);
 
 	void itrf_j2k
 	(
-		double ritrf[3], double vitrf[3], double aitrf[3],
+		vec3 ritrf, vec3 vitrf, vec3 aitrf,
 		MathTimeLib::edirection direct,
-		double rj2k[3], double vj2k[3], double aj2k[3],
+		vec3 rj2k, vec3 vj2k, vec3 aj2k,
 		const iau80data &iau80rec, eOpt opt,
 		double ttt, double jdut1, double lod,
 		double xp, double yp, int eqeterms,
-		std::vector< std::vector<double> > &trans
+		mat3 &trans
 	);
 
 	void itrf_mod
 	(
-		double ritrf[3], double vitrf[3], double aitrf[3],
+		vec3 ritrf, vec3 vitrf, vec3 aitrf,
 		MathTimeLib::edirection direct,
-		double rmod[3], double vmod[3], double amod[3],
+        vec3 rmod, vec3 vmod, vec3 amod,
 		const iau80data &iau80rec, eOpt opt,
 		double ttt, double jdut1, double lod, double xp,
 		double yp, int eqeterms, double ddpsi, double ddeps,
-		std::vector< std::vector<double> > &trans
+		mat3 &trans
 	);
 
 	void itrf_tod
 	(
-		double ritrf[3], double vitrf[3], double aitrf[3],
+		vec3 ritrf, vec3 vitrf, vec3 aitrf,
 		MathTimeLib::edirection direct,
-		double rtod[3], double vtod[3], double atod[3],
+        vec3 rtod, vec3 vtod, vec3 atod,
 		const iau80data &iau80rec, eOpt opt,
 		double ttt, double jdut1, double lod, double xp,
 		double yp, int eqeterms, double ddpsi, double ddeps,
-		std::vector< std::vector<double> > &trans
+		mat3 &trans
 	);
 
 	void itrf_pef
 	(
-		double ritrf[3], double vitrf[3], double aitrf[3],
+		vec3 ritrf, vec3 vitrf, vec3 aitrf,
 		MathTimeLib::edirection direct,
-		double rpef[3], double vpef[3], double apef[3],
+		vec3 rpef, vec3 vpef, vec3 apef,
 		double ttt, double xp, double yp,
-		std::vector< std::vector<double> > &trans
+		mat3 &trans
 	);
 
 	void pef_gcrf

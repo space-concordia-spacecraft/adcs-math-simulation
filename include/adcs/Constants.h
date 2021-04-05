@@ -1,9 +1,5 @@
 #pragma once
 
-#include <glm/glm.hpp>
-using glm::vec3;
-using glm::mat3;
-
 // PHYSICS CONSTANTS
 #define CONST_GRAVITATIONAL_CONSTANT 6.67408e-11
 #define CONST_EARTH_MASS 5.9722e24
@@ -17,11 +13,11 @@ using glm::mat3;
 
 namespace adcs {
     // IMPORTANT LOCATIONS
-    const vec3 GROUND_LOCATION = vec3(1266.06,-4295.81,4526.14);
-    const vec3 ARGENTINA_LOCATION = vec3(1612.36,-4182.16,-4522.83);
-    const vec3 NAMIBIA_LOCATION = vec3(5659.26,1238.85,-2659.2);
+    const double GROUND_LOCATION [3]= {1266.06,-4295.81,4526.14};
+    const double ARGENTINA_LOCATION[3] = {1612.36,-4182.16,-4522.83};
+    const double NAMIBIA_LOCATION[3] = {5659.26,1238.85,-2659.2};
 
     // INERTIA VALUES
-    const vec3 MOMENT_OF_INERTIA = vec3(0.04582275, 0.04561065, 0.0085932349);
-    const vec3 PRODUCT_OF_INERTIA = vec3(0.000947555, -0.000072545546, -0.000031658756);
+    const double MOMENT_OF_INERTIA[3] = {0.04582275, 0.04561065, 0.0085932349};
+    const double PRODUCT_OF_INERTIA[3] = {0.000947555, -0.000072545546, -0.000031658756};
 }
