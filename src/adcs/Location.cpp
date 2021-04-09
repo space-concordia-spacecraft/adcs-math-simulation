@@ -109,6 +109,88 @@ namespace adcs::location {
 
         gh = transpose(gh);
         double nmax = sqrt(195) -1;
+      
+        float cosphi[nmax + 1];
+        float sinphi[nmax + 1];
+
+        for (int i = 1; i <= nmax; i++) {
+            cosphi[i] = cos(i * phi);
+            sinphi[i] = sin(i * phi);
+        }
+
+
+        double Pmax = (nmax + 1) * (nmax + 2) / 2;
+
+        
+        double Br = 0; 
+        double Bt = 0; 
+        double Bp = 0;
+
+        double P[Pmax + 1] = { 0 };
+
+        P[1] = 1;  
+        P[3] = sintheta;
+
+        double dP[Pmax + 1] = { 0 };
+
+        dP[1] = 0; 
+        dP[3] = costheta;
+
+
+        double m = 1; 
+        double n = 0; 
+        double coefindex = 1;
+
+        double a_r = (CONST_EARTH_RADIUS / r) ^ 2;
+
+        for (int i = 2; i <= Pmax; i++) {
+            if (n < m) {
+                m = 0;
+                n++;
+                a_r = a_r * (CONST_EARTH_RADIUS / r);
+            }
+            if (m < n && i != 3) {
+                double last1n = i - n;
+                double last2n = i - 2* n + 1;
+                // do magn field
+                P[i] = (2 * n - 1) / sqrt(n ^ 2 - m ^ 2) * costheta * P[last1n] -  sqrt(((n - 1) ^ 2 - m ^ 2) / (n ^ 2 - m ^ 2)) * P[last2n];
+                dP[i] = (2 * n - 1) / sqrt(n ^ 2 - m ^ 2) * (costheta * dP[last1n] - 
+                    sintheta * P[last1n]) - sqrt(((n - 1) ^ 2 - m ^ 2) / (n ^ 2 - m ^ 2)) * 
+                    dP[last2n];
+            }
+            elseif(i != 3) {
+                lastn = i - n - 1;
+                P[i] = sqrt(1 - 1 / (2 * m)) * sintheta * P[lastn];
+                dP[i] = sqrt(1 - 1 / (2 * m)) * (sintheta * dP[lastn] + costheta * P[lastn]);
+            }
+            if (m == 0) {
+                double coef = a_r * gh[coefindex];
+                Br = Br + (n + 1) * coef * P[i];
+                Bt = Bt - coef * dP[i];
+                coefindex++;
+            }
+            else {
+                double coef = a_r * (gh[coefindex] * cosphi[m] + gh[coefindex + 1] * sinphi[m]);
+                Br = Br + (n + 1) * coef * P[i];
+                Bt = Bt - coef * dP[i];
+
+                if (sintheta == 0) { 
+                        Bp = Bp - costheta * a_r * (-gh[coefindex] * sinphi[m] + gh[coefindex + 1] * cosphi[m]) * dP[i];
+                }
+                else {
+                    Bp = Bp - 1 / sintheta * a_r * m * (-gh[coefindex] * sinphi[m] + 
+                        gh[coefindex + 1] * cosphi[m]) * P[i];
+                }
+                    coefindex = coefindex + 2; 
+            }
+               
+            m++;
+
+        }
+        Bn = -Bt;
+        Be = Bp;
+        Bd = -Br;
+
 
     }
 
