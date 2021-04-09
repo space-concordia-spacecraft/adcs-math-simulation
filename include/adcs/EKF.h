@@ -13,6 +13,7 @@ using glm::normalize;
 using glm::cross;
 using glm::mat;
 using glm::transpose;
+using glm::defaultp;
 
 namespace adcs {
 
