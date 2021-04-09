@@ -8614,7 +8614,7 @@ namespace AstroLib
 
 	double poly[16];
 	double roots[15][2];
-	matrix dmat(3, 3), dmat1(3, 3), dmat2(3, 3), dmat3(3, 3), dmat4(3, 3);
+	matrix dmat(3, 3), dmat1(3, 3), dmat2(3, 3), mat3(3, 3), dmat4(3, 3);
 	vector l1(3), l2(3), l3(3), ldot(3), lddot(3), rs2dot(3), rs2ddot(3),
 	earthrate(3), temp(3), temp1(3);
 	double   d, d1, d2, d3, d4, rho, rhodot, t1t13, t1t3, t31t3, temproot,
@@ -8715,9 +8715,9 @@ namespace AstroLib
 	dmat2[] = (rs2[i), i, 3);
 
 	// ----  velocity determinants ----
-	dmat3[] = (l2[i), i, 1);
-	dmat3[] = (rs2ddot[i), i, 2);
-	dmat3[] = (lddot[i), i, 3);
+	mat3[] = (l2[i), i, 1);
+	mat3[] = (rs2ddot[i), i, 2);
+	mat3[] = (lddot[i), i, 3);
 	dmat4[] = (l2[i), i, 1);
 	dmat4[] = (rs2[i), i, 2);
 	dmat4[] = (lddot[i), i, 3);
@@ -8726,7 +8726,7 @@ namespace AstroLib
 	d  = dmat.determinant();
 	d1 = dmat1.determinant();
 	d2 = dmat2.determinant();
-	d3 = dmat3.determinant();
+	d3 = mat3.determinant();
 	d4 = dmat4.determinant();
 
 	// --------------  iterate to find rho MathTimeLib::magnitude ---------------
@@ -8853,7 +8853,7 @@ namespace AstroLib
 	dmat.display(" d matrix ", 6);
 	dmat1.display(" d1 matrix ", 6);
 	dmat2.display(" d2 matrix ", 6);
-	dmat3.display(" d3 matrix ", 6);
+	mat3.display(" d3 matrix ", 6);
 	dmat4.display(" d4 matrix ", 6);
 	}
 
@@ -8959,8 +8959,8 @@ namespace AstroLib
 		}
 
 		/* ---------------- or don't continue processing ---------------- */
-		MathTimeLib::addvec3(1.0, p, 1.0, q, 1.0, w, d);
-		MathTimeLib::addvec3(magr1, p, magr2, q, MathTimeLib::mag(r3), w, n);
+		MathTimeLib::advec3(1.0, p, 1.0, q, 1.0, w, d);
+		MathTimeLib::advec3(magr1, p, magr2, q, MathTimeLib::mag(r3), w, n);
 		MathTimeLib::norm(n, nn);
 		MathTimeLib::norm(d, dn);
 
@@ -8986,7 +8986,7 @@ namespace AstroLib
 			r1mr2 = magr1 - magr2;
 			r3mr1 = MathTimeLib::mag(r3) - magr1;
 			r2mr3 = magr2 - MathTimeLib::mag(r3);
-			MathTimeLib::addvec3(r1mr2, r3, r3mr1, r2, r2mr3, r1, s);
+			MathTimeLib::advec3(r1mr2, r3, r3mr1, r2, r2mr3, r1, s);
 			MathTimeLib::cross(d, r2, b);
 			l = sqrt(mu / (MathTimeLib::mag(d) * MathTimeLib::mag(n)));
 			tover2 = l / magr2;
@@ -9132,7 +9132,7 @@ namespace AstroLib
 			(1.0 / (dt21 * dt32) + mu / (12.0 * magr2 * magr2 * magr2));
 		term3 = dt21 *
 			(1.0 / (dt32 * dt31) + mu / (12.0 * MathTimeLib::mag(r3) * MathTimeLib::mag(r3) * MathTimeLib::mag(r3)));
-		MathTimeLib::addvec3(term1, r1, term2, r2, term3, r3, v2);
+		MathTimeLib::advec3(term1, r1, term2, r2, term3, r3, v2);
 	}  // herrgibbs
 
 

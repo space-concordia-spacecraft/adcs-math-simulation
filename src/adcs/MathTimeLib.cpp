@@ -587,7 +587,7 @@ namespace MathTimeLib
 
 /* -----------------------------------------------------------------------------
 *
-*                           procedure addvec3
+*                           procedure advec3
 *
 *  this procedure adds three vectors possibly multiplied by a constant.
 *
@@ -611,7 +611,7 @@ namespace MathTimeLib
 *     none
 * --------------------------------------------------------------------------- */
 
-	void    addvec3
+	void    advec3
 	(
 		double a1, double vec1[3],
 		double a2, double vec2[3],
@@ -626,7 +626,7 @@ namespace MathTimeLib
 			vec4[row] = 0.0;
 			vec4[row] = a1 * vec1[row] + a2 * vec2[row] + a3 * vec3[row];
 		}
-	}  // addvec3
+	}  // advec3
 
 
 

@@ -9,6 +9,7 @@ namespace adcs {
     }
 
     void ADCS::run() {
+
         while(true){
             double sunPosition [3] = {0,0,0}, rteme[3] = {0,0,0}, vteme[3] = {0,0,0}, ateme[3] = {0,0,0};
             double recef[3] = {0,0,0}, vecef[3] = {0,0,0}, aecef[3] = {0,0,0};
@@ -39,13 +40,9 @@ namespace adcs {
             // Sun Prediction
             double reci[3] = {0,0,0};
             AstroLib::sun(0, 0, sunPosition, rtasc, decl); //sunalmanac
-            mod_eci(sunPosition, ttt, reci);
-            eci_teme();
-            AstroLib::mod_gcrf(rmod, vmod, amod, MathTimeLib::edirection::eTo, rgcrf, vgcrf, agcrf, ttt);//mod2eci
             //eci2teme
 
             //teme2ecef
-            AstroLib::teme_ecef(rteme, vteme, ateme, direction, recef, vecef, aecef, ttt, jdut, 0, xp, yp, 2);
 
 
             //xyz2ell3

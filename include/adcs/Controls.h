@@ -2,12 +2,13 @@
 
 #include <adcs/Constants.h>
 #include <glm/glm.hpp>
-using glm::dvec3;
-using glm::dmat3;
+using glm::vec3;
+using glm::dvec4;
+using glm::mat3;
 
 namespace adcs::controls {
 
-    bool eclipse_prediction(dvec3 se, dvec3 pe);
+    bool eclipse_prediction(vec3 se, vec3 pe);
     void body_earth_estimation();
     void torque_saturation(const double tw[3], double out[3]);
     void saturation_rw(const double lw[3], const double ti[3], double out[3]);

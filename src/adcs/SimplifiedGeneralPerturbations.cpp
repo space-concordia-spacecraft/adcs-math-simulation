@@ -1145,8 +1145,10 @@ namespace adcs::sgp {
                 tc, temp, temp1, temp2, temp3, tsi, xpidot,
                 xhdot1, z1, z2, z3, z11, z12, z13,
                 z21, z22, z23, z31, z32, z33,
-                qzms2t, ss, x2o3, r[3], v[3],
+                qzms2t, ss, x2o3,
                 delmotemp, qzms2ttemp, qzms24temp;
+
+        vec3 r, v;
 
         /* ------------------------ initialization --------------------- */
         // sgp4fix divisor for divide by zero check on inclination
