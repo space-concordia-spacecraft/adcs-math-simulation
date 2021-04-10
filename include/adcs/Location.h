@@ -5,8 +5,13 @@
 
 using glm::mat3;
 using glm::vec3;
+using glm::defaultp;
+using glm::mat;
+using glm::transpose;
 
 namespace adcs::location {
+
+    typedef mat<14, 14, float, defaultp> mat14;
 
     typedef enum
     {

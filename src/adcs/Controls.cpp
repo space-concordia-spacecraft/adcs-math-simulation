@@ -2,6 +2,7 @@
 
 #include "adcs/Modes.h"
 #include "adcs/Controls.h"
+#include "adcs/Utilities.h"
 
 namespace adcs::controls {
 
@@ -13,7 +14,15 @@ namespace adcs::controls {
         } else {
             return 0;
         }
+    }
 
+    vec4 quat_multiply(vec4 qa, vec4 qb) {
+        double q4 = qa[4]*qb[4] - qa[1]*qb[1] - qa[2]*qb[2] - qa[3]*qb[3];
+        double q1 = qa[4]*qb[1] + qa[1]*qb[4] + qa[2]*qb[3] - qa[3]*qb[2];
+        double q2 = qa[4]*qb[2] - qa[1]*qb[3] + qa[2]*qb[4] + qa[3]*qb[1];
+        double q3 = qa[4]*qb[3] + qa[1]*qb[2] - qa[2]*qb[1] + qa[3]*qb[4];
+
+        return vec4(q1, q2, q3, q4);
     }
 
     vec3 saturation(vec3 b) {
@@ -48,6 +57,16 @@ namespace adcs::controls {
         return saturation(b);
     }
 
+    vec3 targetFrameVelocity(vec4 quaternion_earth_target) {
+        quaternion_earth_target[3] *= -1.0f;
+        vec4 integrated_quaternion = filtered_derivative(quaternion_earth_target);
+
+        vec4 result = quat_multiply(integrated_quaternion, quaternion_earth_target);
+        result *= 2.0f;
+
+        return vec3(result[0], result[1], result[2]);
+    }
+
     void momentum_control(int mode, int eclipse, int &C_M, vec3 &m) {
 
     }
@@ -73,23 +92,16 @@ namespace adcs::controls {
         }
     }
 
-    dvec4 quat_multiply(dvec4 qa, dvec4 qb) {
-        double q4 = qa[4]*qb[4] - qa[1]*qb[1] - qa[2]*qb[2] - qa[3]*qb[3];
-        double q1 = qa[4]*qb[1] + qa[1]*qb[4] + qa[2]*qb[3] - qa[3]*qb[2];
-        double q2 = qa[4]*qb[2] - qa[1]*qb[3] + qa[2]*qb[4] + qa[3]*qb[1];
-        double q3 = qa[4]*qb[3] + qa[1]*qb[2] - qa[2]*qb[1] + qa[3]*qb[4];
 
-        return dvec4(q1, q2, q3, q4);
-    }
 
-    vec3 rotation(vec3 be, dvec4 cq_be) {
-        dvec4 be4 = dvec4(be.x, be.y, be.z, 0);
+    vec3 rotation(vec3 be, vec4 cq_be) {
+        vec4 be4 = vec4(be.x, be.y, be.z, 0);
 
-        dvec4 q = quat_multiply(cq_be, be4);
+        vec4 q = quat_multiply(cq_be, be4);
 
-        dvec4 qb = dvec4(-1) * cq_be;
+        vec4 qb = vec4(-1) * cq_be;
 
-        dvec4 finalq = quat_multiply(q, qb);
+        vec4 finalq = quat_multiply(q, qb);
         return vec3(finalq.x, finalq.y, finalq.z);
     }
 

@@ -21,4 +21,5 @@ namespace adcs {
 
     void triad(mat3 &dcm_AB,vec3 va1,vec3 va2,vec3 vb1,vec3 vb2);
     vec4 DCM2Quat(mat3 dcm_AB);
+
 }
