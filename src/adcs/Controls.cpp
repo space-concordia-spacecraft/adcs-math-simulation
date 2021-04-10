@@ -58,9 +58,28 @@ namespace adcs {
         } else {
             return 0;
         }
+
+    }
+
+    vec4 momentum_bias(vec3 ve, vec3 pe, quat cbe) {
+
+        vi= glm::cross(ve,pe);
+
+        //Rotation
+        vec4 vi4=vec4(vi,0);
+        qa = glm::dot(cbe, vi4);
+        vector<int> v{-1, -1, -1, 1};
+        qb = glm::dot(cbe, v);
+        vo = glm::dot(qa, qb);
+
+        u=glm::normalize(vo);
+        u*= -0.5e-3;
+
+        return vec4(result[0], result[1], result[2]);
     }
 
     int modeSelection(){
 
     }
+
 }
