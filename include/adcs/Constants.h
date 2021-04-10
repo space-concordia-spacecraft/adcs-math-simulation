@@ -24,4 +24,5 @@ namespace adcs {
     // INERTIA VALUES
     const double MOMENT_OF_INERTIA[3] = {0.04582275, 0.04561065, 0.0085932349};
     const double PRODUCT_OF_INERTIA[3] = {0.000947555, -0.000072545546, -0.000031658756};
+
 }
