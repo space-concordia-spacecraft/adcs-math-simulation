@@ -6,7 +6,7 @@
 
 namespace adcs::location {
 
-    void sunalmanac(double jdtdb, double jdtdbF, dvec3 rsun, double& rtasc, double& decl) {
+    void sunalmanac(double jdtdb, double jdtdbF, vec3 rsun, double& rtasc, double& decl) {
         double deg2rad;
         double tut1, meanlong, ttdb, meananomaly, eclplong, obliquity, magr;
 
@@ -70,16 +70,16 @@ namespace adcs::location {
         return int(temp);
     }  // round
 
-    void mod_eci(dvec3 rsun, double julianCenturies, dvec3 reci) {
-        dmat3 prec = precess(julianCenturies);
+    void mod_eci(vec3 rsun, double julianCenturies, vec3 reci) {
+        mat3 prec = precess(julianCenturies);
         reci = rsun * prec;
     }
 
-    void eci_teme(int ddpsi, int ddeps, dvec3 reci, double nut80, double julianCenturies, dvec3 rteme){
-        dmat3 prec = precess(julianCenturies);
+    void eci_teme(int ddpsi, int ddeps, vec3 reci, double nut80, double julianCenturies, vec3 rteme){
+        mat3 prec = precess(julianCenturies);
     }
 
-    void xyz_ell3(dvec3 position, double &latitude, double &longitude, double &altitude, double &h) {
+    void xyz_ell3(vec3 position, double &latitude, double &longitude, double &altitude, double &h) {
         double a = 6378137.0;
         double finv = 298.257222101;
 
@@ -98,21 +98,107 @@ namespace adcs::location {
         altitude = r; // altitude
     }
 
-    void igrfs(double latitude, double longitude, double altitude, dvec3 &position) {
+    void igrfs(double latitude, double longitude, double altitude, vec3 &position) {
         double costheta = cos(((CONST_PI / 2.0)- latitude));
         double sintheta = sin(((CONST_PI / 2.0)- latitude));
 
         double r = altitude;
         double phi = longitude;
 
+        mat14 gh = mat14(-29442, -1501, 4797.1, -2445.1, 3012.9, -2845.6, 1676.7, -641.9, 1350.7, -2352.3, -115.3, 1225.6, 244.9, 582, -538.4, 907.6, 813.7, 283.3, 120.4, -188.7, -334.9, 180.9, 70.4, -329.5, -232.6, 360.1, 47.3, 192.4, 197, -140.9, -119.3, -157.5, 16, 4.1, 100.2, 70, 67.7, -20.8, 72.7, 33.2, -129.9, 58.9, -28.9, -66.7, 13.2, 7.3, -70.9, 62.6, 81.6, -76.1, -54.1, -6.8, -19.5, 51.8, 5.7, 15, 24.4, 9.4, 3.4, -2.8, -27.4, 6.8, -2.2, 24.2, 8.8, 10.1, -16.9, -18.3, -3.2, 13.3, -20.6, -14.6, 13.4, 16.2, 11.7, 5.7, -15.9, -9.1, -2, 2.1, 5.4, 8.8, -21.6, 3.1, 10.8, -3.3, 11.8, 0.7, -6.8, -13.3, -6.9, -0.1, 7.8, 8.7, 1, -9.1, -4, -10.5, 8.4, -1.9, -6.3, 3.2, 0.1, -0.4, 0.5, 4.6, -0.5, 4.4, 1.8, -7.9, -0.7, -0.6, 2.1, -4.2, 2.4, -2.8, -1.8, -1.2, -3.6, -8.7, 3.1, -1.5, -0.1, -2.3, 2, 2, -0.7, -0.8, -1.1, 0.6, 0.8, -0.7, -0.2, 0.2, -2.2, 1.7, -1.4, -0.2, -2.5, 0.4, -2, 3.5, -2.4, -1.9, -0.2, -1.1, 0.4, 0.4, 1.2, 1.9, -0.8, -2.2, 0.9, 0.3, 0.1, 0.7, 0.5, -0.1, -0.3, 0.3, -0.4, 0.2, 0.2, -0.9, -0.9, -0.1, 0, 0.7, 0, -0.9, -0.9, 0.4, 0.4, 0.5, 1.6, -0.5, -0.5, 1, -1.2, -0.2, -0.1, 0.8, 0.4, -0.1, -0.1, 0.3, 0.4, 0.1, 0.5, 0.5, -0.3, -0.4, -0.4, -0.3, -0.8);
+
+        gh = transpose(gh);
+        double nmax = sqrt(195) -1;
+      
+        float cosphi[nmax + 1];
+        float sinphi[nmax + 1];
+
+        for (int i = 1; i <= nmax; i++) {
+            cosphi[i] = cos(i * phi);
+            sinphi[i] = sin(i * phi);
+        }
+
+
+        double Pmax = (nmax + 1) * (nmax + 2) / 2;
+
+        
+        double Br = 0; 
+        double Bt = 0; 
+        double Bp = 0;
+
+        double P[Pmax + 1] = { 0 };
+
+        P[1] = 1;  
+        P[3] = sintheta;
+
+        double dP[Pmax + 1] = { 0 };
+
+        dP[1] = 0; 
+        dP[3] = costheta;
+
+
+        double m = 1; 
+        double n = 0; 
+        double coefindex = 1;
+
+        double a_r = (CONST_EARTH_RADIUS / r) ^ 2;
+
+        for (int i = 2; i <= Pmax; i++) {
+            if (n < m) {
+                m = 0;
+                n++;
+                a_r = a_r * (CONST_EARTH_RADIUS / r);
+            }
+            if (m < n && i != 3) {
+                double last1n = i - n;
+                double last2n = i - 2* n + 1;
+                // do magn field
+                P[i] = (2 * n - 1) / sqrt(n ^ 2 - m ^ 2) * costheta * P[last1n] -  sqrt(((n - 1) ^ 2 - m ^ 2) / (n ^ 2 - m ^ 2)) * P[last2n];
+                dP[i] = (2 * n - 1) / sqrt(n ^ 2 - m ^ 2) * (costheta * dP[last1n] - 
+                    sintheta * P[last1n]) - sqrt(((n - 1) ^ 2 - m ^ 2) / (n ^ 2 - m ^ 2)) * 
+                    dP[last2n];
+            }
+            elseif(i != 3) {
+                lastn = i - n - 1;
+                P[i] = sqrt(1 - 1 / (2 * m)) * sintheta * P[lastn];
+                dP[i] = sqrt(1 - 1 / (2 * m)) * (sintheta * dP[lastn] + costheta * P[lastn]);
+            }
+            if (m == 0) {
+                double coef = a_r * gh[coefindex];
+                Br = Br + (n + 1) * coef * P[i];
+                Bt = Bt - coef * dP[i];
+                coefindex++;
+            }
+            else {
+                double coef = a_r * (gh[coefindex] * cosphi[m] + gh[coefindex + 1] * sinphi[m]);
+                Br = Br + (n + 1) * coef * P[i];
+                Bt = Bt - coef * dP[i];
+
+                if (sintheta == 0) { 
+                        Bp = Bp - costheta * a_r * (-gh[coefindex] * sinphi[m] + gh[coefindex + 1] * cosphi[m]) * dP[i];
+                }
+                else {
+                    Bp = Bp - 1 / sintheta * a_r * m * (-gh[coefindex] * sinphi[m] + 
+                        gh[coefindex + 1] * cosphi[m]) * P[i];
+                }
+                    coefindex = coefindex + 2; 
+            }
+               
+            m++;
+
+        }
+        Bn = -Bt;
+        Be = Bp;
+        Bd = -Br;
+
 
     }
 
-    void lg2ct(dvec3 position, double latitude, double longitude, dvec3 &coordinateDifferences) {
+    void lg2ct(vec3 position, double latitude, double longitude, vec3 &coordinateDifferences) {
 
     }
 
-    void itrf_body(dvec3 be, dvec3 ve, dvec3 pe, dvec3 se, dmat3 dcm_be, dvec3 &b, dvec3 &v, dvec3 &p, dvec3 &s) {
+    void itrf_body(vec3 be, vec3 ve, vec3 pe, vec3 se, mat3 dcm_be, vec3 &b, vec3 &v, vec3 &p, vec3 &s) {
         double angle = acos(glm::dot(se, pe)/(glm::length(se)*glm::length(pe))) * 180.0 / CONST_PI;
 
         b = be * dcm_be;
@@ -120,14 +206,14 @@ namespace adcs::location {
         p = pe * dcm_be;
 
         if(angle > 109.79)
-            s = dvec3(0,0,0);
+            s = vec3(0,0,0);
         else
             s = se * dcm_be;
     }
 
-    void disturbance_torque(dvec3 dipoleMoment, dvec3 b, dvec3 p, dvec3 inertiaMatrix, dvec3 s, dvec3 v, double h, dvec3 &torqueDisturbance){
+    void disturbance_torque(vec3 dipoleMoment, vec3 b, vec3 p, vec3 inertiaMatrix, vec3 s, vec3 v, double h, vec3 &torqueDisturbance){
         // magnetic field
-        dvec3 magneticField = glm::cross(dipoleMoment, (1e-9 * b));
+        vec3 magneticField = glm::cross(dipoleMoment, (1e-9 * b));
 
         // gravity gradient
         p *= 1000;
@@ -135,10 +221,10 @@ namespace adcs::location {
         double tempdot = glm::dot(p,p);
         double thirdTerm = pow(tempdot, 2.5);
 
-        dvec3 temp = p * inertiaMatrix;
-        dvec3 fourthTerm = glm::cross(temp, p);
+        vec3 temp = p * inertiaMatrix;
+        vec3 fourthTerm = glm::cross(temp, p);
 
-        dvec3 gravityGradient = dvec3(1,1,1);
+        vec3 gravityGradient = vec3(1,1,1);
         gravityGradient *= CONST_GRAVITATIONAL_CONSTANT;
         gravityGradient *= 3;
         gravityGradient *= thirdTerm;
@@ -150,15 +236,15 @@ namespace adcs::location {
 
     }
 
-    void teme_ecef(dvec3 steme, dvec3 rteme, dvec3 vteme, dvec3 ateme,
+    void teme_ecef(vec3 steme, vec3 rteme, vec3 vteme, vec3 ateme,
                    double julianCenturies, double jdut1,
-                   dvec3 &secef, dvec3 &recef, dvec3 &vecef, dvec3 &aecef, dmat3 &DCM_ET,
+                   vec3 &secef, vec3 &recef, vec3 &vecef, vec3 &aecef, mat3 &DCM_ET,
                    double lod, double xp, double yp, int eqeterms) {
         double omega, gmstg, thetasa, gmst;
 
-        dvec3 omegaearth, rpef, vpef, apef, spef, omgxr, omgxomgxr, omgxv, tempvec1, tempvec, temp;
+        vec3 omegaearth, rpef, vpef, apef, spef, omgxr, omgxomgxr, omgxv, tempvec1, tempvec, temp;
 
-        dmat3 st, stdot, pm, pmp, stp;
+        mat3 st, stdot, pm, pmp, stp;
 
         gmst = gstime(jdut1);
 
@@ -202,7 +288,7 @@ namespace adcs::location {
         secef = transpose(pm) * spef;
 
         thetasa = 7.29211514670698e-05 * (1.0  - lod/86400.0 );
-        omegaearth = dvec3(0, 0, thetasa);
+        omegaearth = vec3(0, 0, thetasa);
 
         vpef  = (transpose(st) * vteme) - cross(omegaearth, rpef);
         vecef = transpose(pm) * vpef;
@@ -213,10 +299,10 @@ namespace adcs::location {
         DCM_ET = transpose(pm) * st;
     }
 
-    dmat3 polarm(double xp, double yp, double ttt, eOpt opt) {
+    mat3 polarm(double xp, double yp, double ttt, eOpt opt) {
         double cosxp, cosyp, sinxp, sinyp, sp, cossp, sinsp;
 
-        dmat3 pm = dmat3();
+        mat3 pm = mat3();
 
         cosxp = cos(xp);
         sinxp = sin(xp);
@@ -273,7 +359,7 @@ namespace adcs::location {
         return temp;
     }
 
-    dmat3 precess(double julianCenturies) {
+    mat3 precess(double julianCenturies) {
         double convertToRad = CONST_PI / (180.0 * 3600.0);
         double julianCenturiesSquared = pow(julianCenturies, 2);
         double julianCenturiesCubed = pow(julianCenturies, 3);
@@ -311,7 +397,7 @@ namespace adcs::location {
         double row3col2 = -sintheta * sinz;
         double row3col3 =  costheta;
 
-        return dmat3(row1col1, row2col1, row3col1, row1col2, row2col2, row3col2,row1col3, row2col3, row3col3);
+        return mat3(row1col1, row2col1, row3col1, row1col2, row2col2, row3col2,row1col3, row2col3, row3col3);
     }
 
 }

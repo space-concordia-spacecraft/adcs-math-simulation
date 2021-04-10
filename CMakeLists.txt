@@ -44,7 +44,7 @@ file(GLOB ADCS_SRC "src/*.cpp" "src/**/*.cpp")
 include_directories(include)
 
 # Add source to this project's executable.
-add_executable("ADCS" ${ADCS_SRC})
+add_executable("ADCS" ${ADCS_SRC} src/adcs/KalmanFilter.cpp)
 
 # Extra target linking
 target_link_libraries("ADCS" PRIVATE glm ${Python3_LIBRARIES} Python3::NumPy Open3D::Open3D)

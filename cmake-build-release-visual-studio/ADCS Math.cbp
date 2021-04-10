@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ADCS Math"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\Documents\;CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\;CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\vcpkg\;CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\vcpkg\scripts\;CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\vcpkg\scripts\buildsystems\;CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\vcpkg\installed\;CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\vcpkg\installed\x64-windows\;CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\vcpkg\installed\x64-windows\share\;CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\vcpkg\installed\x64-windows\share\glm\;CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\Open3D\;CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\Open3D\CMake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/cmake-build-release-visual-studio"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ADCS">
+				<Option output="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/cmake-build-release-visual-studio/ADCS.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/cmake-build-release-visual-studio"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add option="-D_GLIBCXX_USE_CXX11_ABI=0"/>
+					<Add option="-DGLEW_STATIC"/>
+					<Add option="-DFMT_HEADER_ONLY=1"/>
+					<Add directory="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/include"/>
+					<Add directory="C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include"/>
+					<Add directory="C:/Users/Charles/AppData/Local/Programs/Python/Python39/include"/>
+					<Add directory="C:/Users/Charles/AppData/Local/Programs/Python/Python39/Lib/site-packages/numpy/core/include"/>
+					<Add directory="C:/Users/Charles/Documents/ADCS_Libraries/Open3D/include"/>
+					<Add directory="C:/Users/Charles/Documents/ADCS_Libraries/Open3D/include/open3d/3rdparty"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 ADCS"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ADCS/fast">
+				<Option output="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/cmake-build-release-visual-studio/ADCS.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/cmake-build-release-visual-studio"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add option="-D_GLIBCXX_USE_CXX11_ABI=0"/>
+					<Add option="-DGLEW_STATIC"/>
+					<Add option="-DFMT_HEADER_ONLY=1"/>
+					<Add directory="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/include"/>
+					<Add directory="C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include"/>
+					<Add directory="C:/Users/Charles/AppData/Local/Programs/Python/Python39/include"/>
+					<Add directory="C:/Users/Charles/AppData/Local/Programs/Python/Python39/Lib/site-packages/numpy/core/include"/>
+					<Add directory="C:/Users/Charles/Documents/ADCS_Libraries/Open3D/include"/>
+					<Add directory="C:/Users/Charles/Documents/ADCS_Libraries/Open3D/include/open3d/3rdparty"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 ADCS/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/cmake-build-release-visual-studio"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/cmake-build-release-visual-studio"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math\cmake-build-release-visual-studio\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/ADCS.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/AstroLib.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/Controls.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/DTM_12.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/DateTime.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/EopSpw.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/KalmanFilter.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/Location.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/MSIS_Vers.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/Main.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/MathTimeLib.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/SGP4.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/SimplifiedGeneralPerturbations.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/Utilities.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/simulation/Simulation.cpp">
+			<Option target="ADCS"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/../../../../../Documents/ADCS_Libraries/vcpkg/scripts/buildsystems/vcpkg.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\vcpkg\scripts\buildsystems\"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/../../../../../Documents/ADCS_Libraries/vcpkg/installed/x64-windows/share/glm/glm-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\vcpkg\installed\x64-windows\share\glm\"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/../../../../../Documents/ADCS_Libraries/Open3D/CMake/Open3DConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\Open3D\CMake\"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/../../../../../Documents/ADCS_Libraries/Open3D/CMake/Open3DConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\Open3D\CMake\"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/../../../../../Documents/ADCS_Libraries/Open3D/CMake/Open3DTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\Open3D\CMake\"/>
+		</Unit>
+		<Unit filename="C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/../../../../../Documents/ADCS_Libraries/Open3D/CMake/Open3DTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Documents\ADCS_Libraries\Open3D\CMake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

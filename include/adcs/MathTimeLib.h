@@ -171,7 +171,7 @@ namespace MathTimeLib
 		double vec3[3]
 	);
 
-	void  addvec3
+	void  advec3
 	(
 		double a1, double vec1[3],
 		double a2, double vec2[3],
