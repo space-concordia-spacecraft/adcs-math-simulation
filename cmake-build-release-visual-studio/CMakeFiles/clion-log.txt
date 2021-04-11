@@ -1,0 +1,17 @@
+"C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=C:\Users\Charles\Documents\ADCS_Libraries\vcpkg\scripts\buildsystems\vcpkg.cmake -DCMAKE_PREFIX_PATH=C:\Users\Charles\Documents\ADCS_Libraries\Open3D -G "CodeBlocks - NMake Makefiles" "C:\Users\Charles\OneDrive\Concordia\Space Concordia\ADCS_CODE\adcs-math"
+CMake Deprecation Warning at C:/Users/Charles/Documents/ADCS_Libraries/Open3D/CMake/Open3DConfig.cmake:18 (cmake_policy):
+  The OLD behavior for policy CMP0072 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+Call Stack (most recent call first):
+  C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/scripts/buildsystems/vcpkg.cmake:861 (_find_package)
+  CMakeLists.txt:35 (find_package)
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/cmake-build-release-visual-studio

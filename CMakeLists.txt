@@ -38,13 +38,13 @@ else()
 endif()
 
 # Clump source files from src
-file(GLOB ADCS_SRC "src/*.cpp")
+file(GLOB ADCS_SRC "src/*.cpp" "src/**/*.cpp")
 
 # Specify include directories
 include_directories(include)
 
 # Add source to this project's executable.
-add_executable("ADCS" ${ADCS_SRC})
+add_executable("ADCS" ${ADCS_SRC} src/adcs/KalmanFilter.cpp)
 
 # Extra target linking
 target_link_libraries("ADCS" PRIVATE glm ${Python3_LIBRARIES} Python3::NumPy Open3D::Open3D)
@@ -61,3 +61,7 @@ if(WIN32)
                 ${CMAKE_CURRENT_BINARY_DIR}/$<CONFIG>)
     endif()
 endif()
+
+file(REMOVE_RECURSE ${CMAKE_CURRENT_BINARY_DIR}/assets)
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/assets)
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
