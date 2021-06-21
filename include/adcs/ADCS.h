@@ -4,13 +4,17 @@
 
 #include "simulation/Simulation.h"
 
-#include "adcs/SGP4.h"
+#include "adcs/SimplifiedGeneralPerturbations.h"
 #include "adcs/AstroLib.h"
 #include "adcs/Controls.h"
 #include "adcs/Location.h"
 
 #include <iostream>
 #include <ctime>
+
+#include "glm/glm.hpp"
+
+using glm::vec3;
 
 using adcs::simulation::Simulation;
 using adcs::location::mod_eci;

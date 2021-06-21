@@ -6,6 +6,20 @@
 
 namespace adcs::location {
 
+    // simple function to store help levels that can be set on/off during execution
+    void sethelp(char& iauhelp, char iauopt)
+    {
+        static char iaustore;
+
+        if (iauopt != ' ')
+        {
+            iauhelp = iauopt;
+            iaustore = iauopt;
+        }
+        else
+            iauhelp = iaustore;
+    }
+
     void sunalmanac(double jdtdb, double jdtdbF, vec3 rsun, double& rtasc, double& decl) {
         double deg2rad;
         double tut1, meanlong, ttdb, meananomaly, eclplong, obliquity, magr;
@@ -75,9 +89,336 @@ namespace adcs::location {
         reci = rsun * prec;
     }
 
-    void eci_teme(int ddpsi, int ddeps, vec3 reci, double nut80, double julianCenturies, vec3 rteme){
+    void eci_teme(int ddpsi, int ddeps, vec3 reci, eOpt opt, double julianCenturies, vec3 &rteme){
         mat3 prec = precess(julianCenturies);
+
+        iau80data iau;
+
+        double deltapsi = 0, deltaeps = 0, trueeps = 0, meaneps = 0, omega = 0;
+        mat3 nut;
+
+        nutation(julianCenturies, ddpsi, ddeps,
+                iau, opt,
+                deltapsi, deltaeps, trueeps, meaneps, omega,
+                nut);
+
+        double eqeg = deltapsi * cos(meaneps);
+        eqeg = fmod(eqeg, 2.0*CONST_PI);
+
+        mat3 eqe;
+
+        eqe[0][0] = cos(eqeg);
+        eqe[0][1] = sin(eqeg);
+        eqe[0][2] = 0.0;
+        eqe[1][0] = -sin(eqeg);
+        eqe[1][1] = cos(eqeg);
+        eqe[1][2] = 0.0;
+        eqe[2][0] = 0.0;
+        eqe[2][1] = 0.0;
+        eqe[2][2] = 1.0;
+
+        mat3 tm = eqe * transpose(nut) * transpose(prec);
+
+        rteme = tm * reci;
     }
+
+    /* -----------------------------------------------------------------------------
+    *
+    *                           function nutation
+    *
+    *  this function calulates the transformation matrix that accounts for the
+    *    effects of nutation.
+    *
+    *  author        : david vallado                  719-573-2600   27 jun 2002
+    *
+    *  revisions
+    *    vallado     - consolidate with iau 2000                     14 feb 2005
+    *    vallado     - conversion to c++                             21 feb 2005
+    *    vallado     - conversion to c#                              16 Nov 2011
+    *
+    *  inputs          description                                 range / units
+    *    ttt         - julian centuries of tt
+    *    ddpsi       - delta psi correction to gcrf                      rad
+    *    ddeps       - delta eps correction to gcrf                      rad
+    *    iau80arr    - record containing the iau80 constants rad
+    *    opt         - method option                               e00cio, e00a, e96, e80
+    *
+    *  outputs       :
+    *    deltapsi    - nutation in longitude angle                       rad
+    *    trueeps     - true obliquity of the ecliptic                    rad
+    *    meaneps     - mean obliquity of the ecliptic                    rad
+    *    raan        -                                                   rad
+    *    nut         - transform matrix for tod - mod
+    *
+    *  locals        :
+    *    iar80       - integers for fk5 1980
+    *    rar80       - reals for fk5 1980                                rad
+    *    l           -                                                   rad
+    *    ll          -                                                   rad
+    *    f           -                                                   rad
+    *    d           -                                                   rad
+    *    deltaeps    - change in obliquity                               rad
+    *
+    *  coupling      :
+    *    fundarg     - find fundamental arguments
+    *    fmod      - modulus division
+    *
+    *  references    :
+    *    vallado       2013, 213, 224
+    * --------------------------------------------------------------------------- */
+    void nutation
+            (
+                    double ttt, double ddpsi, double ddeps,
+                    const iau80data &iau80arr, eOpt opt,
+                    double& deltapsi, double& deltaeps, double& trueeps, double& meaneps, double& omega,
+                    mat3 &nut
+            )
+    {
+        // locals
+        double deg2rad, l, l1, f, d,
+                lonmer, lonven, lonear, lonmar, lonjup, lonsat, lonurn, lonnep, precrate,
+                cospsi, sinpsi, coseps, sineps, costrueeps, sintrueeps;
+        int  i;
+        double tempval;
+
+        char iauhelp;
+        sethelp(iauhelp, ' ');
+
+        deg2rad = CONST_PI / 180.0;
+
+        // ---- determine coefficients for iau 1980 nutation theory ----
+        meaneps = ((0.001813  * ttt - 0.00059) * ttt - 46.8150) * ttt + 84381.448;
+        meaneps = fmod(meaneps / 3600.0, 360.0);
+        meaneps = meaneps * deg2rad;
+
+        fundarg(ttt, opt, l, l1, f, d, omega,
+                lonmer, lonven, lonear, lonmar, lonjup, lonsat, lonurn, lonnep, precrate);
+
+        deltapsi = 0.0;
+        deltaeps = 0.0;
+        for (i = 105; i >= 0; i--)
+        {
+            tempval = iau80arr.iar80[i][0] * l + iau80arr.iar80[i][1] * l1 + iau80arr.iar80[i][2] * f +
+                      iau80arr.iar80[i][3] * d + iau80arr.iar80[i][4] * omega;
+            deltapsi = deltapsi + (iau80arr.rar80[i][0] + iau80arr.rar80[i][1] * ttt)  *  sin(tempval);
+            deltaeps = deltaeps + (iau80arr.rar80[i][2] + iau80arr.rar80[i][3] * ttt) * cos(tempval);
+        }
+
+        // --------------- find nutation parameters --------------------
+        deltapsi = fmod(deltapsi + ddpsi, 2.0 * CONST_PI);
+        deltaeps = fmod(deltaeps + ddeps, 2.0 * CONST_PI);
+
+        trueeps = meaneps + deltaeps;
+
+        cospsi = cos(deltapsi);
+        sinpsi = sin(deltapsi);
+        coseps = cos(meaneps);
+        sineps = sin(meaneps);
+        costrueeps = cos(trueeps);
+        sintrueeps = sin(trueeps);
+
+        nut[0][0] = cospsi;
+        nut[0][1] = costrueeps * sinpsi;
+        nut[0][2] = sintrueeps * sinpsi;
+        nut[1][0] = -coseps * sinpsi;
+        nut[1][1] = costrueeps * coseps * cospsi + sintrueeps * sineps;
+        nut[1][2] = sintrueeps * coseps * cospsi - sineps * costrueeps;
+        nut[2][0] = -sineps * sinpsi;
+        nut[2][1] = costrueeps * sineps * cospsi - sintrueeps * coseps;
+        nut[2][2] = sintrueeps * sineps * cospsi + costrueeps * coseps;
+
+        // alternate approach
+        //MathTimeLib::rot1mat(trueeps, n1);
+        //MathTimeLib::rot3mat(deltapsi, n2);
+        //MathTimeLib::rot1mat(-meaneps, n3);
+        //MathTimeLib::matmult(n2, n1, tr1, 3, 3, 3);
+        //MathTimeLib::matmult(n3, tr1, nut, 3, 3, 3);
+
+        if (iauhelp == 'y')
+            printf("meaneps %11.7f dp  %11.7f de  %11.7f te  %11.7f  \n", meaneps * 180 / CONST_PI, deltapsi * 180 / CONST_PI,
+                   deltaeps * 180 / CONST_PI, trueeps * 180 / CONST_PI);
+    }  //  nutation
+
+    /* -----------------------------------------------------------------------------
+         *
+         *                           function fundarg
+         *
+         *  this function calulates the delauany variables and planetary values for
+         *  several theories.
+         *
+         *  author        : david vallado                  719-573-2600   16 jul 2004
+         *
+         *  revisions
+         *    vallado     - conversion to c++                             23 nov 2005
+         *    vallado     - conversion to c#                              16 Nov 2011
+         *
+         *  inputs          description                                  range / units
+         *    ttt         - julian centuries of tt
+         *    opt         - method option                                e00cio, e00a, e96, e80
+         *
+         *  outputs       :
+         *    l           - mean anomaly of the moon                          rad
+         *    l1          - mean anomaly of the Sun                           rad
+         *    f           - mean longitude of the Moon minus that of asc node rad
+         *    d           - mean elongation of the Moon from the Sun          rad
+         *    omega       - mean longitude of the ascending node of the Moon  rad
+         *    planetary longitudes                                          rad
+         *
+         *  locals        :
+         *
+         *  coupling      :
+         *    none        -
+         *
+         *  references    :
+         *    vallado       2013, 210-211, 225
+         * --------------------------------------------------------------------------- */
+
+    void fundarg
+            (
+                    double ttt, eOpt opt,
+                    double& l, double& l1, double& f, double& d, double& omega,
+                    double& lonmer, double& lonven, double& lonear, double& lonmar,
+                    double& lonjup, double& lonsat, double& lonurn, double& lonnep,
+                    double& precrate
+            )
+    {
+        double deg2rad, oo3600;
+        char iauhelp;
+
+        sethelp(iauhelp, ' ');
+        deg2rad = CONST_PI / 180.0;
+        oo3600 = 1.0 / 3600.0;
+        l = l1 = f = d = omega = lonmer = lonven = lonear = lonmar = lonjup = lonsat = lonurn = lonnep = precrate = 0.0;
+
+        // ---- determine coefficients for various iers nutation theories ----
+        // ----  iau-2010 cio theory and iau-2000a theory
+        if (opt == e00cio || opt == e00a)
+        {
+            // ------ form the delaunay fundamental arguments in ", converted to rad
+            l = ((((-0.00024470 * ttt + 0.051635) * ttt + 31.8792) * ttt + 1717915923.2178) * ttt + 485868.249036) * oo3600;
+            l1 = ((((-0.00001149 * ttt + 0.000136) * ttt - 0.5532) * ttt + 129596581.0481) * ttt + 1287104.793048) * oo3600;
+            f = ((((+0.00000417 * ttt - 0.001037) * ttt - 12.7512) * ttt + 1739527262.8478) * ttt + 335779.526232) * oo3600;
+            d = ((((-0.00003169 * ttt + 0.006593) * ttt - 6.3706) * ttt + 1602961601.2090) * ttt + 1072260.703692) * oo3600;
+            omega = ((((-0.00005939 * ttt + 0.007702) * ttt + 7.4722) * ttt - 6962890.5431) * ttt + 450160.398036) * oo3600;
+
+            // ------ form the planetary arguments in ", converted to rad
+            lonmer = (908103.259872 + 538101628.688982  * ttt) * oo3600;
+            lonven = (655127.283060 + 210664136.433548  * ttt) * oo3600;
+            lonear = (361679.244588 + 129597742.283429  * ttt) * oo3600;
+            lonmar = (1279558.798488 + 68905077.493988  * ttt) * oo3600;
+            lonjup = (123665.467464 + 10925660.377991  * ttt) * oo3600;
+            lonsat = (180278.799480 + 4399609.855732  * ttt) * oo3600;
+            lonurn = (1130598.018396 + 1542481.193933  * ttt) * oo3600;
+            lonnep = (1095655.195728 + 786550.320744  * ttt) * oo3600;
+            precrate = ((1.112022 * ttt + 5028.8200) * ttt) * oo3600;
+            // these are close (all in rad) - usually 1e-10, but some are as high as 1e-06
+            //lonmer = (4.402608842 + 2608.7903141574 * ttt) % twopi;
+            //lonven = (3.176146697 + 1021.3285546211 * ttt) % twopi;
+            //lonear = (1.753470314 + 628.3075849991 * ttt) % twopi;
+            //lonmar = (6.203480913 + 334.0612426700 * ttt) % twopi;
+            //lonjup = (0.599546497 + 52.9690962641 * ttt) % twopi;
+            //lonsat = (0.874016757 + 21.3299104960 * ttt) % twopi;
+            //lonurn = (5.481293872 + 7.4781598567 * ttt) % twopi;
+            //lonnep = (5.311886287 + 3.8133035638 * ttt) % twopi;
+            //precrate = (0.024381750 + 0.00000538691 * ttt ) *ttt;
+        }
+
+        // ---- iau-2000b theory
+        if (opt == e00b)
+        {
+            // ------ form the delaunay fundamental arguments in deg
+            l = (1717915923.2178  * ttt + 485868.249036) * oo3600;
+            l1 = (129596581.0481  * ttt + 1287104.79305) * oo3600;
+            f = (1739527262.8478  * ttt + 335779.526232) * oo3600;
+            d = (1602961601.2090  * ttt + 1072260.70369) * oo3600;
+            omega = (-6962890.5431  * ttt + 450160.398036) * oo3600;
+
+            // ------ form the planetary arguments in deg
+            lonmer = 0.0;
+            lonven = 0.0;
+            lonear = 0.0;
+            lonmar = 0.0;
+            lonjup = 0.0;
+            lonsat = 0.0;
+            lonurn = 0.0;
+            lonnep = 0.0;
+            precrate = 0.0;
+            // instead uses a constant rate
+            // dplan = -0.135 * oo3600 * deg2rad;
+            // deplan = 0.388 * oo3600 * deg2rad;
+        }
+
+        // ---- iau-1996 theory
+        if (opt == e96)
+        {
+            // ------ form the delaunay fundamental arguments in deg
+            l = ((((-0.00024470 * ttt + 0.051635) * ttt + 31.8792) * ttt + 1717915923.2178) * ttt) * oo3600 + 134.96340251;
+            l1 = ((((-0.00001149 * ttt - 0.000136) * ttt - 0.5532) * ttt + 129596581.0481) * ttt) * oo3600 + 357.52910918;
+            f = ((((+0.00000417 * ttt + 0.001037) * ttt - 12.7512) * ttt + 1739527262.8478) * ttt) * oo3600 + 93.27209062;
+            d = ((((-0.00003169 * ttt + 0.006593) * ttt - 6.3706) * ttt + 1602961601.2090) * ttt) * oo3600 + 297.85019547;
+            omega = ((((-0.00005939 * ttt + 0.007702) * ttt + 7.4722) * ttt - 6962890.2665) * ttt) * oo3600 + 125.04455501;
+            // ------ form the planetary arguments in deg
+            lonmer = 0.0;
+            lonven = 181.979800853 + 58517.8156748   * ttt;
+            lonear = 100.466448494 + 35999.3728521   * ttt;
+            lonmar = 355.433274605 + 19140.299314    * ttt;
+            lonjup = 34.351483900 + 3034.90567464  * ttt;
+            lonsat = 50.0774713998 + 1222.11379404  * ttt;
+            lonurn = 0.0;
+            lonnep = 0.0;
+            precrate = (0.0003086 * ttt + 1.39697137214) * ttt;
+        }
+
+        // ---- iau-1980 theory
+        if (opt == e80)
+        {
+            // ------ form the delaunay fundamental arguments in deg
+            l = ((((0.064) * ttt + 31.310) * ttt + 1717915922.6330) * ttt) * oo3600 + 134.96298139;
+            l1 = ((((-0.012) * ttt - 0.577) * ttt + 129596581.2240) * ttt) * oo3600 + 357.52772333;
+            f = ((((0.011) * ttt - 13.257) * ttt + 1739527263.1370) * ttt) * oo3600 + 93.27191028;
+            d = ((((0.019) * ttt - 6.891) * ttt + 1602961601.3280) * ttt) * oo3600 + 297.85036306;
+            omega = ((((0.008) * ttt + 7.455) * ttt - 6962890.5390) * ttt) * oo3600 + 125.04452222;
+            // ------ form the planetary arguments in deg
+            // iers tn13 shows no planetary
+            // seidelmann shows these equations
+            // circ 163 shows no planetary
+            // ???????
+            lonmer = 252.3 + 149472.0  * ttt;
+            lonven = 179.9 + 58517.8  * ttt;
+            lonear = 98.4 + 35999.4  * ttt;
+            lonmar = 353.3 + 19140.3  * ttt;
+            lonjup = 32.3 + 3034.9  * ttt;
+            lonsat = 48.0 + 1222.1  * ttt;
+            lonurn = 0.0;
+            lonnep = 0.0;
+            precrate = 0.0;
+        }
+
+        // ---- convert units from deg to rad
+        l = fmod(l, 360.0)      *  deg2rad;
+        l1 = fmod(l1, 360.0)     *  deg2rad;
+        f = fmod(f, 360.0)      *  deg2rad;
+        d = fmod(d, 360.0)      *  deg2rad;
+        omega = fmod(omega, 360.0)  *  deg2rad;
+
+        lonmer = fmod(lonmer, 360.0) * deg2rad;
+        lonven = fmod(lonven, 360.0) * deg2rad;
+        lonear = fmod(lonear, 360.0) * deg2rad;
+        lonmar = fmod(lonmar, 360.0) * deg2rad;
+        lonjup = fmod(lonjup, 360.0) * deg2rad;
+        lonsat = fmod(lonsat, 360.0) * deg2rad;
+        lonurn = fmod(lonurn, 360.0) * deg2rad;
+        lonnep = fmod(lonnep, 360.0) * deg2rad;
+        precrate = fmod(precrate, 360.0) * deg2rad;
+
+        if (iauhelp == 'y')
+        {
+            printf("fa %11.7f  %11.7f  %11.7f  %11.7f  %11.7f deg \n", l * 180 / CONST_PI, l1 * 180 / CONST_PI, f * 180 / CONST_PI, d * 180 / CONST_PI, omega * 180 / CONST_PI);
+            printf("fa %11.7f  %11.7f  %11.7f  %11.7f deg \n", lonmer * 180 / CONST_PI, lonven * 180 / CONST_PI, lonear * 180 / CONST_PI, lonmar * 180 / CONST_PI);
+            printf("fa %11.7f  %11.7f  %11.7f  %11.7f deg \n", lonjup * 180 / CONST_PI, lonsat * 180 / CONST_PI, lonurn * 180 / CONST_PI, lonnep * 180 / CONST_PI);
+            printf("fa %11.7f  \n", precrate * 180 / CONST_PI);
+        }
+    }  // procedure fundarg
 
     void xyz_ell3(vec3 position, double &latitude, double &longitude, double &altitude, double &h) {
         double a = 6378137.0;
@@ -98,17 +439,16 @@ namespace adcs::location {
         altitude = r; // altitude
     }
 
-    void igrfs(double latitude, double longitude, double altitude, vec3 &position) {
+    void igrfs(double latitude, double longitude, double altitude, vec3 &magneticField) {
         double costheta = cos(((CONST_PI / 2.0)- latitude));
         double sintheta = sin(((CONST_PI / 2.0)- latitude));
 
         double r = altitude;
         double phi = longitude;
 
-        mat14 gh = mat14(-29442, -1501, 4797.1, -2445.1, 3012.9, -2845.6, 1676.7, -641.9, 1350.7, -2352.3, -115.3, 1225.6, 244.9, 582, -538.4, 907.6, 813.7, 283.3, 120.4, -188.7, -334.9, 180.9, 70.4, -329.5, -232.6, 360.1, 47.3, 192.4, 197, -140.9, -119.3, -157.5, 16, 4.1, 100.2, 70, 67.7, -20.8, 72.7, 33.2, -129.9, 58.9, -28.9, -66.7, 13.2, 7.3, -70.9, 62.6, 81.6, -76.1, -54.1, -6.8, -19.5, 51.8, 5.7, 15, 24.4, 9.4, 3.4, -2.8, -27.4, 6.8, -2.2, 24.2, 8.8, 10.1, -16.9, -18.3, -3.2, 13.3, -20.6, -14.6, 13.4, 16.2, 11.7, 5.7, -15.9, -9.1, -2, 2.1, 5.4, 8.8, -21.6, 3.1, 10.8, -3.3, 11.8, 0.7, -6.8, -13.3, -6.9, -0.1, 7.8, 8.7, 1, -9.1, -4, -10.5, 8.4, -1.9, -6.3, 3.2, 0.1, -0.4, 0.5, 4.6, -0.5, 4.4, 1.8, -7.9, -0.7, -0.6, 2.1, -4.2, 2.4, -2.8, -1.8, -1.2, -3.6, -8.7, 3.1, -1.5, -0.1, -2.3, 2, 2, -0.7, -0.8, -1.1, 0.6, 0.8, -0.7, -0.2, 0.2, -2.2, 1.7, -1.4, -0.2, -2.5, 0.4, -2, 3.5, -2.4, -1.9, -0.2, -1.1, 0.4, 0.4, 1.2, 1.9, -0.8, -2.2, 0.9, 0.3, 0.1, 0.7, 0.5, -0.1, -0.3, 0.3, -0.4, 0.2, 0.2, -0.9, -0.9, -0.1, 0, 0.7, 0, -0.9, -0.9, 0.4, 0.4, 0.5, 1.6, -0.5, -0.5, 1, -1.2, -0.2, -0.1, 0.8, 0.4, -0.1, -0.1, 0.3, 0.4, 0.1, 0.5, 0.5, -0.3, -0.4, -0.4, -0.3, -0.8);
+        double gh [195] = {-29442, -1501, 4797.1, -2445.1, 3012.9, -2845.6, 1676.7, -641.9, 1350.7, -2352.3, -115.3, 1225.6, 244.9, 582, -538.4, 907.6, 813.7, 283.3, 120.4, -188.7, -334.9, 180.9, 70.4, -329.5, -232.6, 360.1, 47.3, 192.4, 197, -140.9, -119.3, -157.5, 16, 4.1, 100.2, 70, 67.7, -20.8, 72.7, 33.2, -129.9, 58.9, -28.9, -66.7, 13.2, 7.3, -70.9, 62.6, 81.6, -76.1, -54.1, -6.8, -19.5, 51.8, 5.7, 15, 24.4, 9.4, 3.4, -2.8, -27.4, 6.8, -2.2, 24.2, 8.8, 10.1, -16.9, -18.3, -3.2, 13.3, -20.6, -14.6, 13.4, 16.2, 11.7, 5.7, -15.9, -9.1, -2, 2.1, 5.4, 8.8, -21.6, 3.1, 10.8, -3.3, 11.8, 0.7, -6.8, -13.3, -6.9, -0.1, 7.8, 8.7, 1, -9.1, -4, -10.5, 8.4, -1.9, -6.3, 3.2, 0.1, -0.4, 0.5, 4.6, -0.5, 4.4, 1.8, -7.9, -0.7, -0.6, 2.1, -4.2, 2.4, -2.8, -1.8, -1.2, -3.6, -8.7, 3.1, -1.5, -0.1, -2.3, 2, 2, -0.7, -0.8, -1.1, 0.6, 0.8, -0.7, -0.2, 0.2, -2.2, 1.7, -1.4, -0.2, -2.5, 0.4, -2, 3.5, -2.4, -1.9, -0.2, -1.1, 0.4, 0.4, 1.2, 1.9, -0.8, -2.2, 0.9, 0.3, 0.1, 0.7, 0.5, -0.1, -0.3, 0.3, -0.4, 0.2, 0.2, -0.9, -0.9, -0.1, 0, 0.7, 0, -0.9, -0.9, 0.4, 0.4, 0.5, 1.6, -0.5, -0.5, 1, -1.2, -0.2, -0.1, 0.8, 0.4, -0.1, -0.1, 0.3, 0.4, 0.1, 0.5, 0.5, -0.3, -0.4, -0.4, -0.3, -0.8};
 
-        gh = transpose(gh);
-        double nmax = sqrt(195) -1;
+        int nmax = 13;
       
         float cosphi[nmax + 1];
         float sinphi[nmax + 1];
@@ -119,29 +459,28 @@ namespace adcs::location {
         }
 
 
-        double Pmax = (nmax + 1) * (nmax + 2) / 2;
+        int Pmax = (nmax + 1) * (nmax + 2) / 2;
 
-        
         double Br = 0; 
         double Bt = 0; 
         double Bp = 0;
 
-        double P[Pmax + 1] = { 0 };
+        double P[Pmax + 1];
 
         P[1] = 1;  
         P[3] = sintheta;
 
-        double dP[Pmax + 1] = { 0 };
+        double dP[Pmax + 1];
 
         dP[1] = 0; 
         dP[3] = costheta;
 
 
-        double m = 1; 
-        double n = 0; 
-        double coefindex = 1;
+        int m = 1;
+        int n = 0;
+        int coefindex = 1;
 
-        double a_r = (CONST_EARTH_RADIUS / r) ^ 2;
+        double a_r = pow((CONST_EARTH_RADIUS / r), 2);
 
         for (int i = 2; i <= Pmax; i++) {
             if (n < m) {
@@ -150,16 +489,16 @@ namespace adcs::location {
                 a_r = a_r * (CONST_EARTH_RADIUS / r);
             }
             if (m < n && i != 3) {
-                double last1n = i - n;
-                double last2n = i - 2* n + 1;
+                int last1n = i - n;
+                int last2n = i - 2 * n + 1;
                 // do magn field
-                P[i] = (2 * n - 1) / sqrt(n ^ 2 - m ^ 2) * costheta * P[last1n] -  sqrt(((n - 1) ^ 2 - m ^ 2) / (n ^ 2 - m ^ 2)) * P[last2n];
-                dP[i] = (2 * n - 1) / sqrt(n ^ 2 - m ^ 2) * (costheta * dP[last1n] - 
-                    sintheta * P[last1n]) - sqrt(((n - 1) ^ 2 - m ^ 2) / (n ^ 2 - m ^ 2)) * 
+                P[i] = (2 * n - 1) / sqrt(pow(n, 2) - pow(m, 2)) * costheta * P[last1n] -  sqrt((pow((n - 1), 2) - pow(m, 2)) / (pow(n, 2) - pow(m, 2))) * P[last2n];
+                dP[i] = (2 * n - 1) / sqrt(pow(n, 2) - pow(m, 2)) * (costheta * dP[last1n] -
+                    sintheta * P[last1n]) - sqrt((pow((n - 1), 2) - pow(m, 2)) / (pow(n, 2) - pow(m, 2))) *
                     dP[last2n];
             }
-            elseif(i != 3) {
-                lastn = i - n - 1;
+            else if(i != 3) {
+                int lastn = i - n - 1;
                 P[i] = sqrt(1 - 1 / (2 * m)) * sintheta * P[lastn];
                 dP[i] = sqrt(1 - 1 / (2 * m)) * (sintheta * dP[lastn] + costheta * P[lastn]);
             }
@@ -187,10 +526,13 @@ namespace adcs::location {
             m++;
 
         }
-        Bn = -Bt;
-        Be = Bp;
-        Bd = -Br;
 
+        //Bn
+        magneticField[0] = -Bt;
+        //Be
+        magneticField[1] = Bp;
+        //Bd
+        magneticField[2] = Br;
 
     }
 
@@ -213,7 +555,7 @@ namespace adcs::location {
 
     void disturbance_torque(vec3 dipoleMoment, vec3 b, vec3 p, vec3 inertiaMatrix, vec3 s, vec3 v, double h, vec3 &torqueDisturbance){
         // magnetic field
-        vec3 magneticField = glm::cross(dipoleMoment, (1e-9 * b));
+        vec3 magneticField = glm::cross(dipoleMoment, (b * 1e-9));
 
         // gravity gradient
         p *= 1000;
@@ -281,8 +623,8 @@ namespace adcs::location {
 
         pm = polarm(xp, yp, julianCenturies, e80);
 
-        rpef  = transpose(st)*rteme;
-        recef = transpose(pm)*rpef;
+        rpef  = transpose(st) * rteme;
+        recef = transpose(pm) * rpef;
 
         spef  = transpose(st) * steme;
         secef = transpose(pm) * spef;
@@ -295,7 +637,7 @@ namespace adcs::location {
 
         temp  = cross(omegaearth,rpef);
 
-        aecef = transpose(pm)*(transpose(st)*ateme - cross(omegaearth,temp) - (2.0 * cross(omegaearth,vpef)));
+        aecef = transpose(pm)*(transpose(st)*ateme - cross(omegaearth,temp) - (2.0f * cross(omegaearth,vpef)));
         DCM_ET = transpose(pm) * st;
     }
 
@@ -357,6 +699,32 @@ namespace adcs::location {
             temp = temp + (CONST_PI * 2.0f);
 
         return temp;
+    }
+
+    void get_sun_in_teme(double jdtdb, double jdtdbF, vec3 &rteme) {
+        vec3 rsun(0, 0, 0), reci(0,0,0);
+        double rtasc, decl;
+
+        // Julian Centuries of Terrestrial time
+        double ttt = (jdtdb + jdtdbF - 2451545.0) / 36525.0;
+
+        sunalmanac(jdtdb, jdtdbF, rsun, rtasc, decl);
+        mod_eci(rsun, ttt, reci);
+        eci_teme(0, 0, reci, e80, ttt, rteme);
+    }
+
+    void get_igrf(vec3 recef, double & height, double & latitude, double & longitude, vec3 & magneticField) {
+        recef *= 1000;
+        vec3 position;
+
+        double altitude = 0;
+
+        xyz_ell3(recef, latitude, longitude, altitude, height);
+        igrfs(latitude, longitude, altitude/1000.0, position);
+        lg2ct(position, latitude, longitude, magneticField);
+
+        magneticField *= 1e-9;
+        height /= 1000;
     }
 
     mat3 precess(double julianCenturies) {

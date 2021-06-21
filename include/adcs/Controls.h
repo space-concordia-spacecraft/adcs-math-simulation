@@ -1,7 +1,7 @@
 #pragma once
 
 // Imports
-#include <adcs/Constants.h>
+#include "adcs/Constants.h"
 #include <glm/glm.hpp>
 
 using glm::vec3;
@@ -17,7 +17,7 @@ namespace adcs::controls {
     void saturation_rw(const double lw[3], const double ti[3], double out[3]);
     void selector(int mode, const double lwheel[3], const double nominal[3], const double calibration[3], double out[3]);
 
-    vec4 momentum_bias(dvec3 ve, dvec3 pe, dquat cbe)
+    vec4 momentum_bias(vec3 ve, vec3 pe, quat cbe)
 
     vec3 targetFrameVelocity(vec4 quaternion_earth_target);
 
