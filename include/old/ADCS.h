@@ -4,10 +4,10 @@
 
 #include "simulation/Simulation.h"
 
-#include "adcs/SimplifiedGeneralPerturbations.h"
-#include "adcs/AstroLib.h"
-#include "adcs/Controls.h"
-#include "adcs/Location.h"
+#include "SimplifiedGeneralPerturbations.h"
+#include "TrueEquatorMeanEquinox.h"
+#include "Controls.h"
+#include "Location.h"
 
 #include <iostream>
 #include <ctime>

@@ -5,7 +5,7 @@
 #pragma once
 
 #include <glm/glm.hpp>
-#include "adcs/Utilities.h"
+#include "Utilities.h"
 
 using glm::vec3;
 using glm::dvec4;

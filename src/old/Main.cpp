@@ -4,16 +4,16 @@
 #include "matplotlibcpp.h"
 #include "open3d/Open3D.h"
 #include "adcs/Constants.h"
-#include "adcs/AstroLib.h"
-#include "adcs/DTM_12.h"
-#include "adcs/EopSpw.h"
-#include "adcs/MathTimeLib.h"
+#include "old/TrueEquatorMeanEquinox.h"
+#include "old/DTM_12.h"
+#include "old/EopSpw.h"
+#include "old/MathTimeLib.h"
 #include "adcs/MSIS_Vers.h"
-#include "adcs/SGP4.h"
+#include "old/SGP4.h"
 #include "adcs/SGP4DC.h"
 
 #include "simulation/Simulation.h"
-#include "adcs/ADCS.h"
+#include "old/ADCS.h"
 
 namespace plt = matplotlibcpp;
 

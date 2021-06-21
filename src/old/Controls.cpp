@@ -1,8 +1,8 @@
 #include <cmath>
 
-#include "adcs/Modes.h"
-#include "adcs/Controls.h"
-#include "adcs/Utilities.h"
+#include "old/Modes.h"
+#include "old/Controls.h"
+#include "old/Utilities.h"
 
 namespace adcs::controls {
 

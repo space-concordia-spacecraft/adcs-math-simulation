@@ -2,7 +2,7 @@
 // Created by Charles on 4/9/2021.
 //
 
-#include "adcs/Utilities.h"
+#include "old/Utilities.h"
 namespace adcs {
 
     void triad(mat3 &dcm_AB, vec3 va1, vec3 va2, vec3 vb1, vec3 vb2) {

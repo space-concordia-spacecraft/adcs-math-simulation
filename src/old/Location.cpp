@@ -2,7 +2,7 @@
 // Created by Ruben on 2/12/2021.
 //
 
-#include "adcs/Location.h"
+#include "old/Location.h"
 
 namespace adcs::location {
 

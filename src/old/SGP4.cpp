@@ -55,7 +55,7 @@
 *                           original baseline
 *       ----------------------------------------------------------------      */
 
-#include "adcs/SGP4.h"
+#include "old/SGP4.h"
 
 #define pi 3.14159265358979323846
 

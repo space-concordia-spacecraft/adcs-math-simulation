@@ -33,7 +33,7 @@
 *                           original baseline
 *       ----------------------------------------------------------------      */
 
-#include "adcs/AstroLib.h"
+#include "old/TrueEquatorMeanEquinox.h"
 
 namespace AstroLib
 {

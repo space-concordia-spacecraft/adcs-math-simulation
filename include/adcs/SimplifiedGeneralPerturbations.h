@@ -1,22 +1,8 @@
 #pragma once
 
-#include "adcs/Constants.h"
-#include "glm/glm.hpp"
+#include "Utils.h"
 
-using glm::vec3;
-using glm::mat3;
-
-/*     ----------------------------------------------------------------
-*
-*                                 SimplifiedGeneralPerturbations.h
-*
-*    this file contains the sgp4 procedures for analytical propagation
-*    of a satellite. the code was originally released in the 1980 and 1986
-*    spacetrack papers. a detailed discussion of the theory and history
-*    may be found in the 2006 aiaa paper by vallado, crawford, hujsak,
-*    and kelso.
-*/
-
+// -------------------------- structure declarations ----------------------------
 typedef enum
 {
     wgs72old,
@@ -71,22 +57,104 @@ typedef struct elsetrec
 
 } elsetrec;
 
-namespace adcs::sgp {
 
-    typedef enum
-    {
-        wgs72old,
-        wgs72,
-        wgs84
-    } gravconsttype;
+namespace adcs::sgp
+{
 
-    void getgravconst(gravconsttype whichconst, double& tumin, double& mus, double& radiusearthkm, double& xke, double& j2, double& j3, double& j4, double& j3oj2);
-    void twoline2rv(char twoLineElement1[130], char twoLineElement2[130], char typerun, char typeinput, char opsmode, gravconsttype whichconst, double& startmfe, double& stopmfe, double& deltamin, elsetrec& satrec);
-    bool sgp4(elsetrec satrec, double timeSinceEpoch, vec3 position, vec3 velocity);
-    bool sgp4init(gravconsttype whichconst, char opsmode, const char satn[9], const double epoch, const double xbstar, const double xndot, const double xnddot, const double xecco, const double xargpo, const double xinclo, const double xmo, const double xno, const double xnodeo, elsetrec& satrec);
+    //	public class SGP4Class
+    //	{
 
-    // date time
-    double gstime_SGP4(double jdut1);
-    void jday_SGP4(int year, int mon, int day, int hr, int minute, double sec, double& jd, double& jdFrac);
-    void days2mdhms_SGP4(int year, double days, int& mon, int& day, int& hr, int& minute, double& sec);
-}
+    bool sgp4init
+            (
+                    gravconsttype whichconst, char opsmode, const char satn[9], const double epoch,
+                    const double xbstar, const double xndot, const double xnddot, const double xecco, const double xargpo,
+                    const double xinclo, const double xmo, const double xno,
+                    const double xnodeo, elsetrec& satrec
+            );
+
+    bool sgp4
+            (
+                    // no longer need gravconsttype whichconst, all data contained in satrec
+                    elsetrec& satrec, double tsince,
+                    vec3 r, vec3 v
+            );
+
+    void getgravconst
+            (
+                    gravconsttype whichconst,
+                    double& tumin,
+                    double& mus,
+                    double& radiusearthkm,
+                    double& xke,
+                    double& j2,
+                    double& j3,
+                    double& j4,
+                    double& j3oj2
+            );
+
+    // older sgp4io methods
+    void twoline2rv
+            (
+                    char      longstr1[130], char longstr2[130],
+                    char      typerun, char typeinput, char opsmode,
+                    gravconsttype       whichconst,
+                    double& startmfe, double& stopmfe, double& deltamin,
+                    elsetrec& satrec
+            );
+
+    // older sgp4ext methods
+    double  gstime_SGP4
+            (
+                    double jdut1
+            );
+
+    double  sgn_SGP4
+            (
+                    double x
+            );
+
+    double  angle_SGP4
+            (
+                    vec3 vec_1,
+                    vec3 vec_2
+            );
+
+    void    newtonnu_SGP4
+            (
+                    double ecc, double nu,
+                    double& e0, double& m
+            );
+
+    double  asinh_SGP4
+            (
+                    double xval
+            );
+
+    void    rv2coe_SGP4
+            (
+                    vec3 r, vec3 v, double mus,
+                    double& p, double& a, double& ecc, double& incl, double& omega, double& argp,
+                    double& nu, double& m, double& arglat, double& truelon, double& lonper
+            );
+
+    void    jday_SGP4
+            (
+                    int year, int mon, int day, int hr, int minute, double sec,
+                    double& jd, double& jdFrac
+            );
+
+    void    days2mdhms_SGP4
+            (
+                    int year, double days,
+                    int& mon, int& day, int& hr, int& minute, double& sec
+            );
+
+    void    invjday_SGP4
+            (
+                    double jd, double jdFrac,
+                    int& year, int& mon, int& day,
+                    int& hr, int& minute, double& sec
+            );
+
+
+}  // namespace
