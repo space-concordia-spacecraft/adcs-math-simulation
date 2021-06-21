@@ -1,5 +1,3 @@
-#ifndef _MathTimeLib_h_
-#define _MathTimeLib_h_
 /* --------------------------------------------------------------------
 *
 *                                MathTimeLib.h
@@ -400,5 +398,3 @@ namespace MathTimeLib
 	);
 
 };  // namespace MathTimeLib
-
-#endif

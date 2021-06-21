@@ -10,7 +10,7 @@
 #include "adcs/MathTimeLib.h"
 #include "adcs/MSIS_Vers.h"
 #include "adcs/SGP4.h"
-#include "adcs/SGP4DC.h"
+//#include "adcs/SGP4DC.h"
 
 #include "simulation/Simulation.h"
 #include "adcs/ADCS.h"
@@ -26,6 +26,8 @@ void runSimulation(Simulation * sim) {
     adcs.run();
 }
 
+typedef glm::mat<8, 8, float, glm::defaultp> mat8;
+
 int main(int argc, char *argv[]) {
     Simulation sim;
 
@@ -33,6 +35,8 @@ int main(int argc, char *argv[]) {
 
     sim.run();
     second.join();
+
+    mat8 a;
 
     return 0;
 }
