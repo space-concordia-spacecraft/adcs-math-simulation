@@ -4,13 +4,31 @@
 
 #include "adcs/EKF.h"
 
+
 namespace adcs {
+
+    mat7 K;
+    mat6 H;
+    mat36 HE;
+
+    float q1;
+    float q2;
+    float q3;
+    float q4;
+    float wx;
+    float wy;
+    float wz;
+
+    float hwx;
+    float hwy;
+    float hwz;
+
 
     void ekf_init(vec7 &x_check, mat7 &P_check, vec3 S_E, vec3 B_E, vec3 S_B, vec3 B_B) {
         mat3 dcm_BE;
         //Initial state guess using Triad
         triad(dcm_BE,S_E,B_E,S_B,B_B);
-        vec4 q_BE = DCM2Quat(dcm_BE);
+        vec4 q_BE = DCM2quat(dcm_BE);
         x_check = vec7(q_BE[0],q_BE[1],q_BE[2],q_BE[3],0,0,0);
 
         P_check = mat7(1.0,0,0,0,0,0,0, //covariance,q1,(high,guess)
@@ -25,17 +43,17 @@ namespace adcs {
     void ekf_loop(vec7 &x_check, mat7 &P_check, vec3 S_E, vec3 B_E,vec3 S_B,vec3 B_B,vec3 u, mat3 I_inv, mat3 I,bool eclipse,vec3 Lw,float step){
 
         //Splitting variables
-        float q1 = x_check[0];
-        float q2 = x_check[1];
-        float q3 = x_check[2];
-        float q4 = x_check[3];
-        float wx = x_check[4];
-        float wy = x_check[5];
-        float wz = x_check[6];
+         q1 = x_check[0];
+         q2 = x_check[1];
+         q3 = x_check[2];
+         q4 = x_check[3];
+         wx = x_check[4];
+         wy = x_check[5];
+         wz = x_check[6];
 
-        float hwx = Lw[0];
-        float hwy = Lw[1];
-        float hwz = Lw[2];
+         hwx = Lw[0];
+         hwy = Lw[1];
+         hwz = Lw[2];
 
         //**************************************Prediction**********************************************************************
         // Jacobian F
@@ -56,11 +74,35 @@ namespace adcs {
                                      wy,-wx,0,wz,
                                     -wx,-wy,-wz,0)*x_check(1:4)*dt,
             (I_inv*(cross(-vec3(x_check[4],x_check[5],x_check[6]),I*vec3(x_check[4],x_check[5],x_check[6])+Lw)-u))*dt); //predict state to t+dt
-            P_check = F*P_check*transpose(F)+Q; //update covariance matrix of state
         }
+        P_check = F*P_check*transpose(F)+Q; //update covariance matrix of state
+        //**************************************Correction**********************************************************************
 
+        if(eclipse){//eclipse case
+            // Jacobian H eclipse
+            HE = mat36(transpose(mat63(  2 * B_E[1] * q1 + 2 * B_E[2] * q2 + 2 * B_E[3] * q3,  2 * B_E[2] * q1 - 2 * B_E[1] * q2 - 2 * B_E[3] * q4, 2 * B_E[3] * q1 - 2 * B_E[1] * q3 + 2 * B_E[2] * q4, -2 * B_E[3] * q2 + 2 * B_E[2] * q3 + 2 * B_E[1] * q4, 0, 0, 0,
+                                        -2 * B_E[2] * q1 + 2 * B_E[1] * q2 + 2 * B_E[3] * q4,  2 * B_E[1] * q1 + 2 * B_E[2] * q2 + 2 * B_E[3] * q3, 2 * B_E[3] * q2 - 2 * B_E[2] * q3 - 2 * B_E[1] * q4,  2 * B_E[3] * q1 - 2 * B_E[1] * q3 + 2 * B_E[2] * q4, 0, 0, 0,
+                                        -2 * B_E[3] * q1 + 2 * B_E[1] * q3 - 2 * B_E[2] * q4, -2 * B_E[3] * q2 + 2 * B_E[2] * q3 + 2 * B_E[1] * q4, 2 * B_E[1] * q1 + 2 * B_E[2] * q2 + 2 * B_E[3] * q3, -2 * B_E[2] * q1 + 2 * B_E[1] * q2 + 2 * B_E[3] * q4, 0, 0, 0)));
+            K = P_check*transpose(HE)*inverse((HE*P_check*transpose(HE)+R));
+            x_check = x_check + K * ( vec3(B_B[0],B_B[1],B_B[2])-vec3(quat_rotation(B_E,vec4(-x_check[0],-x_check[1],-x_check[2],x_check[3]))));
+            P_check = (mat7(1.0f)-K*HE)*P_check;
 
+        }else{ //Not eclipse, normal conditions
+            // Jacobian H
+            H =  transpose(mat6( 2 * S_E[1] * q1 + 2 * S_E[2] * q2 + 2 * S_E[3] * q3,  2 * S_E[2] * q1 - 2 * S_E[1] * q2 - 2 * S_E[3] * q4, 2 * S_E[3] * q1 - 2 * S_E[1] * q3 + 2 * S_E[2] * q4, -2 * S_E[3] * q2 + 2 * S_E[2] * q3 + 2 * S_E[1] * q4, 0, 0, 0,
+                                -2 * S_E[2] * q1 + 2 * S_E[1] * q2 + 2 * S_E[3] * q4,  2 * S_E[1] * q1 + 2 * S_E[2] * q2 + 2 * S_E[3] * q3, 2 * S_E[3] * q2 - 2 * S_E[2] * q3 - 2 * S_E[1] * q4,  2 * S_E[3] * q1 - 2 * S_E[1] * q3 + 2 * S_E[2] * q4, 0, 0, 0,
+                                -2 * S_E[3] * q1 + 2 * S_E[1] * q3 - 2 * S_E[2] * q4, -2 * S_E[3] * q2 + 2 * S_E[2] * q3 + 2 * S_E[1] * q4, 2 * S_E[1] * q1 + 2 * S_E[2] * q2 + 2 * S_E[3] * q3, -2 * S_E[2] * q1 + 2 * S_E[1] * q2 + 2 * S_E[3] * q4, 0, 0, 0,
+                                 2 * B_E[1] * q1 + 2 * B_E[2] * q2 + 2 * B_E[3] * q3,  2 * B_E[2] * q1 - 2 * B_E[1] * q2 - 2 * B_E[3] * q4, 2 * B_E[3] * q1 - 2 * B_E[1] * q3 + 2 * B_E[2] * q4, -2 * B_E[3] * q2 + 2 * B_E[2] * q3 + 2 * B_E[1] * q4, 0, 0, 0,
+                                -2 * B_E[2] * q1 + 2 * B_E[1] * q2 + 2 * B_E[3] * q4,  2 * B_E[1] * q1 + 2 * B_E[2] * q2 + 2 * B_E[3] * q3, 2 * B_E[3] * q2 - 2 * B_E[2] * q3 - 2 * B_E[1] * q4,  2 * B_E[3] * q1 - 2 * B_E[1] * q3 + 2 * B_E[2] * q4, 0, 0, 0,
+                                -2 * B_E[3] * q1 + 2 * B_E[1] * q3 - 2 * B_E[2] * q4, -2 * B_E[3] * q2 + 2 * B_E[2] * q3 + 2 * B_E[1] * q4, 2 * B_E[1] * q1 + 2 * B_E[2] * q2 + 2 * B_E[3] * q3, -2 * B_E[2] * q1 + 2 * B_E[1] * q2 + 2 * B_E[3] * q4, 0, 0, 0));
+            K = P_check*transpose(H)*inverse((H*P_check*transpose(H)+R));
+            x_check = x_check + K * ( vec6(S_B[0],S_B[1],S_B[2],B_B[0],B_B[1],B_B[2])-vec6(quat_rotation(S_E,vec4(-x_check[0],-x_check[1],-x_check[2],x_check[3])), quat_rotation(B_E,vec4(-x_check[0],-x_check[1],-x_check[2],x_check[3]))));
+            P_check = (mat7(1.0f)-K*H)*P_check;
+        }
+        //**************************************Output value**********************************************************************
 
-    };
+        vec4 q_BE = normalize(vec4(x_check[0],x_check[1],x_check[2],x_check[3]));
+        x_check = vec7(q_BE,x_check[4],x_check[5],x_check[6]);
+    }
 
 }
