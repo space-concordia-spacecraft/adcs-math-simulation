@@ -1,5 +1,3 @@
-#ifndef _SGP4h_
-#define _SGP4h_
 /*     ----------------------------------------------------------------
 *
 *                                 SGP4.h
@@ -228,5 +226,3 @@ namespace SGP4Funcs
 
 
 }  // namespace
-
-#endif

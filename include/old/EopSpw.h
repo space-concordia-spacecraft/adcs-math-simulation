@@ -1,5 +1,3 @@
-#ifndef _EopSpw_h_
-#define _EopSpw_h_
 /* ---------------------------------------------------------------------
 *
 *                              EopSpw.h
@@ -105,5 +103,3 @@ namespace EopSpw
 		);
 
 };  // namespace
-
-#endif

@@ -1,10 +1,6 @@
-//
-// Created by Ruben on 3/27/2021.
-//
-
 #include "Controls.h"
 #include <cmath>
-#include "MathTimeLib.h"
+#include "adcs/MathTimeLib.h"
 
 //mathtimeslib has cross, but not sure if vec3 are arrays
 namespace adcs::controls {

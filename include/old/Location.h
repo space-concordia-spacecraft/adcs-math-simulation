@@ -66,5 +66,4 @@ namespace adcs::location {
     void get_sun_in_teme(double jdtdb, double jdtdbF, vec3 &rteme);
     void get_igrf(vec3 recef, double & height, double & latitude, double & longitude, vec3 & magneticField);
 
-
 }

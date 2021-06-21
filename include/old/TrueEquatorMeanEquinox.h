@@ -29,9 +29,10 @@
 
 #include <math.h>
 #include <glm/glm.hpp>
+
 using glm::vec3;
 using glm::mat3;
-=======
+
 #include <cmath>
 #include <cstdio>
 #include <string>

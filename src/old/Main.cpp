@@ -9,8 +9,13 @@
 #include "old/EopSpw.h"
 #include "old/MathTimeLib.h"
 #include "adcs/MSIS_Vers.h"
+<<<<<<< HEAD:src/old/Main.cpp
 #include "old/SGP4.h"
 #include "adcs/SGP4DC.h"
+=======
+#include "adcs/SGP4.h"
+//#include "adcs/SGP4DC.h"
+>>>>>>> 728f27d891b35e599c76b0d3bbfafadf11b43c53:src/adcs/Main.cpp
 
 #include "simulation/Simulation.h"
 #include "old/ADCS.h"
@@ -26,6 +31,8 @@ void runSimulation(Simulation * sim) {
     adcs.run();
 }
 
+typedef glm::mat<8, 8, float, glm::defaultp> mat8;
+
 int main(int argc, char *argv[]) {
     Simulation sim;
 
@@ -33,6 +40,8 @@ int main(int argc, char *argv[]) {
 
     sim.run();
     second.join();
+
+    mat8 a;
 
     return 0;
 }
