@@ -9,15 +9,6 @@ namespace adcs::teme {
         double rar80[107][5];
     } iau80data;
 
-    typedef enum
-    {
-        e80,
-        e96,
-        e00a,
-        e00b,
-        e00cio
-    } eOpt;
-
     vec3 predictSunPosition(double jdtdb, double jdtdbF);
 
     mat3 precess(double julianCenturies);

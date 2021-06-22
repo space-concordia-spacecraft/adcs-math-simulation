@@ -21,8 +21,4 @@ namespace adcs {
     const double GROUND_LOCATION [3]= {1266.06,-4295.81,4526.14};
     const double ARGENTINA_LOCATION[3] = {1612.36,-4182.16,-4522.83};
     const double NAMIBIA_LOCATION[3] = {5659.26,1238.85,-2659.2};
-
-    // INERTIA VALUES
-    const double MOMENT_OF_INERTIA[3] = {0.04582275, 0.04561065, 0.0085932349};
-    const double PRODUCT_OF_INERTIA[3] = {0.000947555, -0.000072545546, -0.000031658756};
 }
