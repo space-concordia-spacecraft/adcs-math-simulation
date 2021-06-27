@@ -5,6 +5,7 @@
 #include "glm/glm.hpp"
 
 using glm::vec3;
+using glm::vec4;
 using glm::mat3;
 using glm::mat4;
 
@@ -21,5 +22,5 @@ typedef enum
 
 namespace adcs {
     bool isEclipse(vec3 se, vec3 pe);
-    double  gstime(double jdut1);
+    double gstime(double jdut1);
 }

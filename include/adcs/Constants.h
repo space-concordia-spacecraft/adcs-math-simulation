@@ -19,6 +19,6 @@
 namespace adcs {
     // IMPORTANT LOCATIONS
     const double GROUND_LOCATION [3]= {1266.06,-4295.81,4526.14};
-    const double ARGENTINA_LOCATION[3] = {1612.36,-4182.16,-4522.83};
-    const double NAMIBIA_LOCATION[3] = {5659.26,1238.85,-2659.2};
+    const double ARGENTINA_LOCATION [3] = {1612.36,-4182.16,-4522.83};
+    const double NAMIBIA_LOCATION [3] = {5659.26,1238.85,-2659.2};
 }
