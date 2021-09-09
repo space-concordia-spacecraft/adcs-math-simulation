@@ -6,1019 +6,3555 @@
 
 #IncludeRegexTransform: 
 
-../include/adcs/Utilities.h
-glm/glm.hpp
+../include/simulation/Simulation.h
+open3d/Open3D.h
+../include/simulation/open3d/Open3D.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Cholesky
+Core
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Core
+Jacobi
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Jacobi
+src/Core/util/DisableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/DisableStupidWarnings.h
+src/Cholesky/LLT.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Cholesky/LLT.h
+src/Cholesky/LDLT.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Cholesky/LDLT.h
+mkl_lapacke.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/mkl_lapacke.h
+src/misc/lapacke.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/lapacke.h
+src/Cholesky/LLT_LAPACKE.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Cholesky/LLT_LAPACKE.h
+src/Core/util/ReenableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ReenableStupidWarnings.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Core
+src/Core/util/DisableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/DisableStupidWarnings.h
+src/Core/util/Macros.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/Macros.h
+src/Core/util/ConfigureVectorization.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ConfigureVectorization.h
+cuda_runtime.h
 -
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/common.hpp
-detail/qualifier.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/qualifier.hpp
-detail/_fixes.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_fixes.hpp
-detail/func_common.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_common.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_fixes.hpp
-cmath
+hip/hip_runtime.h
 -
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_swizzle.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_swizzle_func.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_vectorize.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/compute_common.hpp
-setup.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
-limits
+new
 -
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/compute_vector_relational.hpp
-setup.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
-limits
+complex
 -
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_common.inl
-../vector_relational.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vector_relational.hpp
-compute_common.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/compute_common.hpp
-type_vec1.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec1.hpp
-type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-_vectorize.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_vectorize.hpp
-limits
+src/Core/util/MKL_support.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/MKL_support.h
+omp.h
 -
-func_common_simd.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_common_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_common_simd.inl
-../simd/common.h
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/common.h
-immintrin.h
+cerrno
 -
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_exponential.inl
-../vector_relational.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vector_relational.hpp
-_vectorize.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_vectorize.hpp
-limits
+cstddef
+-
+cstdlib
 -
 cmath
 -
 cassert
 -
-func_exponential_simd.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_exponential_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_exponential_simd.inl
-../simd/exponential.h
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/exponential.h
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_geometric.inl
-../exponential.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/exponential.hpp
-../common.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/common.hpp
-func_geometric_simd.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_geometric_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_geometric_simd.inl
-../simd/geometric.h
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/geometric.h
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_integer.inl
-_vectorize.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_vectorize.hpp
-intrin.h
+functional
 -
-limits
+iosfwd
 -
-func_integer_simd.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_integer_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_integer_simd.inl
-../simd/integer.h
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/integer.h
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_matrix.inl
-../geometric.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/geometric.hpp
-limits
--
-func_matrix_simd.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_matrix_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_matrix_simd.inl
-type_mat4x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4.hpp
-../geometric.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/geometric.hpp
-../simd/matrix.h
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/matrix.h
 cstring
 -
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_packing.inl
-../common.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/common.hpp
-type_half.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_half.hpp
-func_packing_simd.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_packing_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_packing_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_trigonometric.inl
-_vectorize.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_vectorize.hpp
-cmath
+string
 -
 limits
--
-func_trigonometric_simd.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_trigonometric_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_trigonometric_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_vector_relational.inl
-func_vector_relational_simd.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_vector_relational_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_vector_relational_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/qualifier.hpp
-setup.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
-cassert
--
-cstddef
--
-../simd/platform.h
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/platform.h
-CL/sycl.hpp
--
-limits
--
-cstdint
--
-type_traits
--
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_half.hpp
-setup.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
-type_half.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_half.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_half.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x2.hpp
-type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-limits
--
-cstddef
--
-type_mat2x2.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x2.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x2.inl
-../matrix.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/matrix.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x3.hpp
-type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-limits
--
-cstddef
--
-type_mat2x3.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x3.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x3.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x4.hpp
-type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-limits
--
-cstddef
--
-type_mat2x4.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x4.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x4.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x2.hpp
-type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-limits
--
-cstddef
--
-type_mat3x2.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x2.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x2.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x3.hpp
-type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-limits
--
-cstddef
--
-type_mat3x3.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x3.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x3.inl
-../matrix.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/matrix.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x4.hpp
-type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-limits
--
-cstddef
--
-type_mat3x4.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x4.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x4.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x2.hpp
-type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-limits
--
-cstddef
--
-type_mat4x2.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x2.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x2.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x3.hpp
-type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-limits
--
-cstddef
--
-type_mat4x3.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x3.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x3.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4.hpp
-type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-limits
--
-cstddef
--
-type_mat4x4.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4.inl
-../matrix.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/matrix.hpp
-type_mat4x4_simd.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec1.hpp
-qualifier.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/qualifier.hpp
-_swizzle.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_swizzle.hpp
-_swizzle_func.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_swizzle_func.hpp
-cstddef
--
-type_vec1.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec1.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec1.inl
-./compute_vector_relational.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/compute_vector_relational.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-qualifier.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/qualifier.hpp
-_swizzle.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_swizzle.hpp
-_swizzle_func.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_swizzle_func.hpp
-cstddef
--
-type_vec2.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.inl
-./compute_vector_relational.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/compute_vector_relational.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-qualifier.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/qualifier.hpp
-_swizzle.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_swizzle.hpp
-_swizzle_func.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_swizzle_func.hpp
-cstddef
--
-type_vec3.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.inl
-compute_vector_relational.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/compute_vector_relational.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-qualifier.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/qualifier.hpp
-_swizzle.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_swizzle.hpp
-_swizzle_func.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_swizzle_func.hpp
-cstddef
--
-type_vec4.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.inl
-compute_vector_relational.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/compute_vector_relational.hpp
-type_vec4_simd.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4_simd.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/exponential.hpp
-detail/type_vec1.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec1.hpp
-detail/type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-detail/type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-detail/type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-cmath
--
-detail/func_exponential.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_exponential.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x2.hpp
-../detail/type_mat2x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x2_precision.hpp
-../detail/type_mat2x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x3.hpp
-../detail/type_mat2x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x3_precision.hpp
-../detail/type_mat2x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x4.hpp
-../detail/type_mat2x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x4_precision.hpp
-../detail/type_mat2x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x2.hpp
-../detail/type_mat3x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x2_precision.hpp
-../detail/type_mat3x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x3.hpp
-../detail/type_mat3x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x3_precision.hpp
-../detail/type_mat3x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x4.hpp
-../detail/type_mat3x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x4_precision.hpp
-../detail/type_mat3x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x2.hpp
-../detail/type_mat4x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x2_precision.hpp
-../detail/type_mat4x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x3.hpp
-../detail/type_mat4x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x3_precision.hpp
-../detail/type_mat4x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x4.hpp
-../detail/type_mat4x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x4_precision.hpp
-../detail/type_mat4x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x2.hpp
-../detail/type_mat2x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x2_precision.hpp
-../detail/type_mat2x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x3.hpp
-../detail/type_mat2x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x3_precision.hpp
-../detail/type_mat2x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x4.hpp
-../detail/type_mat2x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x4_precision.hpp
-../detail/type_mat2x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x2.hpp
-../detail/type_mat3x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x2_precision.hpp
-../detail/type_mat3x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x3.hpp
-../detail/type_mat3x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x3_precision.hpp
-../detail/type_mat3x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x4.hpp
-../detail/type_mat3x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x4_precision.hpp
-../detail/type_mat3x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x2.hpp
-../detail/type_mat4x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x2_precision.hpp
-../detail/type_mat2x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x3.hpp
-../detail/type_mat4x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x3_precision.hpp
-../detail/type_mat4x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x4.hpp
-../detail/type_mat4x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x4_precision.hpp
-../detail/type_mat4x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/scalar_int_sized.hpp
-../detail/setup.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/scalar_uint_sized.hpp
-../detail/setup.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_bool2.hpp
-../detail/type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_bool2_precision.hpp
-../detail/type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_bool3.hpp
-../detail/type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_bool3_precision.hpp
-../detail/type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_bool4.hpp
-../detail/type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_bool4_precision.hpp
-../detail/type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_double2.hpp
-../detail/type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_double2_precision.hpp
-../detail/type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_double3.hpp
-../detail/type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_double3_precision.hpp
-../detail/type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_double4.hpp
-../detail/type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_double4_precision.hpp
-../detail/setup.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
-../detail/type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float2.hpp
-../detail/type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float2_precision.hpp
-../detail/type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float3.hpp
-../detail/type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float3_precision.hpp
-../detail/type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float4.hpp
-../detail/type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float4_precision.hpp
-../detail/type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int2.hpp
-../detail/type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int2_sized.hpp
-../ext/vector_int2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int2.hpp
-../ext/scalar_int_sized.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/scalar_int_sized.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int3.hpp
-../detail/type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int3_sized.hpp
-../ext/vector_int3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int3.hpp
-../ext/scalar_int_sized.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/scalar_int_sized.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int4.hpp
-../detail/type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int4_sized.hpp
-../ext/vector_int4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int4.hpp
-../ext/scalar_int_sized.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/scalar_int_sized.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint2.hpp
-../detail/type_vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint2_sized.hpp
-../ext/vector_uint2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint2.hpp
-../ext/scalar_uint_sized.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/scalar_uint_sized.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint3.hpp
-../detail/type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint3_sized.hpp
-../ext/vector_uint3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint3.hpp
-../ext/scalar_uint_sized.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/scalar_uint_sized.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint4.hpp
-../detail/type_vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint4_sized.hpp
-../ext/vector_uint4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint4.hpp
-../ext/scalar_uint_sized.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/scalar_uint_sized.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/fwd.hpp
-detail/qualifier.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/qualifier.hpp
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/geometric.hpp
-detail/type_vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
-detail/func_geometric.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_geometric.inl
-
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/glm.hpp
-detail/_fixes.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/_fixes.hpp
-detail/setup.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
-cmath
 -
 climits
 -
-cfloat
+algorithm
 -
+array
+-
+type_traits
+-
+iostream
+-
+intrin.h
+-
+SYCL/sycl.hpp
+-
+src/Core/util/Constants.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/Constants.h
+src/Core/util/Meta.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/Meta.h
+src/Core/util/ForwardDeclarations.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ForwardDeclarations.h
+src/Core/util/StaticAssert.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/StaticAssert.h
+src/Core/util/XprHelper.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/XprHelper.h
+src/Core/util/Memory.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/Memory.h
+src/Core/util/IntegralConstant.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/IntegralConstant.h
+src/Core/util/SymbolicIndex.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/SymbolicIndex.h
+src/Core/NumTraits.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/NumTraits.h
+src/Core/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/MathFunctions.h
+src/Core/GenericPacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/GenericPacketMath.h
+src/Core/MathFunctionsImpl.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/MathFunctionsImpl.h
+src/Core/arch/Default/ConjHelper.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/Default/ConjHelper.h
+src/Core/arch/SSE/PacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/PacketMath.h
+src/Core/arch/SSE/TypeCasting.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/TypeCasting.h
+src/Core/arch/SSE/Complex.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/Complex.h
+src/Core/arch/AVX/PacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/PacketMath.h
+src/Core/arch/AVX/TypeCasting.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/TypeCasting.h
+src/Core/arch/AVX/Complex.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/Complex.h
+src/Core/arch/AVX512/PacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX512/PacketMath.h
+src/Core/arch/AVX512/Complex.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX512/Complex.h
+src/Core/arch/SSE/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/MathFunctions.h
+src/Core/arch/AVX/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/MathFunctions.h
+src/Core/arch/AVX512/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX512/MathFunctions.h
+src/Core/arch/SSE/PacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/PacketMath.h
+src/Core/arch/SSE/TypeCasting.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/TypeCasting.h
+src/Core/arch/SSE/Complex.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/Complex.h
+src/Core/arch/AVX/PacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/PacketMath.h
+src/Core/arch/AVX/TypeCasting.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/TypeCasting.h
+src/Core/arch/AVX/Complex.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/Complex.h
+src/Core/arch/SSE/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/MathFunctions.h
+src/Core/arch/AVX/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/MathFunctions.h
+src/Core/arch/SSE/PacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/PacketMath.h
+src/Core/arch/SSE/TypeCasting.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/TypeCasting.h
+src/Core/arch/SSE/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/MathFunctions.h
+src/Core/arch/SSE/Complex.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/Complex.h
+src/Core/arch/AltiVec/PacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AltiVec/PacketMath.h
+src/Core/arch/AltiVec/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AltiVec/MathFunctions.h
+src/Core/arch/AltiVec/Complex.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AltiVec/Complex.h
+src/Core/arch/NEON/PacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/PacketMath.h
+src/Core/arch/NEON/TypeCasting.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/TypeCasting.h
+src/Core/arch/NEON/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/MathFunctions.h
+src/Core/arch/NEON/Complex.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/Complex.h
+src/Core/arch/ZVector/PacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/ZVector/PacketMath.h
+src/Core/arch/ZVector/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/ZVector/MathFunctions.h
+src/Core/arch/ZVector/Complex.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/ZVector/Complex.h
+src/Core/arch/MSA/PacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/MSA/PacketMath.h
+src/Core/arch/MSA/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/MSA/MathFunctions.h
+src/Core/arch/MSA/Complex.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/MSA/Complex.h
+src/Core/arch/GPU/Half.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/Half.h
+src/Core/arch/GPU/PacketMathHalf.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/PacketMathHalf.h
+src/Core/arch/GPU/TypeCasting.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/TypeCasting.h
+src/Core/arch/GPU/PacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/PacketMath.h
+src/Core/arch/GPU/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/MathFunctions.h
+src/Core/arch/SYCL/InteropHeaders.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/InteropHeaders.h
+src/Core/arch/SYCL/PacketMath.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/PacketMath.h
+src/Core/arch/SYCL/MathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/MathFunctions.h
+src/Core/arch/SYCL/TypeCasting.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/TypeCasting.h
+src/Core/arch/Default/Settings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/Default/Settings.h
+src/Core/functors/TernaryFunctors.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/functors/TernaryFunctors.h
+src/Core/functors/BinaryFunctors.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/functors/BinaryFunctors.h
+src/Core/functors/UnaryFunctors.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/functors/UnaryFunctors.h
+src/Core/functors/NullaryFunctors.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/functors/NullaryFunctors.h
+src/Core/functors/StlFunctors.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/functors/StlFunctors.h
+src/Core/functors/AssignmentFunctors.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/functors/AssignmentFunctors.h
+src/Core/arch/CUDA/Complex.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/CUDA/Complex.h
+src/Core/util/IndexedViewHelper.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/IndexedViewHelper.h
+src/Core/util/ReshapedHelper.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ReshapedHelper.h
+src/Core/ArithmeticSequence.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/ArithmeticSequence.h
+src/Core/IO.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/IO.h
+src/Core/DenseCoeffsBase.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/DenseCoeffsBase.h
+src/Core/DenseBase.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/DenseBase.h
+src/Core/MatrixBase.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/MatrixBase.h
+src/Core/EigenBase.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/EigenBase.h
+src/Core/Product.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Product.h
+src/Core/CoreEvaluators.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CoreEvaluators.h
+src/Core/AssignEvaluator.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/AssignEvaluator.h
+src/Core/Assign.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Assign.h
+src/Core/ArrayBase.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/ArrayBase.h
+src/Core/util/BlasUtil.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/BlasUtil.h
+src/Core/DenseStorage.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/DenseStorage.h
+src/Core/NestByValue.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/NestByValue.h
+src/Core/ReturnByValue.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/ReturnByValue.h
+src/Core/NoAlias.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/NoAlias.h
+src/Core/PlainObjectBase.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/PlainObjectBase.h
+src/Core/Matrix.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Matrix.h
+src/Core/Array.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Array.h
+src/Core/CwiseTernaryOp.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CwiseTernaryOp.h
+src/Core/CwiseBinaryOp.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CwiseBinaryOp.h
+src/Core/CwiseUnaryOp.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CwiseUnaryOp.h
+src/Core/CwiseNullaryOp.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CwiseNullaryOp.h
+src/Core/CwiseUnaryView.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CwiseUnaryView.h
+src/Core/SelfCwiseBinaryOp.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/SelfCwiseBinaryOp.h
+src/Core/Dot.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Dot.h
+src/Core/StableNorm.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/StableNorm.h
+src/Core/Stride.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Stride.h
+src/Core/MapBase.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/MapBase.h
+src/Core/Map.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Map.h
+src/Core/Ref.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Ref.h
+src/Core/Block.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Block.h
+src/Core/VectorBlock.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/VectorBlock.h
+src/Core/IndexedView.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/IndexedView.h
+src/Core/Reshaped.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Reshaped.h
+src/Core/Transpose.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Transpose.h
+src/Core/DiagonalMatrix.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/DiagonalMatrix.h
+src/Core/Diagonal.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Diagonal.h
+src/Core/DiagonalProduct.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/DiagonalProduct.h
+src/Core/Redux.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Redux.h
+src/Core/Visitor.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Visitor.h
+src/Core/Fuzzy.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Fuzzy.h
+src/Core/Swap.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Swap.h
+src/Core/CommaInitializer.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CommaInitializer.h
+src/Core/GeneralProduct.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/GeneralProduct.h
+src/Core/Solve.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Solve.h
+src/Core/Inverse.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Inverse.h
+src/Core/SolverBase.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/SolverBase.h
+src/Core/PermutationMatrix.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/PermutationMatrix.h
+src/Core/Transpositions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Transpositions.h
+src/Core/TriangularMatrix.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/TriangularMatrix.h
+src/Core/SelfAdjointView.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/SelfAdjointView.h
+src/Core/products/GeneralBlockPanelKernel.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralBlockPanelKernel.h
+src/Core/products/Parallelizer.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/Parallelizer.h
+src/Core/ProductEvaluators.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/ProductEvaluators.h
+src/Core/products/GeneralMatrixVector.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixVector.h
+src/Core/products/GeneralMatrixMatrix.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixMatrix.h
+src/Core/SolveTriangular.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/SolveTriangular.h
+src/Core/products/GeneralMatrixMatrixTriangular.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h
+src/Core/products/SelfadjointMatrixVector.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointMatrixVector.h
+src/Core/products/SelfadjointMatrixMatrix.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointMatrixMatrix.h
+src/Core/products/SelfadjointProduct.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointProduct.h
+src/Core/products/SelfadjointRank2Update.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointRank2Update.h
+src/Core/products/TriangularMatrixVector.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularMatrixVector.h
+src/Core/products/TriangularMatrixMatrix.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularMatrixMatrix.h
+src/Core/products/TriangularSolverMatrix.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularSolverMatrix.h
+src/Core/products/TriangularSolverVector.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularSolverVector.h
+src/Core/BandMatrix.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/BandMatrix.h
+src/Core/CoreIterators.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CoreIterators.h
+src/Core/ConditionEstimator.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/ConditionEstimator.h
+src/Core/BooleanRedux.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/BooleanRedux.h
+src/Core/Select.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Select.h
+src/Core/VectorwiseOp.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/VectorwiseOp.h
+src/Core/PartialReduxEvaluator.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/PartialReduxEvaluator.h
+src/Core/Random.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Random.h
+src/Core/Replicate.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Replicate.h
+src/Core/Reverse.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Reverse.h
+src/Core/ArrayWrapper.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/ArrayWrapper.h
+src/Core/StlIterators.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/StlIterators.h
+src/Core/products/GeneralMatrixMatrix_BLAS.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixMatrix_BLAS.h
+src/Core/products/GeneralMatrixVector_BLAS.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixVector_BLAS.h
+src/Core/products/GeneralMatrixMatrixTriangular_BLAS.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixMatrixTriangular_BLAS.h
+src/Core/products/SelfadjointMatrixMatrix_BLAS.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointMatrixMatrix_BLAS.h
+src/Core/products/SelfadjointMatrixVector_BLAS.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointMatrixVector_BLAS.h
+src/Core/products/TriangularMatrixMatrix_BLAS.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularMatrixMatrix_BLAS.h
+src/Core/products/TriangularMatrixVector_BLAS.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularMatrixVector_BLAS.h
+src/Core/products/TriangularSolverMatrix_BLAS.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularSolverMatrix_BLAS.h
+src/Core/Assign_MKL.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Assign_MKL.h
+src/Core/GlobalFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/GlobalFunctions.h
+src/Core/util/ReenableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ReenableStupidWarnings.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Geometry
+Core
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Core
+SVD
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/SVD
+LU
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/LU
 limits
 -
-cassert
+src/Core/util/DisableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/DisableStupidWarnings.h
+src/Geometry/OrthoMethods.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/OrthoMethods.h
+src/Geometry/EulerAngles.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/EulerAngles.h
+src/Geometry/Homogeneous.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Homogeneous.h
+src/Geometry/RotationBase.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/RotationBase.h
+src/Geometry/Rotation2D.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Rotation2D.h
+src/Geometry/Quaternion.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Quaternion.h
+src/Geometry/AngleAxis.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/AngleAxis.h
+src/Geometry/Transform.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Transform.h
+src/Geometry/Translation.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Translation.h
+src/Geometry/Scaling.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Scaling.h
+src/Geometry/Hyperplane.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Hyperplane.h
+src/Geometry/ParametrizedLine.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/ParametrizedLine.h
+src/Geometry/AlignedBox.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/AlignedBox.h
+src/Geometry/Umeyama.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Umeyama.h
+src/Geometry/arch/Geometry_SSE.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/arch/Geometry_SSE.h
+src/Core/util/ReenableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ReenableStupidWarnings.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Householder
+Core
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Core
+src/Core/util/DisableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/DisableStupidWarnings.h
+src/Householder/Householder.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Householder/Householder.h
+src/Householder/HouseholderSequence.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Householder/HouseholderSequence.h
+src/Householder/BlockHouseholder.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Householder/BlockHouseholder.h
+src/Core/util/ReenableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ReenableStupidWarnings.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Jacobi
+Core
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Core
+src/Core/util/DisableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/DisableStupidWarnings.h
+src/Jacobi/Jacobi.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Jacobi/Jacobi.h
+src/Core/util/ReenableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ReenableStupidWarnings.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/LU
+Core
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Core
+src/Core/util/DisableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/DisableStupidWarnings.h
+src/misc/Kernel.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/Kernel.h
+src/misc/Image.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/Image.h
+src/LU/FullPivLU.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/LU/FullPivLU.h
+src/LU/PartialPivLU.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/LU/PartialPivLU.h
+mkl_lapacke.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/mkl_lapacke.h
+src/misc/lapacke.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/lapacke.h
+src/LU/PartialPivLU_LAPACKE.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/LU/PartialPivLU_LAPACKE.h
+src/LU/Determinant.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/LU/Determinant.h
+src/LU/InverseImpl.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/LU/InverseImpl.h
+src/LU/arch/Inverse_SSE.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/LU/arch/Inverse_SSE.h
+src/Core/util/ReenableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ReenableStupidWarnings.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/QR
+Core
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Core
+Cholesky
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Cholesky
+Jacobi
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Jacobi
+Householder
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Householder
+src/Core/util/DisableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/DisableStupidWarnings.h
+src/QR/HouseholderQR.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/QR/HouseholderQR.h
+src/QR/FullPivHouseholderQR.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/QR/FullPivHouseholderQR.h
+src/QR/ColPivHouseholderQR.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/QR/ColPivHouseholderQR.h
+src/QR/CompleteOrthogonalDecomposition.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/QR/CompleteOrthogonalDecomposition.h
+mkl_lapacke.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/mkl_lapacke.h
+src/misc/lapacke.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/lapacke.h
+src/QR/HouseholderQR_LAPACKE.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/QR/HouseholderQR_LAPACKE.h
+src/QR/ColPivHouseholderQR_LAPACKE.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h
+src/Core/util/ReenableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ReenableStupidWarnings.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/SVD
+QR
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/QR
+Householder
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Householder
+Jacobi
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Jacobi
+src/Core/util/DisableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/DisableStupidWarnings.h
+src/misc/RealSvd2x2.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/RealSvd2x2.h
+src/SVD/UpperBidiagonalization.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/SVD/UpperBidiagonalization.h
+src/SVD/SVDBase.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/SVD/SVDBase.h
+src/SVD/JacobiSVD.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/SVD/JacobiSVD.h
+src/SVD/BDCSVD.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/SVD/BDCSVD.h
+mkl_lapacke.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/mkl_lapacke.h
+src/misc/lapacke.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/lapacke.h
+src/SVD/JacobiSVD_LAPACKE.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/SVD/JacobiSVD_LAPACKE.h
+src/Core/util/ReenableStupidWarnings.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ReenableStupidWarnings.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/StdVector
+Core
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/Core
+vector
 -
-fwd.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/fwd.hpp
-vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vec2.hpp
-vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vec3.hpp
-vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vec4.hpp
-mat2x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat2x2.hpp
-mat2x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat2x3.hpp
-mat2x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat2x4.hpp
-mat3x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat3x2.hpp
-mat3x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat3x3.hpp
-mat3x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat3x4.hpp
-mat4x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat4x2.hpp
-mat4x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat4x3.hpp
-mat4x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat4x4.hpp
-trigonometric.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/trigonometric.hpp
-exponential.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/exponential.hpp
-common.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/common.hpp
-packing.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/packing.hpp
-geometric.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/geometric.hpp
-matrix.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/matrix.hpp
-vector_relational.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vector_relational.hpp
-integer.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/integer.hpp
+src/StlSupport/StdVector.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/StlSupport/StdVector.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/integer.hpp
-detail/qualifier.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/qualifier.hpp
-common.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/common.hpp
-vector_relational.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vector_relational.hpp
-detail/func_integer.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_integer.inl
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Cholesky/LDLT.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat2x2.hpp
-./ext/matrix_double2x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x2.hpp
-./ext/matrix_double2x2_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x2_precision.hpp
-./ext/matrix_float2x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x2.hpp
-./ext/matrix_float2x2_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x2_precision.hpp
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Cholesky/LLT.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat2x3.hpp
-./ext/matrix_double2x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x3.hpp
-./ext/matrix_double2x3_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x3_precision.hpp
-./ext/matrix_float2x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x3.hpp
-./ext/matrix_float2x3_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x3_precision.hpp
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Cholesky/LLT_LAPACKE.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat2x4.hpp
-./ext/matrix_double2x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x4.hpp
-./ext/matrix_double2x4_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x4_precision.hpp
-./ext/matrix_float2x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x4.hpp
-./ext/matrix_float2x4_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x4_precision.hpp
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/ArithmeticSequence.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat3x2.hpp
-./ext/matrix_double3x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x2.hpp
-./ext/matrix_double3x2_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x2_precision.hpp
-./ext/matrix_float3x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x2.hpp
-./ext/matrix_float3x2_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x2_precision.hpp
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Array.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat3x3.hpp
-./ext/matrix_double3x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x3.hpp
-./ext/matrix_double3x3_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x3_precision.hpp
-./ext/matrix_float3x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x3.hpp
-./ext/matrix_float3x3_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x3_precision.hpp
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/ArrayBase.h
+../plugins/MatrixCwiseUnaryOps.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+../plugins/ArrayCwiseUnaryOps.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/ArrayCwiseUnaryOps.h
+../plugins/CommonCwiseBinaryOps.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/CommonCwiseBinaryOps.h
+../plugins/MatrixCwiseBinaryOps.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/MatrixCwiseBinaryOps.h
+../plugins/ArrayCwiseBinaryOps.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/ArrayCwiseBinaryOps.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat3x4.hpp
-./ext/matrix_double3x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x4.hpp
-./ext/matrix_double3x4_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x4_precision.hpp
-./ext/matrix_float3x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x4.hpp
-./ext/matrix_float3x4_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x4_precision.hpp
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/ArrayWrapper.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat4x2.hpp
-./ext/matrix_double4x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x2.hpp
-./ext/matrix_double4x2_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x2_precision.hpp
-./ext/matrix_float4x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x2.hpp
-./ext/matrix_float4x2_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x2_precision.hpp
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Assign.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat4x3.hpp
-./ext/matrix_double4x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x3.hpp
-./ext/matrix_double4x3_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x3_precision.hpp
-./ext/matrix_float4x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x3.hpp
-./ext/matrix_float4x3_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x3_precision.hpp
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/AssignEvaluator.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat4x4.hpp
-./ext/matrix_double4x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x4.hpp
-./ext/matrix_double4x4_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x4_precision.hpp
-./ext/matrix_float4x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x4.hpp
-./ext/matrix_float4x4_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x4_precision.hpp
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Assign_MKL.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/matrix.hpp
-detail/qualifier.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/qualifier.hpp
-detail/setup.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
-vec2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vec2.hpp
-vec3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vec3.hpp
-vec4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vec4.hpp
-mat2x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat2x2.hpp
-mat2x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat2x3.hpp
-mat2x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat2x4.hpp
-mat3x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat3x2.hpp
-mat3x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat3x3.hpp
-mat3x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat3x4.hpp
-mat4x2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat4x2.hpp
-mat4x3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat4x3.hpp
-mat4x4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/mat4x4.hpp
-detail/func_matrix.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_matrix.inl
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/BandMatrix.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/packing.hpp
-./ext/vector_uint2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint2.hpp
-./ext/vector_float2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float2.hpp
-./ext/vector_float4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float4.hpp
-detail/func_packing.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_packing.inl
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Block.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/common.h
-platform.h
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/platform.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/BooleanRedux.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/exponential.h
-platform.h
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/platform.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CommaInitializer.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/geometric.h
-common.h
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/common.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/ConditionEstimator.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/integer.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CoreEvaluators.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/matrix.h
-geometric.h
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/geometric.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CoreIterators.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/neon.h
-arm_neon.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CwiseBinaryOp.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CwiseNullaryOp.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CwiseTernaryOp.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CwiseUnaryOp.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/CwiseUnaryView.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/DenseBase.h
+../plugins/CommonCwiseUnaryOps.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/CommonCwiseUnaryOps.h
+../plugins/BlockMethods.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/BlockMethods.h
+../plugins/IndexedViewMethods.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/IndexedViewMethods.h
+../plugins/ReshapedMethods.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/ReshapedMethods.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/DenseCoeffsBase.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/DenseStorage.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Diagonal.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/DiagonalMatrix.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/DiagonalProduct.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Dot.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/EigenBase.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Fuzzy.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/GeneralProduct.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/GenericPacketMath.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/GlobalFunctions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/IO.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/IndexedView.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Inverse.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Map.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/MapBase.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/MathFunctions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/MathFunctionsImpl.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Matrix.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/MatrixBase.h
+../plugins/CommonCwiseBinaryOps.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/CommonCwiseBinaryOps.h
+../plugins/MatrixCwiseUnaryOps.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+../plugins/MatrixCwiseBinaryOps.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/MatrixCwiseBinaryOps.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/NestByValue.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/NoAlias.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/NumTraits.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/PartialReduxEvaluator.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/PermutationMatrix.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/PlainObjectBase.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Product.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/ProductEvaluators.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Random.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Redux.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Ref.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Replicate.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Reshaped.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/ReturnByValue.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Reverse.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Select.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/SelfAdjointView.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/SelfCwiseBinaryOp.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Solve.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/SolveTriangular.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/SolverBase.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/StableNorm.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/StlIterators.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Stride.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Swap.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Transpose.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Transpositions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/TriangularMatrix.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/VectorBlock.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/VectorwiseOp.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/Visitor.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/Complex.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/MathFunctions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/PacketMath.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/TypeCasting.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX512/Complex.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX512/MathFunctions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AVX512/PacketMath.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AltiVec/Complex.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AltiVec/MathFunctions.h
+../Default/GenericPacketMathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/AltiVec/PacketMath.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/CUDA/Complex.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/Default/ConjHelper.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/Default/Settings.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/Half.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/MathFunctions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/PacketMath.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/PacketMathHalf.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/TypeCasting.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/HIP/hcc/math_constants.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/MSA/Complex.h
+iostream
 -
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/platform.h
-cuda.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/MSA/MathFunctions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/MSA/PacketMath.h
+iostream
+-
+string
+-
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/Complex.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/MathFunctions.h
+../Default/GenericPacketMathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/PacketMath.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/TypeCasting.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/Complex.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/MathFunctions.h
+../Default/GenericPacketMathFunctions.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/PacketMath.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/TypeCasting.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/InteropHeaders.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/MathFunctions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/PacketMath.h
+type_traits
+-
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/TypeCasting.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/ZVector/Complex.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/ZVector/MathFunctions.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/arch/ZVector/PacketMath.h
+stdint.h
+-
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/functors/AssignmentFunctors.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/functors/BinaryFunctors.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/functors/NullaryFunctors.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/functors/StlFunctors.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/functors/TernaryFunctors.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/functors/UnaryFunctors.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralBlockPanelKernel.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixMatrix.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixMatrixTriangular_BLAS.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixMatrix_BLAS.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixVector.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixVector_BLAS.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/Parallelizer.h
+atomic
+-
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointMatrixMatrix.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointMatrixMatrix_BLAS.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointMatrixVector.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointMatrixVector_BLAS.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointProduct.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointRank2Update.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularMatrixMatrix.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularMatrixMatrix_BLAS.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularMatrixVector.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularMatrixVector_BLAS.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularSolverMatrix.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularSolverMatrix_BLAS.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/products/TriangularSolverVector.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/BlasUtil.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ConfigureVectorization.h
+malloc.h
 -
 immintrin.h
 -
-immintrin.h
--
-popcntintrin.h
--
-nmmintrin.h
--
-smmintrin.h
--
-tmmintrin.h
--
-pmmintrin.h
+mmintrin.h
 -
 emmintrin.h
 -
-neon.h
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/simd/neon.h
+xmmintrin.h
+-
+pmmintrin.h
+-
+tmmintrin.h
+-
+smmintrin.h
+-
+nmmintrin.h
+-
+immintrin.h
+-
+altivec.h
+-
+altivec.h
+-
+arm_neon.h
+-
+vecintrin.h
+-
+msa.h
+-
+vector_types.h
+-
+cuda_runtime_api.h
+-
+cuda_fp16.h
+-
+hip/hip_vector_types.h
+-
+hip/hip_fp16.h
+-
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/trigonometric.hpp
-detail/setup.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
-detail/qualifier.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/qualifier.hpp
-detail/func_trigonometric.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_trigonometric.inl
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/Constants.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vec2.hpp
-./ext/vector_bool2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_bool2.hpp
-./ext/vector_bool2_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_bool2_precision.hpp
-./ext/vector_float2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float2.hpp
-./ext/vector_float2_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float2_precision.hpp
-./ext/vector_double2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_double2.hpp
-./ext/vector_double2_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_double2_precision.hpp
-./ext/vector_int2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int2.hpp
-./ext/vector_int2_sized.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int2_sized.hpp
-./ext/vector_uint2.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint2.hpp
-./ext/vector_uint2_sized.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint2_sized.hpp
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/DisableStupidWarnings.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vec3.hpp
-./ext/vector_bool3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_bool3.hpp
-./ext/vector_bool3_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_bool3_precision.hpp
-./ext/vector_float3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float3.hpp
-./ext/vector_float3_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float3_precision.hpp
-./ext/vector_double3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_double3.hpp
-./ext/vector_double3_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_double3_precision.hpp
-./ext/vector_int3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int3.hpp
-./ext/vector_int3_sized.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int3_sized.hpp
-./ext/vector_uint3.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint3.hpp
-./ext/vector_uint3_sized.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint3_sized.hpp
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ForwardDeclarations.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vec4.hpp
-./ext/vector_bool4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_bool4.hpp
-./ext/vector_bool4_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_bool4_precision.hpp
-./ext/vector_float4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float4.hpp
-./ext/vector_float4_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_float4_precision.hpp
-./ext/vector_double4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_double4.hpp
-./ext/vector_double4_precision.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_double4_precision.hpp
-./ext/vector_int4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int4.hpp
-./ext/vector_int4_sized.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_int4_sized.hpp
-./ext/vector_uint4.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint4.hpp
-./ext/vector_uint4_sized.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/ext/vector_uint4_sized.hpp
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/IndexedViewHelper.h
 
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/vector_relational.hpp
-detail/qualifier.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/qualifier.hpp
-detail/setup.hpp
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
-detail/func_vector_relational.inl
-C:/Users/Charles/Documents/ADCS_Libraries/vcpkg/installed/x64-windows/include/glm/detail/func_vector_relational.inl
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/IntegralConstant.h
 
-C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/Utilities.cpp
-adcs/Utilities.h
-C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/src/adcs/adcs/Utilities.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/MKL_support.h
+mkl.h
+-
+../../misc/blas.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/blas.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/Macros.h
+hip/hip_runtime.h
+-
+cmath
+-
+cstdlib
+-
+iostream
+-
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/Memory.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/Meta.h
+cfloat
+-
+math_constants.h
+-
+Eigen/src/Core/arch/HIP/hcc/math_constants.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/Eigen/src/Core/arch/HIP/hcc/math_constants.h
+cstdint
+-
+cstdint
+-
+stdint.h
+-
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ReenableStupidWarnings.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/ReshapedHelper.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/StaticAssert.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/SymbolicIndex.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Core/util/XprHelper.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/AlignedBox.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/AngleAxis.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/EulerAngles.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Homogeneous.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Hyperplane.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/OrthoMethods.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/ParametrizedLine.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Quaternion.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Rotation2D.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/RotationBase.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Scaling.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Transform.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Translation.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/Umeyama.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Geometry/arch/Geometry_SSE.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Householder/BlockHouseholder.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Householder/Householder.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Householder/HouseholderSequence.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/Jacobi/Jacobi.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/LU/Determinant.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/LU/FullPivLU.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/LU/InverseImpl.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/LU/PartialPivLU.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/LU/PartialPivLU_LAPACKE.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/LU/arch/Inverse_SSE.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/QR/ColPivHouseholderQR.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/QR/CompleteOrthogonalDecomposition.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/QR/FullPivHouseholderQR.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/QR/HouseholderQR.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/QR/HouseholderQR_LAPACKE.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/SVD/BDCSVD.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/SVD/JacobiSVD.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/SVD/JacobiSVD_LAPACKE.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/SVD/SVDBase.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/SVD/UpperBidiagonalization.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/StlSupport/StdVector.h
+details.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/StlSupport/details.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/StlSupport/details.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/Image.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/Kernel.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/RealSvd2x2.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/blas.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/lapacke.h
+lapacke_config.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/lapacke_config.h
+stdlib.h
+-
+complex.h
+-
+complex.h
+-
+lapacke_mangling.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/lapacke_mangling.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/misc/lapacke_mangling.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/ArrayCwiseBinaryOps.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/ArrayCwiseUnaryOps.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/BlockMethods.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/CommonCwiseBinaryOps.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/CommonCwiseUnaryOps.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/IndexedViewMethods.h
+IndexedViewMethods.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/IndexedViewMethods.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/MatrixCwiseBinaryOps.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/ReshapedMethods.h
+ReshapedMethods.h
+C:/Program Files/Open3D/include/open3d/3rdparty/Eigen/src/plugins/ReshapedMethods.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/GL/glew.h
+stddef.h
+-
+inttypes.h
+-
+stdint.h
+-
+inttypes.h
+-
+Availability.h
+-
+OpenGL/glu.h
+-
+GL/glu.h
+-
+
+C:/Program Files/Open3D/include/open3d/3rdparty/GLFW/glfw3.h
+stddef.h
+-
+stdint.h
+-
+GLES/gl.h
+-
+GLES/glext.h
+-
+GLES2/gl2.h
+-
+GLES2/gl2ext.h
+-
+GLES3/gl3.h
+-
+GLES2/gl2ext.h
+-
+GLES3/gl31.h
+-
+GLES2/gl2ext.h
+-
+GLES3/gl32.h
+-
+GLES2/gl2ext.h
+-
+OpenGL/gl3.h
+-
+OpenGL/gl3ext.h
+-
+GL/glcorearb.h
+-
+OpenGL/gl.h
+-
+OpenGL/glu.h
+-
+GL/gl.h
+-
+GL/glext.h
+-
+GL/glu.h
+-
+vulkan/vulkan.h
+-
+
+C:/Program Files/Open3D/include/open3d/3rdparty/fmt/core.h
+cassert
+-
+cstdio
+-
+cstring
+-
+iterator
+-
+string
+-
+type_traits
+-
+string_view
+-
+experimental/string_view
+-
+fmt/core.h
+-
+
+C:/Program Files/Open3D/include/open3d/3rdparty/fmt/format-inl.h
+format.h
+C:/Program Files/Open3D/include/open3d/3rdparty/fmt/format.h
+string.h
+-
+cctype
+-
+cerrno
+-
+climits
+-
+cmath
+-
+cstdarg
+-
+cstddef
+-
+cstring
+-
+cwchar
+-
+locale
+-
+windows.h
+-
+windows.h
+-
+
+C:/Program Files/Open3D/include/open3d/3rdparty/fmt/format.h
+algorithm
+-
+cassert
+-
+cmath
+-
+cstdint
+-
+cstring
+-
+iterator
+-
+limits
+-
+memory
+-
+stdexcept
+-
+core.h
+C:/Program Files/Open3D/include/open3d/3rdparty/fmt/core.h
+intrin.h
+-
+fmt/format.h
+-
+fmt/format.h
+-
+format-inl.h
+C:/Program Files/Open3D/include/open3d/3rdparty/fmt/format-inl.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/fmt/ostream.h
+ostream
+-
+format.h
+C:/Program Files/Open3D/include/open3d/3rdparty/fmt/format.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/fmt/printf.h
+algorithm
+-
+limits
+-
+ostream.h
+C:/Program Files/Open3D/include/open3d/3rdparty/fmt/ostream.h
+
+C:/Program Files/Open3D/include/open3d/3rdparty/fmt/ranges.h
+type_traits
+-
+format.h
+C:/Program Files/Open3D/include/open3d/3rdparty/fmt/format.h
+
+C:/Program Files/Open3D/include/open3d/Macro.h
+
+C:/Program Files/Open3D/include/open3d/Open3D.h
+open3d/Open3DConfig.h
+C:/Program Files/Open3D/include/open3d/open3d/Open3DConfig.h
+open3d/camera/PinholeCameraIntrinsic.h
+C:/Program Files/Open3D/include/open3d/open3d/camera/PinholeCameraIntrinsic.h
+open3d/camera/PinholeCameraParameters.h
+C:/Program Files/Open3D/include/open3d/open3d/camera/PinholeCameraParameters.h
+open3d/camera/PinholeCameraTrajectory.h
+C:/Program Files/Open3D/include/open3d/open3d/camera/PinholeCameraTrajectory.h
+open3d/core/Blob.h
+C:/Program Files/Open3D/include/open3d/open3d/core/Blob.h
+open3d/core/DLPack.h
+C:/Program Files/Open3D/include/open3d/open3d/core/DLPack.h
+open3d/core/Device.h
+C:/Program Files/Open3D/include/open3d/open3d/core/Device.h
+open3d/core/Dtype.h
+C:/Program Files/Open3D/include/open3d/open3d/core/Dtype.h
+open3d/core/EigenConverter.h
+C:/Program Files/Open3D/include/open3d/open3d/core/EigenConverter.h
+open3d/core/FuncionTraits.h
+C:/Program Files/Open3D/include/open3d/open3d/core/FuncionTraits.h
+open3d/core/MemoryManager.h
+C:/Program Files/Open3D/include/open3d/open3d/core/MemoryManager.h
+open3d/core/ShapeUtil.h
+C:/Program Files/Open3D/include/open3d/open3d/core/ShapeUtil.h
+open3d/core/SizeVector.h
+C:/Program Files/Open3D/include/open3d/open3d/core/SizeVector.h
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/open3d/core/Tensor.h
+open3d/core/TensorKey.h
+C:/Program Files/Open3D/include/open3d/open3d/core/TensorKey.h
+open3d/core/TensorList.h
+C:/Program Files/Open3D/include/open3d/open3d/core/TensorList.h
+open3d/core/nns/NearestNeighborSearch.h
+C:/Program Files/Open3D/include/open3d/open3d/core/nns/NearestNeighborSearch.h
+open3d/geometry/BoundingVolume.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/BoundingVolume.h
+open3d/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/Geometry.h
+open3d/geometry/HalfEdgeTriangleMesh.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/HalfEdgeTriangleMesh.h
+open3d/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/Image.h
+open3d/geometry/KDTreeFlann.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/KDTreeFlann.h
+open3d/geometry/Keypoint.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/Keypoint.h
+open3d/geometry/Line3D.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/Line3D.h
+open3d/geometry/LineSet.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/LineSet.h
+open3d/geometry/Octree.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/Octree.h
+open3d/geometry/PointCloud.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/PointCloud.h
+open3d/geometry/RGBDImage.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/RGBDImage.h
+open3d/geometry/TriangleMesh.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/TriangleMesh.h
+open3d/geometry/VoxelGrid.h
+C:/Program Files/Open3D/include/open3d/open3d/geometry/VoxelGrid.h
+open3d/io/FeatureIO.h
+C:/Program Files/Open3D/include/open3d/open3d/io/FeatureIO.h
+open3d/io/FileFormatIO.h
+C:/Program Files/Open3D/include/open3d/open3d/io/FileFormatIO.h
+open3d/io/IJsonConvertibleIO.h
+C:/Program Files/Open3D/include/open3d/open3d/io/IJsonConvertibleIO.h
+open3d/io/ImageIO.h
+C:/Program Files/Open3D/include/open3d/open3d/io/ImageIO.h
+open3d/io/LineSetIO.h
+C:/Program Files/Open3D/include/open3d/open3d/io/LineSetIO.h
+open3d/io/PinholeCameraTrajectoryIO.h
+C:/Program Files/Open3D/include/open3d/open3d/io/PinholeCameraTrajectoryIO.h
+open3d/io/PointCloudIO.h
+C:/Program Files/Open3D/include/open3d/open3d/io/PointCloudIO.h
+open3d/io/PoseGraphIO.h
+C:/Program Files/Open3D/include/open3d/open3d/io/PoseGraphIO.h
+open3d/io/TriangleMeshIO.h
+C:/Program Files/Open3D/include/open3d/open3d/io/TriangleMeshIO.h
+open3d/io/VoxelGridIO.h
+C:/Program Files/Open3D/include/open3d/open3d/io/VoxelGridIO.h
+open3d/pipelines/color_map/NonRigidOptimizer.h
+C:/Program Files/Open3D/include/open3d/open3d/pipelines/color_map/NonRigidOptimizer.h
+open3d/pipelines/color_map/RigidOptimizer.h
+C:/Program Files/Open3D/include/open3d/open3d/pipelines/color_map/RigidOptimizer.h
+open3d/pipelines/integration/ScalableTSDFVolume.h
+C:/Program Files/Open3D/include/open3d/open3d/pipelines/integration/ScalableTSDFVolume.h
+open3d/pipelines/integration/TSDFVolume.h
+C:/Program Files/Open3D/include/open3d/open3d/pipelines/integration/TSDFVolume.h
+open3d/pipelines/integration/UniformTSDFVolume.h
+C:/Program Files/Open3D/include/open3d/open3d/pipelines/integration/UniformTSDFVolume.h
+open3d/pipelines/odometry/Odometry.h
+C:/Program Files/Open3D/include/open3d/open3d/pipelines/odometry/Odometry.h
+open3d/pipelines/registration/Feature.h
+C:/Program Files/Open3D/include/open3d/open3d/pipelines/registration/Feature.h
+open3d/pipelines/registration/Registration.h
+C:/Program Files/Open3D/include/open3d/open3d/pipelines/registration/Registration.h
+open3d/pipelines/registration/TransformationEstimation.h
+C:/Program Files/Open3D/include/open3d/open3d/pipelines/registration/TransformationEstimation.h
+open3d/t/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/open3d/t/geometry/Geometry.h
+open3d/t/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/open3d/t/geometry/Image.h
+open3d/t/geometry/PointCloud.h
+C:/Program Files/Open3D/include/open3d/open3d/t/geometry/PointCloud.h
+open3d/t/geometry/RGBDImage.h
+C:/Program Files/Open3D/include/open3d/open3d/t/geometry/RGBDImage.h
+open3d/t/geometry/TSDFVoxelGrid.h
+C:/Program Files/Open3D/include/open3d/open3d/t/geometry/TSDFVoxelGrid.h
+open3d/t/geometry/TensorMap.h
+C:/Program Files/Open3D/include/open3d/open3d/t/geometry/TensorMap.h
+open3d/t/geometry/TriangleMesh.h
+C:/Program Files/Open3D/include/open3d/open3d/t/geometry/TriangleMesh.h
+open3d/t/io/ImageIO.h
+C:/Program Files/Open3D/include/open3d/open3d/t/io/ImageIO.h
+open3d/t/io/PointCloudIO.h
+C:/Program Files/Open3D/include/open3d/open3d/t/io/PointCloudIO.h
+open3d/t/pipelines/kernel/TransformationConverter.h
+C:/Program Files/Open3D/include/open3d/open3d/t/pipelines/kernel/TransformationConverter.h
+open3d/t/pipelines/registration/Registration.h
+C:/Program Files/Open3D/include/open3d/open3d/t/pipelines/registration/Registration.h
+open3d/t/pipelines/registration/TransformationEstimation.h
+C:/Program Files/Open3D/include/open3d/open3d/t/pipelines/registration/TransformationEstimation.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/open3d/utility/Console.h
+open3d/utility/Eigen.h
+C:/Program Files/Open3D/include/open3d/open3d/utility/Eigen.h
+open3d/utility/FileSystem.h
+C:/Program Files/Open3D/include/open3d/open3d/utility/FileSystem.h
+open3d/utility/Helper.h
+C:/Program Files/Open3D/include/open3d/open3d/utility/Helper.h
+open3d/utility/Timer.h
+C:/Program Files/Open3D/include/open3d/open3d/utility/Timer.h
+open3d/visualization/gui/Application.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Application.h
+open3d/visualization/gui/Button.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Button.h
+open3d/visualization/gui/Checkbox.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Checkbox.h
+open3d/visualization/gui/Color.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Color.h
+open3d/visualization/gui/Combobox.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Combobox.h
+open3d/visualization/gui/Dialog.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Dialog.h
+open3d/visualization/gui/Gui.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Gui.h
+open3d/visualization/gui/ImageLabel.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/ImageLabel.h
+open3d/visualization/gui/Label.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Label.h
+open3d/visualization/gui/Layout.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Layout.h
+open3d/visualization/gui/Menu.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Menu.h
+open3d/visualization/gui/ProgressBar.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/ProgressBar.h
+open3d/visualization/gui/SceneWidget.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/SceneWidget.h
+open3d/visualization/gui/Slider.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Slider.h
+open3d/visualization/gui/TabControl.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/TabControl.h
+open3d/visualization/gui/TextEdit.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/TextEdit.h
+open3d/visualization/gui/Theme.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Theme.h
+open3d/visualization/gui/TreeView.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/TreeView.h
+open3d/visualization/gui/Window.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/gui/Window.h
+open3d/visualization/rendering/Material.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/rendering/Material.h
+open3d/visualization/rendering/Open3DScene.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/rendering/Open3DScene.h
+open3d/visualization/utility/Draw.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/utility/Draw.h
+open3d/visualization/utility/DrawGeometry.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/utility/DrawGeometry.h
+open3d/visualization/utility/SelectionPolygon.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/utility/SelectionPolygon.h
+open3d/visualization/utility/SelectionPolygonVolume.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/utility/SelectionPolygonVolume.h
+open3d/visualization/visualizer/O3DVisualizer.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/visualizer/O3DVisualizer.h
+open3d/visualization/visualizer/ViewControl.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/visualizer/ViewControl.h
+open3d/visualization/visualizer/ViewControlWithCustomAnimation.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/visualizer/ViewControlWithCustomAnimation.h
+open3d/visualization/visualizer/ViewControlWithEditing.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/visualizer/ViewControlWithEditing.h
+open3d/visualization/visualizer/Visualizer.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/visualizer/Visualizer.h
+open3d/visualization/visualizer/VisualizerWithCustomAnimation.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/visualizer/VisualizerWithCustomAnimation.h
+open3d/visualization/visualizer/VisualizerWithEditing.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/visualizer/VisualizerWithEditing.h
+open3d/visualization/visualizer/VisualizerWithKeyCallback.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/visualizer/VisualizerWithKeyCallback.h
+open3d/visualization/visualizer/VisualizerWithVertexSelection.h
+C:/Program Files/Open3D/include/open3d/open3d/visualization/visualizer/VisualizerWithVertexSelection.h
+open3d/t/io/sensor/realsense/RSBagReader.h
+C:/Program Files/Open3D/include/open3d/open3d/t/io/sensor/realsense/RSBagReader.h
+open3d/t/io/sensor/realsense/RealSenseSensor.h
+C:/Program Files/Open3D/include/open3d/open3d/t/io/sensor/realsense/RealSenseSensor.h
+
+C:/Program Files/Open3D/include/open3d/Open3DConfig.h
+
+C:/Program Files/Open3D/include/open3d/camera/PinholeCameraIntrinsic.h
+Eigen/Core
+-
+open3d/utility/IJsonConvertible.h
+C:/Program Files/Open3D/include/open3d/camera/open3d/utility/IJsonConvertible.h
+
+C:/Program Files/Open3D/include/open3d/camera/PinholeCameraParameters.h
+memory
+-
+vector
+-
+open3d/camera/PinholeCameraIntrinsic.h
+C:/Program Files/Open3D/include/open3d/camera/open3d/camera/PinholeCameraIntrinsic.h
+
+C:/Program Files/Open3D/include/open3d/camera/PinholeCameraTrajectory.h
+memory
+-
+vector
+-
+open3d/camera/PinholeCameraParameters.h
+C:/Program Files/Open3D/include/open3d/camera/open3d/camera/PinholeCameraParameters.h
+
+C:/Program Files/Open3D/include/open3d/core/Blob.h
+cstddef
+-
+iostream
+-
+string
+-
+open3d/core/Device.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Device.h
+open3d/core/MemoryManager.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/MemoryManager.h
+
+C:/Program Files/Open3D/include/open3d/core/DLPack.h
+stddef.h
+-
+stdint.h
+-
+
+C:/Program Files/Open3D/include/open3d/core/Device.h
+string
+-
+vector
+-
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/core/open3d/utility/Console.h
+open3d/utility/Helper.h
+C:/Program Files/Open3D/include/open3d/core/open3d/utility/Helper.h
+
+C:/Program Files/Open3D/include/open3d/core/Dispatch.h
+open3d/core/Dtype.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Dtype.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/core/open3d/utility/Console.h
+
+C:/Program Files/Open3D/include/open3d/core/Dtype.h
+cstring
+-
+string
+-
+open3d/Macro.h
+C:/Program Files/Open3D/include/open3d/core/open3d/Macro.h
+open3d/core/Dispatch.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Dispatch.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/core/open3d/utility/Console.h
+
+C:/Program Files/Open3D/include/open3d/core/EigenConverter.h
+Eigen/Core
+-
+vector
+-
+open3d/core/Device.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Device.h
+open3d/core/Dtype.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Dtype.h
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Tensor.h
+open3d/core/TensorList.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/TensorList.h
+
+C:/Program Files/Open3D/include/open3d/core/FuncionTraits.h
+
+C:/Program Files/Open3D/include/open3d/core/MemoryManager.h
+cstring
+-
+memory
+-
+stdexcept
+-
+string
+-
+unordered_map
+-
+open3d/core/Device.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Device.h
+
+C:/Program Files/Open3D/include/open3d/core/Scalar.h
+cstdint
+-
+string
+-
+open3d/core/Dtype.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Dtype.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/core/open3d/utility/Console.h
+
+C:/Program Files/Open3D/include/open3d/core/ShapeUtil.h
+open3d/core/Dispatch.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Dispatch.h
+open3d/core/SizeVector.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/SizeVector.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/core/open3d/utility/Console.h
+
+C:/Program Files/Open3D/include/open3d/core/SizeVector.h
+cstddef
+-
+numeric
+-
+string
+-
+vector
+-
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/core/open3d/utility/Console.h
+open3d/utility/Optional.h
+C:/Program Files/Open3D/include/open3d/core/open3d/utility/Optional.h
+
+C:/Program Files/Open3D/include/open3d/core/Tensor.h
+cassert
+-
+cstddef
+-
+memory
+-
+string
+-
+type_traits
+-
+open3d/core/Blob.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Blob.h
+open3d/core/DLPack.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/DLPack.h
+open3d/core/Device.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Device.h
+open3d/core/Dtype.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Dtype.h
+open3d/core/Scalar.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Scalar.h
+open3d/core/ShapeUtil.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/ShapeUtil.h
+open3d/core/SizeVector.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/SizeVector.h
+open3d/core/TensorInit.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/TensorInit.h
+open3d/core/TensorKey.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/TensorKey.h
+
+C:/Program Files/Open3D/include/open3d/core/TensorInit.h
+initializer_list
+-
+utility
+-
+open3d/core/SizeVector.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/SizeVector.h
+
+C:/Program Files/Open3D/include/open3d/core/TensorKey.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/core/open3d/utility/Console.h
+open3d/utility/Optional.h
+C:/Program Files/Open3D/include/open3d/core/open3d/utility/Optional.h
+
+C:/Program Files/Open3D/include/open3d/core/TensorList.h
+cstddef
+-
+memory
+-
+string
+-
+open3d/core/Blob.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Blob.h
+open3d/core/Device.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Device.h
+open3d/core/Dtype.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Dtype.h
+open3d/core/ShapeUtil.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/ShapeUtil.h
+open3d/core/SizeVector.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/SizeVector.h
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/Tensor.h
+open3d/core/TensorKey.h
+C:/Program Files/Open3D/include/open3d/core/open3d/core/TensorKey.h
+
+C:/Program Files/Open3D/include/open3d/core/hashmap/Hashmap.h
+open3d/core/Dtype.h
+C:/Program Files/Open3D/include/open3d/core/hashmap/open3d/core/Dtype.h
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/core/hashmap/open3d/core/Tensor.h
+open3d/core/hashmap/HashmapBuffer.h
+C:/Program Files/Open3D/include/open3d/core/hashmap/open3d/core/hashmap/HashmapBuffer.h
+
+C:/Program Files/Open3D/include/open3d/core/hashmap/HashmapBuffer.h
+assert.h
+-
+memory
+-
+vector
+-
+open3d/core/MemoryManager.h
+C:/Program Files/Open3D/include/open3d/core/hashmap/open3d/core/MemoryManager.h
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/core/hashmap/open3d/core/Tensor.h
+
+C:/Program Files/Open3D/include/open3d/core/kernel/UnaryEW.h
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/core/kernel/open3d/core/Tensor.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/core/kernel/open3d/utility/Console.h
+
+C:/Program Files/Open3D/include/open3d/core/nns/FaissIndex.h
+vector
+-
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/core/Tensor.h
+open3d/core/nns/NNSIndex.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/core/nns/NNSIndex.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/utility/Console.h
+
+C:/Program Files/Open3D/include/open3d/core/nns/FixedRadiusIndex.h
+vector
+-
+open3d/core/Dtype.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/core/Dtype.h
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/core/Tensor.h
+open3d/core/nns/NNSIndex.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/core/nns/NNSIndex.h
+
+C:/Program Files/Open3D/include/open3d/core/nns/NNSIndex.h
+vector
+-
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/core/Tensor.h
+
+C:/Program Files/Open3D/include/open3d/core/nns/NanoFlannIndex.h
+vector
+-
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/core/Tensor.h
+open3d/core/nns/NNSIndex.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/core/nns/NNSIndex.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/utility/Console.h
+
+C:/Program Files/Open3D/include/open3d/core/nns/NearestNeighborSearch.h
+vector
+-
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/core/Tensor.h
+open3d/core/nns/FaissIndex.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/core/nns/FaissIndex.h
+open3d/core/nns/FixedRadiusIndex.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/core/nns/FixedRadiusIndex.h
+open3d/core/nns/NanoFlannIndex.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/core/nns/NanoFlannIndex.h
+open3d/utility/Optional.h
+C:/Program Files/Open3D/include/open3d/core/nns/open3d/utility/Optional.h
+
+C:/Program Files/Open3D/include/open3d/geometry/BoundingVolume.h
+Eigen/Core
+-
+open3d/geometry/Geometry3D.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry3D.h
+
+C:/Program Files/Open3D/include/open3d/geometry/Geometry.h
+string
+-
+
+C:/Program Files/Open3D/include/open3d/geometry/Geometry2D.h
+Eigen/Core
+-
+open3d/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry.h
+
+C:/Program Files/Open3D/include/open3d/geometry/Geometry3D.h
+Eigen/Core
+-
+Eigen/Geometry
+-
+open3d/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry.h
+open3d/utility/Eigen.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/utility/Eigen.h
+
+C:/Program Files/Open3D/include/open3d/geometry/HalfEdgeTriangleMesh.h
+Eigen/Core
+-
+unordered_map
+-
+open3d/geometry/Geometry3D.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry3D.h
+open3d/geometry/MeshBase.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/MeshBase.h
+
+C:/Program Files/Open3D/include/open3d/geometry/Image.h
+Eigen/Core
+-
+memory
+-
+vector
+-
+open3d/geometry/Geometry2D.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry2D.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/utility/Console.h
+
+C:/Program Files/Open3D/include/open3d/geometry/KDTreeFlann.h
+Eigen/Core
+-
+memory
+-
+vector
+-
+open3d/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry.h
+open3d/geometry/KDTreeSearchParam.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/KDTreeSearchParam.h
+open3d/pipelines/registration/Feature.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/pipelines/registration/Feature.h
+
+C:/Program Files/Open3D/include/open3d/geometry/KDTreeSearchParam.h
+
+C:/Program Files/Open3D/include/open3d/geometry/Keypoint.h
+memory
+-
+
+C:/Program Files/Open3D/include/open3d/geometry/Line3D.h
+Eigen/Core
+-
+Eigen/Geometry
+-
+limits
+-
+open3d/geometry/BoundingVolume.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/BoundingVolume.h
+open3d/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry.h
+open3d/utility/Optional.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/utility/Optional.h
+
+C:/Program Files/Open3D/include/open3d/geometry/LineSet.h
+Eigen/Core
+-
+memory
+-
+vector
+-
+open3d/geometry/Geometry3D.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry3D.h
+
+C:/Program Files/Open3D/include/open3d/geometry/MeshBase.h
+Eigen/Core
+-
+memory
+-
+tuple
+-
+unordered_map
+-
+unordered_set
+-
+vector
+-
+open3d/geometry/Geometry3D.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry3D.h
+open3d/utility/Helper.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/utility/Helper.h
+
+C:/Program Files/Open3D/include/open3d/geometry/Octree.h
+cstddef
+-
+memory
+-
+vector
+-
+open3d/geometry/Geometry3D.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry3D.h
+open3d/utility/IJsonConvertible.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/utility/IJsonConvertible.h
+
+C:/Program Files/Open3D/include/open3d/geometry/PointCloud.h
+Eigen/Core
+-
+memory
+-
+tuple
+-
+vector
+-
+open3d/geometry/Geometry3D.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry3D.h
+open3d/geometry/KDTreeSearchParam.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/KDTreeSearchParam.h
+
+C:/Program Files/Open3D/include/open3d/geometry/RGBDImage.h
+open3d/geometry/Geometry2D.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry2D.h
+open3d/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Image.h
+
+C:/Program Files/Open3D/include/open3d/geometry/TriangleMesh.h
+Eigen/Core
+-
+memory
+-
+numeric
+-
+tuple
+-
+unordered_map
+-
+unordered_set
+-
+vector
+-
+open3d/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Image.h
+open3d/geometry/MeshBase.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/MeshBase.h
+open3d/utility/Helper.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/utility/Helper.h
+
+C:/Program Files/Open3D/include/open3d/geometry/VoxelGrid.h
+Eigen/Core
+-
+memory
+-
+unordered_map
+-
+vector
+-
+open3d/geometry/Geometry3D.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/geometry/Geometry3D.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/utility/Console.h
+open3d/utility/Helper.h
+C:/Program Files/Open3D/include/open3d/geometry/open3d/utility/Helper.h
+
+C:/Program Files/Open3D/include/open3d/io/FeatureIO.h
+string
+-
+open3d/pipelines/registration/Feature.h
+C:/Program Files/Open3D/include/open3d/io/open3d/pipelines/registration/Feature.h
+
+C:/Program Files/Open3D/include/open3d/io/FileFormatIO.h
+string
+-
+
+C:/Program Files/Open3D/include/open3d/io/IJsonConvertibleIO.h
+algorithm
+-
+iterator
+-
+string
+-
+open3d/utility/IJsonConvertible.h
+C:/Program Files/Open3D/include/open3d/io/open3d/utility/IJsonConvertible.h
+
+C:/Program Files/Open3D/include/open3d/io/ImageIO.h
+string
+-
+open3d/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/io/open3d/geometry/Image.h
+
+C:/Program Files/Open3D/include/open3d/io/LineSetIO.h
+string
+-
+open3d/geometry/LineSet.h
+C:/Program Files/Open3D/include/open3d/io/open3d/geometry/LineSet.h
+
+C:/Program Files/Open3D/include/open3d/io/PinholeCameraTrajectoryIO.h
+string
+-
+open3d/camera/PinholeCameraTrajectory.h
+C:/Program Files/Open3D/include/open3d/io/open3d/camera/PinholeCameraTrajectory.h
+
+C:/Program Files/Open3D/include/open3d/io/PointCloudIO.h
+string
+-
+open3d/geometry/PointCloud.h
+C:/Program Files/Open3D/include/open3d/io/open3d/geometry/PointCloud.h
+
+C:/Program Files/Open3D/include/open3d/io/PoseGraphIO.h
+string
+-
+open3d/pipelines/registration/PoseGraph.h
+C:/Program Files/Open3D/include/open3d/io/open3d/pipelines/registration/PoseGraph.h
+
+C:/Program Files/Open3D/include/open3d/io/TriangleMeshIO.h
+string
+-
+open3d/geometry/TriangleMesh.h
+C:/Program Files/Open3D/include/open3d/io/open3d/geometry/TriangleMesh.h
+
+C:/Program Files/Open3D/include/open3d/io/VoxelGridIO.h
+string
+-
+open3d/geometry/VoxelGrid.h
+C:/Program Files/Open3D/include/open3d/io/open3d/geometry/VoxelGrid.h
+
+C:/Program Files/Open3D/include/open3d/io/sensor/RGBDSensorConfig.h
+open3d/utility/IJsonConvertible.h
+C:/Program Files/Open3D/include/open3d/io/sensor/open3d/utility/IJsonConvertible.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/color_map/NonRigidOptimizer.h
+memory
+-
+vector
+-
+open3d/camera/PinholeCameraTrajectory.h
+C:/Program Files/Open3D/include/open3d/pipelines/color_map/open3d/camera/PinholeCameraTrajectory.h
+open3d/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/pipelines/color_map/open3d/geometry/Image.h
+open3d/geometry/RGBDImage.h
+C:/Program Files/Open3D/include/open3d/pipelines/color_map/open3d/geometry/RGBDImage.h
+open3d/geometry/TriangleMesh.h
+C:/Program Files/Open3D/include/open3d/pipelines/color_map/open3d/geometry/TriangleMesh.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/color_map/RigidOptimizer.h
+memory
+-
+vector
+-
+open3d/camera/PinholeCameraTrajectory.h
+C:/Program Files/Open3D/include/open3d/pipelines/color_map/open3d/camera/PinholeCameraTrajectory.h
+open3d/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/pipelines/color_map/open3d/geometry/Image.h
+open3d/geometry/RGBDImage.h
+C:/Program Files/Open3D/include/open3d/pipelines/color_map/open3d/geometry/RGBDImage.h
+open3d/geometry/TriangleMesh.h
+C:/Program Files/Open3D/include/open3d/pipelines/color_map/open3d/geometry/TriangleMesh.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/integration/ScalableTSDFVolume.h
+memory
+-
+unordered_map
+-
+open3d/pipelines/integration/TSDFVolume.h
+C:/Program Files/Open3D/include/open3d/pipelines/integration/open3d/pipelines/integration/TSDFVolume.h
+open3d/utility/Helper.h
+C:/Program Files/Open3D/include/open3d/pipelines/integration/open3d/utility/Helper.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/integration/TSDFVolume.h
+open3d/camera/PinholeCameraIntrinsic.h
+C:/Program Files/Open3D/include/open3d/pipelines/integration/open3d/camera/PinholeCameraIntrinsic.h
+open3d/geometry/PointCloud.h
+C:/Program Files/Open3D/include/open3d/pipelines/integration/open3d/geometry/PointCloud.h
+open3d/geometry/RGBDImage.h
+C:/Program Files/Open3D/include/open3d/pipelines/integration/open3d/geometry/RGBDImage.h
+open3d/geometry/TriangleMesh.h
+C:/Program Files/Open3D/include/open3d/pipelines/integration/open3d/geometry/TriangleMesh.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/integration/UniformTSDFVolume.h
+open3d/geometry/VoxelGrid.h
+C:/Program Files/Open3D/include/open3d/pipelines/integration/open3d/geometry/VoxelGrid.h
+open3d/pipelines/integration/TSDFVolume.h
+C:/Program Files/Open3D/include/open3d/pipelines/integration/open3d/pipelines/integration/TSDFVolume.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/odometry/Odometry.h
+Eigen/Core
+-
+iostream
+-
+tuple
+-
+vector
+-
+open3d/camera/PinholeCameraIntrinsic.h
+C:/Program Files/Open3D/include/open3d/pipelines/odometry/open3d/camera/PinholeCameraIntrinsic.h
+open3d/pipelines/odometry/OdometryOption.h
+C:/Program Files/Open3D/include/open3d/pipelines/odometry/open3d/pipelines/odometry/OdometryOption.h
+open3d/pipelines/odometry/RGBDOdometryJacobian.h
+C:/Program Files/Open3D/include/open3d/pipelines/odometry/open3d/pipelines/odometry/RGBDOdometryJacobian.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/pipelines/odometry/open3d/utility/Console.h
+open3d/utility/Eigen.h
+C:/Program Files/Open3D/include/open3d/pipelines/odometry/open3d/utility/Eigen.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/odometry/OdometryOption.h
+string
+-
+
+C:/Program Files/Open3D/include/open3d/pipelines/odometry/RGBDOdometryJacobian.h
+Eigen/Core
+-
+iostream
+-
+tuple
+-
+vector
+-
+open3d/pipelines/odometry/OdometryOption.h
+C:/Program Files/Open3D/include/open3d/pipelines/odometry/open3d/pipelines/odometry/OdometryOption.h
+open3d/utility/Eigen.h
+C:/Program Files/Open3D/include/open3d/pipelines/odometry/open3d/utility/Eigen.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/registration/CorrespondenceChecker.h
+Eigen/Core
+-
+memory
+-
+string
+-
+vector
+-
+open3d/pipelines/registration/TransformationEstimation.h
+C:/Program Files/Open3D/include/open3d/pipelines/registration/open3d/pipelines/registration/TransformationEstimation.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/registration/Feature.h
+Eigen/Core
+-
+memory
+-
+vector
+-
+open3d/geometry/KDTreeSearchParam.h
+C:/Program Files/Open3D/include/open3d/pipelines/registration/open3d/geometry/KDTreeSearchParam.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/registration/PoseGraph.h
+memory
+-
+vector
+-
+open3d/utility/Eigen.h
+C:/Program Files/Open3D/include/open3d/pipelines/registration/open3d/utility/Eigen.h
+open3d/utility/IJsonConvertible.h
+C:/Program Files/Open3D/include/open3d/pipelines/registration/open3d/utility/IJsonConvertible.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/registration/Registration.h
+Eigen/Core
+-
+tuple
+-
+vector
+-
+open3d/pipelines/registration/CorrespondenceChecker.h
+C:/Program Files/Open3D/include/open3d/pipelines/registration/open3d/pipelines/registration/CorrespondenceChecker.h
+open3d/pipelines/registration/TransformationEstimation.h
+C:/Program Files/Open3D/include/open3d/pipelines/registration/open3d/pipelines/registration/TransformationEstimation.h
+open3d/utility/Eigen.h
+C:/Program Files/Open3D/include/open3d/pipelines/registration/open3d/utility/Eigen.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/registration/RobustKernel.h
+
+C:/Program Files/Open3D/include/open3d/pipelines/registration/TransformationEstimation.h
+Eigen/Core
+-
+memory
+-
+string
+-
+utility
+-
+vector
+-
+open3d/pipelines/registration/RobustKernel.h
+C:/Program Files/Open3D/include/open3d/pipelines/registration/open3d/pipelines/registration/RobustKernel.h
+
+C:/Program Files/Open3D/include/open3d/t/geometry/Geometry.h
+string
+-
+
+C:/Program Files/Open3D/include/open3d/t/geometry/Image.h
+limits
+-
+memory
+-
+string
+-
+vector
+-
+open3d/core/Dtype.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/core/Dtype.h
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/core/Tensor.h
+open3d/core/kernel/UnaryEW.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/core/kernel/UnaryEW.h
+open3d/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/geometry/Image.h
+open3d/t/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/t/geometry/Geometry.h
+
+C:/Program Files/Open3D/include/open3d/t/geometry/PointCloud.h
+Eigen/Core
+-
+string
+-
+unordered_map
+-
+unordered_set
+-
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/core/Tensor.h
+open3d/geometry/PointCloud.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/geometry/PointCloud.h
+open3d/t/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/t/geometry/Geometry.h
+open3d/t/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/t/geometry/Image.h
+open3d/t/geometry/TensorMap.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/t/geometry/TensorMap.h
+open3d/utility/Console.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/utility/Console.h
+
+C:/Program Files/Open3D/include/open3d/t/geometry/RGBDImage.h
+open3d/geometry/RGBDImage.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/geometry/RGBDImage.h
+open3d/t/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/t/geometry/Image.h
+
+C:/Program Files/Open3D/include/open3d/t/geometry/TSDFVoxelGrid.h
+Eigen/Core
+-
+string
+-
+unordered_map
+-
+unordered_set
+-
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/core/Tensor.h
+open3d/core/TensorList.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/core/TensorList.h
+open3d/core/hashmap/Hashmap.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/core/hashmap/Hashmap.h
+open3d/t/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/t/geometry/Geometry.h
+open3d/t/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/t/geometry/Image.h
+open3d/t/geometry/PointCloud.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/t/geometry/PointCloud.h
+open3d/t/geometry/TensorMap.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/t/geometry/TensorMap.h
+open3d/t/geometry/TriangleMesh.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/t/geometry/TriangleMesh.h
+
+C:/Program Files/Open3D/include/open3d/t/geometry/TensorMap.h
+string
+-
+unordered_map
+-
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/core/Tensor.h
+
+C:/Program Files/Open3D/include/open3d/t/geometry/TriangleMesh.h
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/core/Tensor.h
+open3d/geometry/TriangleMesh.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/geometry/TriangleMesh.h
+open3d/t/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/t/geometry/Geometry.h
+open3d/t/geometry/TensorMap.h
+C:/Program Files/Open3D/include/open3d/t/geometry/open3d/t/geometry/TensorMap.h
+
+C:/Program Files/Open3D/include/open3d/t/io/ImageIO.h
+string
+-
+open3d/io/ImageIO.h
+C:/Program Files/Open3D/include/open3d/t/io/open3d/io/ImageIO.h
+open3d/t/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/t/io/open3d/t/geometry/Image.h
+
+C:/Program Files/Open3D/include/open3d/t/io/PointCloudIO.h
+string
+-
+open3d/io/PointCloudIO.h
+C:/Program Files/Open3D/include/open3d/t/io/open3d/io/PointCloudIO.h
+open3d/t/geometry/PointCloud.h
+C:/Program Files/Open3D/include/open3d/t/io/open3d/t/geometry/PointCloud.h
+
+C:/Program Files/Open3D/include/open3d/t/io/sensor/RGBDSensor.h
+string
+-
+open3d/io/sensor/RGBDSensorConfig.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/open3d/io/sensor/RGBDSensorConfig.h
+open3d/t/geometry/RGBDImage.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/open3d/t/geometry/RGBDImage.h
+open3d/t/io/sensor/RGBDVideoMetadata.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/open3d/t/io/sensor/RGBDVideoMetadata.h
+
+C:/Program Files/Open3D/include/open3d/t/io/sensor/RGBDVideoMetadata.h
+open3d/camera/PinholeCameraIntrinsic.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/open3d/camera/PinholeCameraIntrinsic.h
+open3d/core/Dtype.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/open3d/core/Dtype.h
+open3d/utility/IJsonConvertible.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/open3d/utility/IJsonConvertible.h
+
+C:/Program Files/Open3D/include/open3d/t/io/sensor/RGBDVideoReader.h
+open3d/io/sensor/RGBDSensorConfig.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/open3d/io/sensor/RGBDSensorConfig.h
+open3d/t/geometry/RGBDImage.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/open3d/t/geometry/RGBDImage.h
+open3d/t/io/sensor/RGBDVideoMetadata.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/open3d/t/io/sensor/RGBDVideoMetadata.h
+
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/RSBagReader.h
+atomic
+-
+condition_variable
+-
+string
+-
+thread
+-
+unordered_map
+-
+vector
+-
+open3d/io/sensor/RGBDSensorConfig.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/open3d/io/sensor/RGBDSensorConfig.h
+open3d/t/io/sensor/RGBDVideoReader.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/open3d/t/io/sensor/RGBDVideoReader.h
+open3d/utility/IJsonConvertible.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/open3d/utility/IJsonConvertible.h
+
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/RealSenseSensor.h
+string
+-
+open3d/t/geometry/RGBDImage.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/open3d/t/geometry/RGBDImage.h
+open3d/t/io/sensor/RGBDSensor.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/open3d/t/io/sensor/RGBDSensor.h
+open3d/t/io/sensor/RGBDVideoMetadata.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/open3d/t/io/sensor/RGBDVideoMetadata.h
+open3d/t/io/sensor/realsense/RealSenseSensorConfig.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/open3d/t/io/sensor/realsense/RealSenseSensorConfig.h
+
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/RealSenseSensorConfig.h
+set
+-
+string
+-
+unordered_map
+-
+utility
+-
+open3d/core/Dtype.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/open3d/core/Dtype.h
+open3d/io/IJsonConvertibleIO.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/open3d/io/IJsonConvertibleIO.h
+open3d/io/sensor/RGBDSensorConfig.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/open3d/io/sensor/RGBDSensorConfig.h
+open3d/t/io/sensor/RGBDVideoMetadata.h
+C:/Program Files/Open3D/include/open3d/t/io/sensor/realsense/open3d/t/io/sensor/RGBDVideoMetadata.h
+
+C:/Program Files/Open3D/include/open3d/t/pipelines/kernel/TransformationConverter.h
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/t/pipelines/kernel/open3d/core/Tensor.h
+
+C:/Program Files/Open3D/include/open3d/t/pipelines/registration/Registration.h
+tuple
+-
+vector
+-
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/t/pipelines/registration/open3d/core/Tensor.h
+open3d/t/pipelines/registration/TransformationEstimation.h
+C:/Program Files/Open3D/include/open3d/t/pipelines/registration/open3d/t/pipelines/registration/TransformationEstimation.h
+
+C:/Program Files/Open3D/include/open3d/t/pipelines/registration/TransformationEstimation.h
+memory
+-
+string
+-
+utility
+-
+vector
+-
+open3d/core/Tensor.h
+C:/Program Files/Open3D/include/open3d/t/pipelines/registration/open3d/core/Tensor.h
+open3d/pipelines/registration/RobustKernel.h
+C:/Program Files/Open3D/include/open3d/t/pipelines/registration/open3d/pipelines/registration/RobustKernel.h
+open3d/t/geometry/PointCloud.h
+C:/Program Files/Open3D/include/open3d/t/pipelines/registration/open3d/t/geometry/PointCloud.h
+open3d/t/pipelines/kernel/TransformationConverter.h
+C:/Program Files/Open3D/include/open3d/t/pipelines/registration/open3d/t/pipelines/kernel/TransformationConverter.h
+
+C:/Program Files/Open3D/include/open3d/utility/Console.h
+Eigen/Core
+-
+iostream
+-
+string
+-
+vector
+-
+fmt/format.h
+-
+fmt/printf.h
+-
+fmt/ranges.h
+-
+
+C:/Program Files/Open3D/include/open3d/utility/Eigen.h
+Eigen/Core
+-
+Eigen/StdVector
+-
+tuple
+-
+vector
+-
+
+C:/Program Files/Open3D/include/open3d/utility/FileSystem.h
+functional
+-
+string
+-
+vector
+-
+
+C:/Program Files/Open3D/include/open3d/utility/Helper.h
+cmath
+-
+cstdlib
+-
+functional
+-
+string
+-
+tuple
+-
+vector
+-
+
+C:/Program Files/Open3D/include/open3d/utility/IJsonConvertible.h
+Eigen/Core
+-
+open3d/utility/Eigen.h
+C:/Program Files/Open3D/include/open3d/utility/open3d/utility/Eigen.h
+
+C:/Program Files/Open3D/include/open3d/utility/Optional.h
+cassert
+-
+functional
+-
+initializer_list
+-
+stdexcept
+-
+string
+-
+type_traits
+-
+utility
+-
+
+C:/Program Files/Open3D/include/open3d/utility/Timer.h
+string
+-
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Application.h
+cstdint
+-
+functional
+-
+memory
+-
+string
+-
+vector
+-
+open3d/visualization/gui/Menu.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Menu.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Button.h
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+functional
+-
+open3d/visualization/gui/UIImage.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/UIImage.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Checkbox.h
+functional
+-
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Color.h
+Eigen/Geometry
+-
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Combobox.h
+functional
+-
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Dialog.h
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Events.h
+cstdint
+-
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Gui.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/ImageLabel.h
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+open3d/visualization/gui/UIImage.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/UIImage.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Label.h
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Layout.h
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Menu.h
+open3d/visualization/gui/MenuBase.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/MenuBase.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/MenuBase.h
+memory
+-
+open3d/visualization/gui/Events.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Events.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/ProgressBar.h
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/SceneWidget.h
+map
+-
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+open3d/visualization/rendering/RendererHandle.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/rendering/RendererHandle.h
+open3d/visualization/rendering/View.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/rendering/View.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Slider.h
+functional
+-
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/TabControl.h
+functional
+-
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/TextEdit.h
+functional
+-
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Theme.h
+string
+-
+open3d/visualization/gui/Color.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Color.h
+open3d/visualization/gui/Gui.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Gui.h
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/TreeView.h
+functional
+-
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/UIImage.h
+open3d/visualization/rendering/RendererHandle.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/rendering/RendererHandle.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Widget.h
+memory
+-
+vector
+-
+open3d/visualization/gui/Gui.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Gui.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/Window.h
+functional
+-
+memory
+-
+string
+-
+open3d/visualization/gui/Events.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Events.h
+open3d/visualization/gui/Gui.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Gui.h
+open3d/visualization/gui/Menu.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Menu.h
+open3d/visualization/gui/Widget.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Widget.h
+open3d/visualization/gui/WindowSystem.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/WindowSystem.h
+open3d/visualization/rendering/Renderer.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/rendering/Renderer.h
+
+C:/Program Files/Open3D/include/open3d/visualization/gui/WindowSystem.h
+open3d/visualization/gui/Gui.h
+C:/Program Files/Open3D/include/open3d/visualization/gui/open3d/visualization/gui/Gui.h
+
+C:/Program Files/Open3D/include/open3d/visualization/rendering/Camera.h
+Eigen/Geometry
+-
+
+C:/Program Files/Open3D/include/open3d/visualization/rendering/Gradient.h
+Eigen/Core
+-
+map
+-
+vector
+-
+open3d/visualization/rendering/RendererHandle.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/visualization/rendering/RendererHandle.h
+
+C:/Program Files/Open3D/include/open3d/visualization/rendering/Material.h
+Eigen/Core
+-
+string
+-
+unordered_map
+-
+open3d/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/geometry/Image.h
+open3d/visualization/rendering/Gradient.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/visualization/rendering/Gradient.h
+open3d/visualization/utility/GLHelper.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/visualization/utility/GLHelper.h
+
+C:/Program Files/Open3D/include/open3d/visualization/rendering/MaterialModifier.h
+Eigen/Core
+-
+open3d/visualization/rendering/RendererHandle.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/visualization/rendering/RendererHandle.h
+
+C:/Program Files/Open3D/include/open3d/visualization/rendering/Open3DScene.h
+map
+-
+vector
+-
+open3d/geometry/BoundingVolume.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/geometry/BoundingVolume.h
+open3d/visualization/rendering/Renderer.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/visualization/rendering/Renderer.h
+open3d/visualization/rendering/RendererHandle.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/visualization/rendering/RendererHandle.h
+open3d/visualization/rendering/Scene.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/visualization/rendering/Scene.h
+
+C:/Program Files/Open3D/include/open3d/visualization/rendering/Renderer.h
+open3d/visualization/rendering/MaterialModifier.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/visualization/rendering/MaterialModifier.h
+open3d/visualization/rendering/RendererHandle.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/visualization/rendering/RendererHandle.h
+
+C:/Program Files/Open3D/include/open3d/visualization/rendering/RendererHandle.h
+array
+-
+cstdint
+-
+functional
+-
+fmt/format.h
+-
+
+C:/Program Files/Open3D/include/open3d/visualization/rendering/Scene.h
+Eigen/Geometry
+-
+memory
+-
+vector
+-
+open3d/visualization/rendering/Camera.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/visualization/rendering/Camera.h
+open3d/visualization/rendering/RendererHandle.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/visualization/rendering/RendererHandle.h
+
+C:/Program Files/Open3D/include/open3d/visualization/rendering/View.h
+Eigen/Geometry
+-
+open3d/visualization/rendering/RendererHandle.h
+C:/Program Files/Open3D/include/open3d/visualization/rendering/open3d/visualization/rendering/RendererHandle.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/GeometryRenderer.h
+open3d/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/geometry/Geometry.h
+open3d/visualization/shader/ImageMaskShader.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ImageMaskShader.h
+open3d/visualization/shader/ImageShader.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ImageShader.h
+open3d/visualization/shader/NormalShader.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/NormalShader.h
+open3d/visualization/shader/PhongShader.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/PhongShader.h
+open3d/visualization/shader/PickingShader.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/PickingShader.h
+open3d/visualization/shader/RGBDImageShader.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/RGBDImageShader.h
+open3d/visualization/shader/Simple2DShader.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/Simple2DShader.h
+open3d/visualization/shader/SimpleBlackShader.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/SimpleBlackShader.h
+open3d/visualization/shader/SimpleShader.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/SimpleShader.h
+open3d/visualization/shader/TexturePhongShader.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/TexturePhongShader.h
+open3d/visualization/shader/TextureSimpleShader.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/TextureSimpleShader.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/ImageMaskShader.h
+open3d/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/geometry/Image.h
+open3d/visualization/shader/ShaderWrapper.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ShaderWrapper.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/ImageShader.h
+open3d/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/geometry/Image.h
+open3d/visualization/shader/ShaderWrapper.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ShaderWrapper.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/NormalShader.h
+Eigen/Core
+-
+vector
+-
+open3d/visualization/shader/ShaderWrapper.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ShaderWrapper.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/PhongShader.h
+Eigen/Core
+-
+vector
+-
+open3d/visualization/shader/ShaderWrapper.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ShaderWrapper.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/PickingShader.h
+Eigen/Core
+-
+vector
+-
+open3d/visualization/shader/ShaderWrapper.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ShaderWrapper.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/RGBDImageShader.h
+open3d/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/geometry/Image.h
+open3d/visualization/shader/ShaderWrapper.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ShaderWrapper.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/ShaderWrapper.h
+GL/glew.h
+-
+open3d/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/geometry/Geometry.h
+open3d/visualization/visualizer/RenderOption.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/visualizer/RenderOption.h
+open3d/visualization/visualizer/ViewControl.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/visualizer/ViewControl.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/Simple2DShader.h
+Eigen/Core
+-
+vector
+-
+open3d/visualization/shader/ShaderWrapper.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ShaderWrapper.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/SimpleBlackShader.h
+Eigen/Core
+-
+vector
+-
+open3d/visualization/shader/ShaderWrapper.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ShaderWrapper.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/SimpleShader.h
+Eigen/Core
+-
+vector
+-
+open3d/visualization/shader/ShaderWrapper.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ShaderWrapper.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/TexturePhongShader.h
+Eigen/Core
+-
+vector
+-
+open3d/visualization/shader/ShaderWrapper.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ShaderWrapper.h
+
+C:/Program Files/Open3D/include/open3d/visualization/shader/TextureSimpleShader.h
+Eigen/Core
+-
+vector
+-
+open3d/visualization/shader/ShaderWrapper.h
+C:/Program Files/Open3D/include/open3d/visualization/shader/open3d/visualization/shader/ShaderWrapper.h
+
+C:/Program Files/Open3D/include/open3d/visualization/utility/ColorMap.h
+Eigen/Core
+-
+memory
+-
+
+C:/Program Files/Open3D/include/open3d/visualization/utility/Draw.h
+vector
+-
+open3d/visualization/visualizer/O3DVisualizer.h
+C:/Program Files/Open3D/include/open3d/visualization/utility/open3d/visualization/visualizer/O3DVisualizer.h
+
+C:/Program Files/Open3D/include/open3d/visualization/utility/DrawGeometry.h
+Eigen/Core
+-
+functional
+-
+map
+-
+memory
+-
+string
+-
+vector
+-
+open3d/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/visualization/utility/open3d/geometry/Geometry.h
+
+C:/Program Files/Open3D/include/open3d/visualization/utility/GLHelper.h
+windows.h
+-
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+Eigen/Core
+-
+string
+-
+unordered_map
+-
+
+C:/Program Files/Open3D/include/open3d/visualization/utility/SelectionPolygon.h
+Eigen/Core
+-
+memory
+-
+vector
+-
+open3d/geometry/Geometry2D.h
+C:/Program Files/Open3D/include/open3d/visualization/utility/open3d/geometry/Geometry2D.h
+open3d/geometry/Image.h
+C:/Program Files/Open3D/include/open3d/visualization/utility/open3d/geometry/Image.h
+
+C:/Program Files/Open3D/include/open3d/visualization/utility/SelectionPolygonVolume.h
+Eigen/Core
+-
+memory
+-
+string
+-
+vector
+-
+open3d/utility/IJsonConvertible.h
+C:/Program Files/Open3D/include/open3d/visualization/utility/open3d/utility/IJsonConvertible.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/O3DVisualizer.h
+open3d/visualization/gui/SceneWidget.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/gui/SceneWidget.h
+open3d/visualization/gui/Window.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/gui/Window.h
+open3d/visualization/rendering/Material.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/rendering/Material.h
+open3d/visualization/rendering/Scene.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/rendering/Scene.h
+open3d/visualization/visualizer/O3DVisualizerSelections.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/visualizer/O3DVisualizerSelections.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/O3DVisualizerSelections.h
+Eigen/Core
+-
+map
+-
+set
+-
+string
+-
+vector
+-
+open3d/visualization/gui/SceneWidget.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/gui/SceneWidget.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/RenderOption.h
+Eigen/Core
+-
+open3d/utility/IJsonConvertible.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/utility/IJsonConvertible.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/ViewControl.h
+open3d/camera/PinholeCameraParameters.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/camera/PinholeCameraParameters.h
+open3d/geometry/BoundingVolume.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/geometry/BoundingVolume.h
+open3d/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/geometry/Geometry.h
+open3d/visualization/utility/GLHelper.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/utility/GLHelper.h
+open3d/visualization/visualizer/ViewParameters.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/visualizer/ViewParameters.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/ViewControlWithCustomAnimation.h
+open3d/camera/PinholeCameraTrajectory.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/camera/PinholeCameraTrajectory.h
+open3d/visualization/visualizer/ViewControl.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/visualizer/ViewControl.h
+open3d/visualization/visualizer/ViewTrajectory.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/visualizer/ViewTrajectory.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/ViewControlWithEditing.h
+open3d/visualization/visualizer/ViewControl.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/visualizer/ViewControl.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/ViewParameters.h
+Eigen/Core
+-
+Eigen/StdVector
+-
+open3d/utility/IJsonConvertible.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/utility/IJsonConvertible.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/ViewTrajectory.h
+Eigen/Core
+-
+tuple
+-
+vector
+-
+open3d/utility/IJsonConvertible.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/utility/IJsonConvertible.h
+open3d/visualization/visualizer/ViewParameters.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/visualizer/ViewParameters.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/Visualizer.h
+windows.h
+-
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+Eigen/Core
+-
+memory
+-
+string
+-
+unordered_map
+-
+unordered_set
+-
+open3d/geometry/Geometry.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/geometry/Geometry.h
+open3d/visualization/shader/GeometryRenderer.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/shader/GeometryRenderer.h
+open3d/visualization/utility/ColorMap.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/utility/ColorMap.h
+open3d/visualization/visualizer/RenderOption.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/visualizer/RenderOption.h
+open3d/visualization/visualizer/ViewControl.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/visualizer/ViewControl.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/VisualizerWithCustomAnimation.h
+open3d/visualization/visualizer/Visualizer.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/visualizer/Visualizer.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/VisualizerWithEditing.h
+open3d/visualization/visualizer/Visualizer.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/visualizer/Visualizer.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/VisualizerWithKeyCallback.h
+map
+-
+open3d/visualization/visualizer/Visualizer.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/visualizer/Visualizer.h
+
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/VisualizerWithVertexSelection.h
+unordered_map
+-
+open3d/visualization/visualizer/Visualizer.h
+C:/Program Files/Open3D/include/open3d/visualization/visualizer/open3d/visualization/visualizer/Visualizer.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/__multiarray_api.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/_neighborhood_iterator_imp.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/_numpyconfig.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/arrayobject.h
+ndarrayobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/ndarrayobject.h
+npy_interrupt.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/npy_interrupt.h
+noprefix.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/noprefix.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/ndarrayobject.h
+Python.h
+-
+ndarraytypes.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/ndarraytypes.h
+__multiarray_api.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/__multiarray_api.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/ndarraytypes.h
+npy_common.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/npy_common.h
+npy_endian.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/npy_endian.h
+npy_cpu.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/npy_cpu.h
+utils.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/utils.h
+_neighborhood_iterator_imp.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/_neighborhood_iterator_imp.h
+npy_1_7_deprecated_api.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/noprefix.h
+ndarrayobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/ndarrayobject.h
+npy_interrupt.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/npy_interrupt.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h
+old_defines.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/old_defines.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/npy_common.h
+Python.h
+-
+numpyconfig.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/numpyconfig.h
+npy_config.h
+-
+io.h
+-
+sys/types.h
+-
+inttypes.h
+-
+limits.h
+-
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/npy_cpu.h
+numpyconfig.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/numpyconfig.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/npy_endian.h
+endian.h
+-
+sys/endian.h
+-
+npy_cpu.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/npy_cpu.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/npy_interrupt.h
+setjmp.h
+-
+signal.h
+-
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/numpyconfig.h
+_numpyconfig.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/_numpyconfig.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/old_defines.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/Lib/site-packages/numpy/core/include/numpy/utils.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/Python.h
+patchlevel.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/patchlevel.h
+pyconfig.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyconfig.h
+pymacconfig.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pymacconfig.h
+limits.h
+-
+stdio.h
+-
+string.h
+-
+errno.h
+-
+stdlib.h
+-
+unistd.h
+-
+crypt.h
+-
+stddef.h
+-
+assert.h
+-
+pyport.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyport.h
+pymacro.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pymacro.h
+pymath.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pymath.h
+pytime.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pytime.h
+pymem.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pymem.h
+object.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/object.h
+objimpl.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/objimpl.h
+typeslots.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/typeslots.h
+pyhash.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyhash.h
+pydebug.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pydebug.h
+bytearrayobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/bytearrayobject.h
+bytesobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/bytesobject.h
+unicodeobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/unicodeobject.h
+longobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/longobject.h
+longintrepr.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/longintrepr.h
+boolobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/boolobject.h
+floatobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/floatobject.h
+complexobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/complexobject.h
+rangeobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/rangeobject.h
+memoryobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/memoryobject.h
+tupleobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/tupleobject.h
+listobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/listobject.h
+dictobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/dictobject.h
+odictobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/odictobject.h
+enumobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/enumobject.h
+setobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/setobject.h
+methodobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/methodobject.h
+moduleobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/moduleobject.h
+funcobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/funcobject.h
+classobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/classobject.h
+fileobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/fileobject.h
+pycapsule.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pycapsule.h
+traceback.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/traceback.h
+sliceobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/sliceobject.h
+cellobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cellobject.h
+iterobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/iterobject.h
+genobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/genobject.h
+descrobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/descrobject.h
+warnings.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/warnings.h
+weakrefobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/weakrefobject.h
+structseq.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/structseq.h
+namespaceobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/namespaceobject.h
+picklebufobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/picklebufobject.h
+codecs.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/codecs.h
+pyerrors.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyerrors.h
+cpython/initconfig.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/initconfig.h
+pystate.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pystate.h
+context.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/context.h
+pyarena.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyarena.h
+modsupport.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/modsupport.h
+compile.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/compile.h
+pythonrun.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pythonrun.h
+pylifecycle.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pylifecycle.h
+ceval.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/ceval.h
+sysmodule.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/sysmodule.h
+osmodule.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/osmodule.h
+intrcheck.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/intrcheck.h
+import.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/import.h
+abstract.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/abstract.h
+bltinmodule.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/bltinmodule.h
+eval.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/eval.h
+pyctype.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyctype.h
+pystrtod.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pystrtod.h
+pystrcmp.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pystrcmp.h
+dtoa.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/dtoa.h
+fileutils.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/fileutils.h
+pyfpe.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyfpe.h
+tracemalloc.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/tracemalloc.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/abstract.h
+cpython/abstract.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/abstract.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/bltinmodule.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/boolobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/bytearrayobject.h
+stdarg.h
+-
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/bytesobject.h
+stdarg.h
+-
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cellobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/ceval.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/classobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/code.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/codecs.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/compile.h
+code.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/code.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/complexobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/context.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/abstract.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/dictobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/fileobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/initconfig.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/object.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/objimpl.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/pyerrors.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/pylifecycle.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/pymem.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/pystate.h
+cpython/initconfig.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/cpython/initconfig.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/sysmodule.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/traceback.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/tupleobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/unicodeobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/descrobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/dictobject.h
+cpython/dictobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/dictobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/dtoa.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/enumobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/eval.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/fileobject.h
+cpython/fileobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/fileobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/fileutils.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/floatobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/funcobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/genobject.h
+pystate.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pystate.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/import.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/intrcheck.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/iterobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/listobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/longintrepr.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/longobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/memoryobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/methodobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/modsupport.h
+stdarg.h
+-
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/moduleobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/namespaceobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/object.h
+pymem.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pymem.h
+cpython/object.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/object.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/objimpl.h
+pymem.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pymem.h
+cpython/objimpl.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/objimpl.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/odictobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/osmodule.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/patchlevel.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/picklebufobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyarena.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pycapsule.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyconfig.h
+io.h
+-
+float.h
+-
+basetsd.h
+-
+stdio.h
+-
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyctype.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pydebug.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyerrors.h
+stdarg.h
+-
+cpython/pyerrors.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/pyerrors.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyfpe.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyhash.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pylifecycle.h
+cpython/pylifecycle.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/pylifecycle.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pymacconfig.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pymacro.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pymath.h
+pyconfig.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyconfig.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pymem.h
+pyport.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyport.h
+cpython/pymem.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/pymem.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyport.h
+pyconfig.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyconfig.h
+inttypes.h
+-
+stdlib.h
+-
+ieeefp.h
+-
+math.h
+-
+sys/time.h
+-
+time.h
+-
+sys/time.h
+-
+time.h
+-
+sys/select.h
+-
+sys/stat.h
+-
+stat.h
+-
+sys/types.h
+-
+sys/termio.h
+-
+ctype.h
+-
+wctype.h
+-
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pystate.h
+pythread.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pythread.h
+cpython/pystate.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/pystate.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pystrcmp.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pystrtod.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pythonrun.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pythread.h
+pthread.h
+-
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pytime.h
+pyconfig.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/pyconfig.h
+object.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/object.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/rangeobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/setobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/sliceobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/structseq.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/sysmodule.h
+cpython/sysmodule.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/sysmodule.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/traceback.h
+cpython/traceback.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/traceback.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/tracemalloc.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/tupleobject.h
+cpython/tupleobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/tupleobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/typeslots.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/unicodeobject.h
+stdarg.h
+-
+ctype.h
+-
+wchar.h
+-
+cpython/unicodeobject.h
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/cpython/unicodeobject.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/warnings.h
+
+C:/Users/Ruben/AppData/Local/Programs/Python/Python38/include/weakrefobject.h
+
+C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/src/Main.cpp
+iostream
+-
+memory
+-
+matplotlibcpp.h
+C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/src/matplotlibcpp.h
+open3d/Open3D.h
+C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/src/open3d/Open3D.h
+simulation/Simulation.h
+C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/src/simulation/Simulation.h
+
+C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/src/simulation/Simulation.cpp
+simulation/Simulation.h
+C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/src/simulation/simulation/Simulation.h
+
+C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/installed/x64-windows/include/GL/GL.h
+winapifamily.h
+-
+
+C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/installed/x64-windows/include/GL/GLU.h
+winapifamily.h
+-
+GL/gl.h
+-
+
+C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/installed/x64-windows/include/matplotlibcpp.h
+Python.h
+-
+vector
+-
+map
+-
+array
+-
+numeric
+-
+algorithm
+-
+stdexcept
+-
+iostream
+-
+cstdint
+-
+functional
+-
+string
+-
+numpy/arrayobject.h
+-
+opencv2/opencv.hpp
+-
 

@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.17)
 
 # Setup project
-project("ADCS Math")
+project("ADCS Math Simulation")
 
 # Specify C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -38,13 +38,13 @@ else()
 endif()
 
 # Clump source files from src
-file(GLOB ADCS_SRC "src/*.cpp" "src/**/*.cpp")
+file(GLOB ADCS_SRC "src/*.cpp" "src/simulation/*.cpp")
 
 # Specify include directories
 include_directories(include)
 
 # Add source to this project's executable.
-add_executable("ADCS" ${ADCS_SRC} src/old/KalmanFilter.cpp)
+add_executable("ADCS" ${ADCS_SRC})
 
 # Extra target linking
 target_link_libraries("ADCS" PRIVATE glm ${Python3_LIBRARIES} Python3::NumPy Open3D::Open3D)

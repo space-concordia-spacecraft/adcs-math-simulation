@@ -1,6 +1,5 @@
 #pragma once
 
-#include <adcs/Constants.h>
 #include "open3d/Open3D.h"
 
 using open3d::visualization::Visualizer;

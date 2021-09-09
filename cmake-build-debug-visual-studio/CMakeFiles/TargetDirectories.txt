@@ -1,0 +1,3 @@
+C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/ADCS.dir
+C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/edit_cache.dir
+C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/rebuild_cache.dir

@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math
+# Install script for directory: C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/ADCS Math")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/ADCS Math Simulation")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Charles/OneDrive/Concordia/Space Concordia/ADCS_CODE/adcs-math/cmake-build-release-visual-studio/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-release-visual-studio/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
