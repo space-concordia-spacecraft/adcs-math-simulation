@@ -16,6 +16,7 @@ CLion is a C++ IDE distributed by JetBrains. You may get a free student license 
 ```
 pip install numpy
 pip install matplotlib
+pip install open3d
 ```
 If the **_pip_** command is not recognized by your system, please follow the instructions on [this page](https://pip.pypa.io/en/stable/installing/) to install **pip**.
 
