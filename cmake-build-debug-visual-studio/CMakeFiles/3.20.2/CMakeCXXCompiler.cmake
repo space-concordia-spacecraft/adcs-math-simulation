@@ -11,17 +11,19 @@ set(CMAKE_CXX11_COMPILE_FEATURES "cxx_std_11;cxx_alias_templates;cxx_alignas;cxx
 set(CMAKE_CXX14_COMPILE_FEATURES "cxx_std_14;cxx_aggregate_default_initializers;cxx_attribute_deprecated;cxx_binary_literals;cxx_contextual_conversions;cxx_decltype_auto;cxx_digit_separators;cxx_generic_lambdas;cxx_lambda_init_captures;cxx_relaxed_constexpr;cxx_return_type_deduction;cxx_variable_templates")
 set(CMAKE_CXX17_COMPILE_FEATURES "cxx_std_17")
 set(CMAKE_CXX20_COMPILE_FEATURES "cxx_std_20")
+set(CMAKE_CXX23_COMPILE_FEATURES "")
 
 set(CMAKE_CXX_PLATFORM_ID "Windows")
 set(CMAKE_CXX_SIMULATE_ID "")
 set(CMAKE_CXX_COMPILER_FRONTEND_VARIANT "")
 set(CMAKE_CXX_SIMULATE_VERSION "")
 set(CMAKE_CXX_COMPILER_ARCHITECTURE_ID x64)
+
 set(MSVC_CXX_ARCHITECTURE_ID x64)
 
-set(CMAKE_AR "")
+set(CMAKE_AR "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/bin/Hostx64/x64/lib.exe")
 set(CMAKE_CXX_COMPILER_AR "")
-set(CMAKE_RANLIB "")
+set(CMAKE_RANLIB ":")
 set(CMAKE_CXX_COMPILER_RANLIB "")
 set(CMAKE_LINKER "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/bin/Hostx64/x64/link.exe")
 set(CMAKE_MT "C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/mt.exe")
@@ -42,7 +44,7 @@ if(CMAKE_COMPILER_IS_MINGW)
   set(MINGW 1)
 endif()
 set(CMAKE_CXX_COMPILER_ID_RUN 1)
-set(CMAKE_CXX_SOURCE_FILE_EXTENSIONS C;M;c++;cc;cpp;cxx;m;mm;CPP)
+set(CMAKE_CXX_SOURCE_FILE_EXTENSIONS C;M;c++;cc;cpp;cxx;m;mm;mpp;CPP)
 set(CMAKE_CXX_IGNORE_EXTENSIONS inl;h;hpp;HPP;H;o;O;obj;OBJ;def;DEF;rc;RC)
 
 foreach (lang C OBJC OBJCXX)
@@ -59,6 +61,7 @@ set(CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES 1)
 # Save compiler ABI information.
 set(CMAKE_CXX_SIZEOF_DATA_PTR "8")
 set(CMAKE_CXX_COMPILER_ABI "")
+set(CMAKE_CXX_BYTE_ORDER "LITTLE_ENDIAN")
 set(CMAKE_CXX_LIBRARY_ARCHITECTURE "")
 
 if(CMAKE_CXX_SIZEOF_DATA_PTR)

@@ -21,7 +21,7 @@ Compilation of the C compiler identification source "CMakeCCompilerId.c" produce
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
 
-The C compiler identification is MSVC, found in "C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.exe"
+The C compiler identification is MSVC, found in "C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/3.20.2/CompilerIdC/CMakeCCompilerId.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/bin/Hostx64/x64/cl.exe 
@@ -45,57 +45,29 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
 
-The CXX compiler identification is MSVC, found in "C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.exe"
-
-Determining if the C compiler works passed with the following output:
-Change Dir: C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/CMakeTmp
-
-Run Build Command(s):nmake /nologo cmTC_c8fae\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_c8fae.dir\build.make /nologo -L                  CMakeFiles\cmTC_c8fae.dir\build
-Building C object CMakeFiles/cmTC_c8fae.dir/testCCompiler.c.obj
-	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @C:\Users\Ruben\AppData\Local\Temp\nmC8BD.tmp
-testCCompiler.c
-Linking C executable cmTC_c8fae.exe
-	"E:\Applications\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_c8fae.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_c8fae.dir\objects1.rsp @C:\Users\Ruben\AppData\Local\Temp\nmC93B.tmp
-	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/CMakeTmp/cmTC_c8fae.exe -installedDir C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/installed/x64-windows/debug/bin -OutVariable out
-
-
+The CXX compiler identification is MSVC, found in "C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/3.20.2/CompilerIdCXX/CMakeCXXCompilerId.exe"
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_08a9c\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_08a9c.dir\build.make /nologo -L                  CMakeFiles\cmTC_08a9c.dir\build
-Building C object CMakeFiles/cmTC_08a9c.dir/CMakeCCompilerABI.c.obj
-	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @C:\Users\Ruben\AppData\Local\Temp\nmCE3B.tmp
-CMakeCCompilerABI.c
-Linking C executable cmTC_08a9c.exe
-	"E:\Applications\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_08a9c.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_08a9c.dir\objects1.rsp @C:\Users\Ruben\AppData\Local\Temp\nmCE9A.tmp
-	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/CMakeTmp/cmTC_08a9c.exe -installedDir C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/installed/x64-windows/debug/bin -OutVariable out
-
-
-
-Determining if the CXX compiler works passed with the following output:
-Change Dir: C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/CMakeTmp
-
-Run Build Command(s):nmake /nologo cmTC_513bd\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_513bd.dir\build.make /nologo -L                  CMakeFiles\cmTC_513bd.dir\build
-Building CXX object CMakeFiles/cmTC_513bd.dir/testCXXCompiler.cxx.obj
-	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @C:\Users\Ruben\AppData\Local\Temp\nmD36B.tmp
-testCXXCompiler.cxx
-Linking CXX executable cmTC_513bd.exe
-	"E:\Applications\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_513bd.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_513bd.dir\objects1.rsp @C:\Users\Ruben\AppData\Local\Temp\nmD3CA.tmp
-	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/CMakeTmp/cmTC_513bd.exe -installedDir C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+Run Build Command(s):nmake -f Makefile /nologo cmTC_2a6ed\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_2a6ed.dir\build.make /nologo -L                  CMakeFiles\cmTC_2a6ed.dir\build
+Building C object CMakeFiles/cmTC_2a6ed.dir/CMakeCCompilerABI.c.obj
+	"C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_2a6ed.dir\CMakeCCompilerABI.c.obj.d --working-dir=C:\Users\Ruben\OneDrive\Desktop\space\adcs-math-simulation\cmake-build-debug-visual-studio\CMakeFiles\CMakeTmp --filter-prefix="" -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @C:\Users\Ruben\AppData\Local\Temp\nm861B.tmp
+Linking C executable cmTC_2a6ed.exe
+	"C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_2a6ed.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_2a6ed.dir\objects1.rsp @C:\Users\Ruben\AppData\Local\Temp\nm87B3.tmp
+	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/CMakeTmp/cmTC_2a6ed.exe -installedDir C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/installed/x64-windows/debug/bin -OutVariable out
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_d8111\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_d8111.dir\build.make /nologo -L                  CMakeFiles\cmTC_d8111.dir\build
-Building CXX object CMakeFiles/cmTC_d8111.dir/CMakeCXXCompilerABI.cpp.obj
-	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @C:\Users\Ruben\AppData\Local\Temp\nmD88C.tmp
-CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_d8111.exe
-	"E:\Applications\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_d8111.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_d8111.dir\objects1.rsp @C:\Users\Ruben\AppData\Local\Temp\nmD8FA.tmp
-	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/CMakeTmp/cmTC_d8111.exe -installedDir C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+Run Build Command(s):nmake -f Makefile /nologo cmTC_f1b99\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_f1b99.dir\build.make /nologo -L                  CMakeFiles\cmTC_f1b99.dir\build
+Building CXX object CMakeFiles/cmTC_f1b99.dir/CMakeCXXCompilerABI.cpp.obj
+	"C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_f1b99.dir\CMakeCXXCompilerABI.cpp.obj.d --working-dir=C:\Users\Ruben\OneDrive\Desktop\space\adcs-math-simulation\cmake-build-debug-visual-studio\CMakeFiles\CMakeTmp --filter-prefix="" -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @C:\Users\Ruben\AppData\Local\Temp\nm905C.tmp
+Linking CXX executable cmTC_f1b99.exe
+	"C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_f1b99.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_f1b99.dir\objects1.rsp @C:\Users\Ruben\AppData\Local\Temp\nm9251.tmp
+	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/Ruben/OneDrive/Desktop/space/adcs-math-simulation/cmake-build-debug-visual-studio/CMakeFiles/CMakeTmp/cmTC_f1b99.exe -installedDir C:/Users/Ruben/OneDrive/Desktop/space/vcpkg/installed/x64-windows/debug/bin -OutVariable out
 
 
 
